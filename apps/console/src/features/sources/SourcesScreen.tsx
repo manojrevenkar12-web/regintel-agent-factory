@@ -68,14 +68,15 @@ export function SourcesScreen() {
                       </p>
                     )}
                   </div>
-                  <div className="overflow-x-auto pb-2">
+                  {/* biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be reachable by keyboard */}
+                  <section className="overflow-x-auto pb-2" aria-label={`${s.authority} season`} tabIndex={0}>
                     <SeasonStrip
                       label={s.authority}
                       days={s.days}
                       length={SEASON_DAYS}
                       marks={(inc.data ?? []).filter((x) => x.id.split(":")[1] === s.source)}
                     />
-                  </div>
+                  </section>
                 </li>
               ))}
             </ol>

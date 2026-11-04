@@ -32,10 +32,13 @@ test("an incident shows its gates and the reviewer's verdict", async ({ page }) 
     .getByRole("link", { name: /day \d+/ })
     .first()
     .click();
+  await expect(page.getByText("What the contract found")).toBeVisible();
+  // a people-only season has no attempts; an agent season shows each attempt's gates and diff
+  if (await page.getByText("went straight to a person").isVisible()) return;
   await expect(page.getByRole("heading", { level: 3, name: /Attempt 1/ })).toBeVisible();
-  await expect(page.getByText("contract on every page")).toBeVisible();
-  await page.getByRole("button", { name: "Show the change" }).click();
-  await expect(page.locator("pre")).toContainText("@@");
+  await expect(page.getByText("contract on every page").first()).toBeVisible();
+  await page.getByRole("button", { name: "Show the change" }).first().click();
+  await expect(page.locator("pre").first()).toContainText("@@");
 });
 
 test("an assessment shows clause text and evidence, and signs as the chosen person", async ({ page }) => {
@@ -70,6 +73,7 @@ test("a stale sign-off is refused with a reason", async ({ page }) => {
     }),
   );
   await page.goto("/#/impact");
+  await page.getByLabel("Rules").check();
   await page
     .getByRole("link", { name: /version \d+/ })
     .first()

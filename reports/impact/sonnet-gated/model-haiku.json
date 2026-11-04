@@ -38,7 +38,7 @@
   "relinks": [],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.001,
+  "seconds": 0,
   "model_calls": 0,
   "errors": [],
   "day": 2,
@@ -79,7 +79,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, keep an SBOM for the device.",
-      "why": "Its trace link points at UDA-GD-2024-005 2.2, which states the same before-change obligation for class IIb devices."
+      "why": "Its trace link points at UDA-GD-2024-005 2.2, which states the same SBOM obligation for class IIb devices."
      }
     ],
     "gaps": [],
@@ -119,21 +119,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "For all devices, the manufacturer shall assess vulnerabilities in third-party components quarterly.",
-      "why": "Its trace link points at UDA-GD-2024-005 2.1, which is the before-change clause, and its text requires quarterly review."
+      "why": "Its trace link points at UDA-GD-2024-005 2.1, and its quarterly review matches that clause."
      },
      {
       "requirement": "REQ-DRS-0066",
       "device": "DRS",
       "via": "model",
       "quote": "For all devices, the manufacturer shall assess vulnerabilities in third-party components quarterly.",
-      "why": "Its trace link points at UDA-GD-2024-005 2.1, which is the before-change clause, and it applies to all devices including class I."
+      "why": "Its trace link points at UDA-GD-2024-005 2.1, which applies to all devices including class I, and its quarterly review matches it."
      },
      {
       "requirement": "REQ-IMG-0067",
       "device": "IMG",
       "via": "model",
       "quote": "For all devices, the manufacturer shall assess vulnerabilities in third-party components quarterly.",
-      "why": "Its trace link points at UDA-GD-2024-005 2.1, which is the before-change clause, and its text requires quarterly review."
+      "why": "Its trace link points at UDA-GD-2024-005 2.1, and its quarterly review matches that clause."
      }
     ],
     "gaps": [],
@@ -170,21 +170,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "For all devices, the manufacturer shall establish a risk management process.",
-      "why": "Its trace link points at UDA-GD-2024-005 1.1, which is the before-change clause."
+      "why": "Its trace link points at UDA-GD-2024-005 1.1, which is the clause as it was before the change, and its text requires running the risk management process."
      },
      {
       "requirement": "REQ-DRS-0058",
       "device": "DRS",
       "via": "model",
       "quote": "Derived from the Union Device Authority guidance on risk management (2024).",
-      "why": "It has no trace link, its rationale names this document's title and year, and nothing points to another document."
+      "why": "It has no trace link, but its rationale names this UDA guidance on risk management (2024) and no other document, and its text requires running the risk management process."
      },
      {
       "requirement": "REQ-IMG-0059",
       "device": "IMG",
       "via": "model",
       "quote": "For all devices, the manufacturer shall establish a risk management process.",
-      "why": "Its trace link points at UDA-GD-2024-005 1.1, which is the before-change clause."
+      "why": "Its trace link points at UDA-GD-2024-005 1.1, which is the clause as it was before the change, and its text requires running the risk management process."
      }
     ],
     "gaps": [],
@@ -203,8 +203,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.00481208,
-  "seconds": 22.905,
+  "cost_usd": 0.0053920800000000005,
+  "seconds": 27.186,
   "model_calls": 1,
   "errors": [],
   "day": 6,
@@ -245,14 +245,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 23 days.",
-      "why": "Its trace link points at this document's clause 1.4 with the pre-change 23-day text, and its requirement text matches that obligation."
+      "why": "Its trace link points at SMC-W-2024-006 clause 1.4, which states the pre-change 23-day obligation for class IIb devices."
      },
      {
       "requirement": "REQ-IMG-0773",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 23 days.",
-      "why": "Its trace link points at this document's clause 1.4 with the pre-change 23-day text, and its requirement text matches that obligation."
+      "why": "Its trace link points at SMC-W-2024-006 clause 1.4, which states the pre-change 23-day obligation covering class IIa devices."
      }
     ],
     "gaps": [],
@@ -289,8 +289,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0019075,
-  "seconds": 11.128,
+  "cost_usd": 0.0016505,
+  "seconds": 8.64,
   "model_calls": 1,
   "errors": [],
   "day": 9,
@@ -477,7 +477,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIb and III devices, test each software unit against its acceptance criteria.",
-      "why": "Its trace link points to TGA-DG-2024-004 clause 2.2, the clause as it was before the change, and the linked text matches the requirement's obligation."
+      "why": "Its trace link points at TGA-DG-2024-004 2.2, the pre-change clause, and the link text states the same shall-obligation for class IIb and III."
      }
     ],
     "gaps": [],
@@ -623,8 +623,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0007982,
-  "seconds": 6.369,
+  "cost_usd": 0.0009047,
+  "seconds": 6.844,
   "model_calls": 1,
   "errors": [],
   "day": 9,
@@ -886,7 +886,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.009,
+  "seconds": 0.001,
   "model_calls": 0,
   "errors": [],
   "day": 11,
@@ -926,7 +926,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the manufacturer shall identify the user interface characteristics related to safety.",
-      "why": "Its trace link points at TGA-DG-2023-003 clause 1.1, the clause as it stood before the change, and the infusion pump is class IIb."
+      "why": "Its trace link points at TGA-DG-2023-003 clause 1.1, whose pre-change wording applies to class IIb devices, and its text requires listing safety-related user interface characteristics for the infusion pump."
      }
     ],
     "gaps": [
@@ -941,7 +941,7 @@
   "relinks": [],
   "rejected": [],
   "cost_usd": 0.0008007000000000001,
-  "seconds": 5.714,
+  "seconds": 5.959,
   "model_calls": 1,
   "errors": [],
   "day": 12,
@@ -1337,7 +1337,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.002,
+  "seconds": 0.001,
   "model_calls": 0,
   "errors": [],
   "day": 16,
@@ -1377,8 +1377,8 @@
       "requirement": "REQ-IMG-0623",
       "device": "IMG",
       "via": "model",
-      "quote": "For class IIa, IIb and III devices, the importer shall update the clinical evaluation report every six months.",
-      "why": "Its trace link points at TGA-DG-2024-005 3.1, the clause as it read before the change, and its text requires updating the CER at least every six months."
+      "quote": "at least every six months",
+      "why": "Its trace link points at TGA-DG-2024-005 3.1, the clause as it read before the change, and its text states the six-month update interval."
      }
     ],
     "gaps": [],
@@ -1418,8 +1418,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0008096000000000001,
-  "seconds": 5.144,
+  "cost_usd": 0.0008986,
+  "seconds": 6.075,
   "model_calls": 1,
   "errors": [],
   "day": 19,
@@ -1508,14 +1508,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, plan and carry out the clinical evaluation of the device.",
-      "why": "Its trace link points at NMPA-RG-2024-003 1.1, which imposes the same obligation as the clause before the change."
+      "why": "Its trace link points at NMPA-RG-2024-003 clause 1.1, which imposes this obligation on class IIb devices."
      },
      {
       "requirement": "REQ-IMG-0445",
       "device": "IMG",
       "via": "model",
       "quote": "Northern Medical Products Agency 2024 publication about clinical evaluation.",
-      "why": "It has no trace link, and its rationale names this document's authority, year and subject while no other candidate's rationale or link points elsewhere for this obligation."
+      "why": "It has no trace link, and its rationale names this document's authority, subject and year, with nothing pointing to another document."
      }
     ],
     "gaps": [],
@@ -1549,7 +1549,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the manufacturer shall establish and maintain a post-market surveillance plan.",
-      "why": "Its trace link points at NMPA-RG-2024-003 2.1, which states the same obligation as the clause before the change."
+      "why": "Its trace link points at NMPA-RG-2024-003 clause 2.1, which states this obligation for class IIb devices."
      }
     ],
     "gaps": [],
@@ -1630,8 +1630,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0019375999999999998,
-  "seconds": 11.169,
+  "cost_usd": 0.0020271,
+  "seconds": 11.446,
   "model_calls": 1,
   "errors": [],
   "day": 21,
@@ -1671,15 +1671,15 @@
       "requirement": "REQ-PMP-0638",
       "device": "PMP",
       "via": "model",
-      "quote": "The manufacturer shall, for class IIa, IIb and III devices, give reasons for each claim of equivalence with another device.",
-      "why": "Its trace link points at TGA-DG-2024-006 clause 2.2, which is the clause as it stood before the change."
+      "quote": "give reasons for each claim of equivalence with another device",
+      "why": "Its trace link points to TGA-DG-2024-006 clause 2.2, the clause as it was before the change, and its text states the same obligation."
      },
      {
       "requirement": "REQ-IMG-0639",
       "device": "IMG",
       "via": "model",
-      "quote": "The manufacturer shall, for class IIa, IIb and III devices, give reasons for each claim of equivalence with another device.",
-      "why": "Its trace link points at TGA-DG-2024-006 clause 2.2, which is the clause as it stood before the change."
+      "quote": "give reasons for each claim of equivalence with another device",
+      "why": "Its trace link points to TGA-DG-2024-006 clause 2.2, the clause as it was before the change, and its text states the same obligation."
      }
     ],
     "gaps": [],
@@ -1711,32 +1711,19 @@
      "DRS",
      "IMG"
     ],
-    "affected": [
-     {
-      "requirement": "REQ-PMP-0635",
-      "device": "PMP",
-      "via": "model",
-      "quote": "For all devices, the manufacturer shall plan and conduct a clinical evaluation.",
-      "why": "Its trace link points at TGA-DG-2024-006 clause 2.1, which is the clause as it stood before the change."
-     },
-     {
-      "requirement": "REQ-DRS-0636",
-      "device": "DRS",
-      "via": "model",
-      "quote": "For all devices, the manufacturer shall plan and conduct a clinical evaluation.",
-      "why": "Its trace link points at TGA-DG-2024-006 clause 2.1, which is the clause as it stood before the change."
-     }
-    ],
+    "affected": [],
     "gaps": [],
     "flags": [
+     "PMP: no requirement found for 2.1; check whether one exists",
+     "DRS: no requirement found for 2.1; check whether one exists",
      "IMG: no requirement found for 2.1; check whether one exists"
     ]
    }
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0028206,
-  "seconds": 15.643,
+  "cost_usd": 0.0017846000000000001,
+  "seconds": 7.492,
   "model_calls": 1,
   "errors": [],
   "day": 21,
@@ -1776,15 +1763,15 @@
       "requirement": "REQ-PMP-0237",
       "device": "PMP",
       "via": "model",
-      "quote": "every two years",
-      "why": "Its trace link points at FDO-G-2024-002 2.2, and its text (\"at least every two years\") matches the clause as it was before the change."
+      "quote": "The manufacturer shall, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components every two years.",
+      "why": "Its trace link points at FDO-G-2024-002 clause 2.2, which is the clause as it was before the change, and its rationale names this Federal Device Office Q&A."
      },
      {
       "requirement": "REQ-IMG-0238",
       "device": "IMG",
       "via": "model",
-      "quote": "every two years",
-      "why": "Its trace link points at FDO-G-2024-002 2.2, and its text (\"at least every two years\") matches the clause as it was before the change."
+      "quote": "The manufacturer shall, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components every two years.",
+      "why": "Its trace link points at FDO-G-2024-002 clause 2.2, which is the clause as it was before the change, and its rationale names this Federal Device Office 2024 publication."
      }
     ],
     "gaps": [],
@@ -1793,8 +1780,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0011708,
-  "seconds": 8.019,
+  "cost_usd": 0.0012008000000000001,
+  "seconds": 6.451,
   "model_calls": 1,
   "errors": [],
   "day": 23,
@@ -2138,21 +2125,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "The importer shall, for all devices, remediate vulnerabilities rated critical within 45 days.",
-      "why": "Its trace link points at SMC-W-2024-005 clause 2.2 with the pre-change wording, and its text states the same 45-day critical-vulnerability obligation."
+      "why": "Its trace link points at SMC-W-2024-005 clause 2.2, and the linked text is the pre-change clause (all devices, 45 days)."
      },
      {
       "requirement": "REQ-DRS-0765",
       "device": "DRS",
       "via": "model",
       "quote": "Derived from the Swiss Medical Council position paper on clinical evaluation (2024).",
-      "why": "It has no trace link, but its rationale names this document's title and issuer, no other candidate points to this document, and the pre-change clause covered all devices including class I."
+      "why": "It has no trace link, its rationale names this document, it is the only 45-day candidate, and no other candidate's rationale points elsewhere for that deadline."
      },
      {
       "requirement": "REQ-IMG-0766",
       "device": "IMG",
       "via": "model",
       "quote": "The importer shall, for all devices, remediate vulnerabilities rated critical within 45 days.",
-      "why": "Its trace link points at SMC-W-2024-005 clause 2.2 with the pre-change wording, and its text states the same 45-day obligation."
+      "why": "Its trace link points at SMC-W-2024-005 clause 2.2, and the linked text is the pre-change clause (all devices, 45 days)."
      }
     ],
     "gaps": [],
@@ -2201,8 +2188,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0016405999999999999,
-  "seconds": 9.097,
+  "cost_usd": 0.0020215999999999997,
+  "seconds": 12.454,
   "model_calls": 1,
   "errors": [],
   "day": 28,
@@ -2322,22 +2309,22 @@
       "requirement": "REQ-PMP-0173",
       "device": "PMP",
       "via": "model",
-      "quote": "Derived from the Union Device Authority Q&A on vigilance and incident reporting (2025).",
-      "why": "Its rationale names this document's title, authority and year, and the other 26-day PMP candidates point to other documents or subjects, so only this one fits clause 2.1."
+      "quote": "Union Device Authority Q&A on vigilance and incident reporting (2025)",
+      "why": "Its rationale names this document's subject and year, nothing else points elsewhere, and \"is expected to\" matches the \"should\" of clause 2.1."
      },
      {
       "requirement": "REQ-DRS-0174",
       "device": "DRS",
       "via": "model",
       "quote": "For all devices, the importer should register the UDI in the device database within 26 days.",
-      "why": "Its trace link points at UDA-GD-2025-012 2.1, and its 26-day importer obligation matches that clause."
+      "why": "Its trace link points at UDA-GD-2025-012 clause 2.1, the clause as it was before the change, and the requirement text states the same 26-day obligation."
      },
      {
       "requirement": "REQ-IMG-0175",
       "device": "IMG",
       "via": "model",
       "quote": "For all devices, the importer should register the UDI in the device database within 26 days.",
-      "why": "Its trace link points at UDA-GD-2025-012 2.1, and its 26-day obligation matches that clause."
+      "why": "Its trace link points at UDA-GD-2025-012 clause 2.1, the clause as it was before the change, and the requirement text states the same 26-day obligation."
      }
     ],
     "gaps": [],
@@ -2570,8 +2557,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0016530999999999998,
-  "seconds": 9.781,
+  "cost_usd": 0.0017816,
+  "seconds": 10.403,
   "model_calls": 1,
   "errors": [],
   "day": 33,
@@ -2611,15 +2598,15 @@
       "requirement": "REQ-PMP-0205",
       "device": "PMP",
       "via": "model",
-      "quote": "the manufacturer shall update the database entry after a change to the device within 13 days",
-      "why": "Its trace link points at UDA-GD-2025-014 2.3, the clause as it was before the change, and its 13-day deadline matches that clause."
+      "quote": "For class IIa, IIb and III devices, the manufacturer shall update the database entry after a change to the device within 13 days.",
+      "why": "Its trace link points at UDA-GD-2025-014 2.3, and the 13-day deadline matches the clause as it was before the change."
      },
      {
       "requirement": "REQ-IMG-0206",
       "device": "IMG",
       "via": "model",
-      "quote": "the manufacturer shall update the database entry after a change to the device within 13 days",
-      "why": "Its trace link points at UDA-GD-2025-014 2.3, the clause as it was before the change, and its 13-day deadline matches that clause."
+      "quote": "For class IIa, IIb and III devices, the manufacturer shall update the database entry after a change to the device within 13 days.",
+      "why": "Its trace link points at UDA-GD-2025-014 2.3, and the 13-day deadline matches the clause as it was before the change."
      }
     ],
     "gaps": [],
@@ -2652,8 +2639,8 @@
       "requirement": "REQ-PMP-0199",
       "device": "PMP",
       "via": "model",
-      "quote": "The authorised representative shall, for class IIb and III devices, evaluate trends in incidents that are not serious every two years",
-      "why": "Its trace link points at UDA-GD-2025-014 3.1, the clause as it was before the change, and its two-year interval matches that clause."
+      "quote": "The authorised representative shall, for class IIb and III devices, evaluate trends in incidents that are not serious every two years.",
+      "why": "Its trace link points at UDA-GD-2025-014 3.1 with the same obligation and two-year interval as the clause before the change."
      }
     ],
     "gaps": [],
@@ -2690,8 +2677,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0018744999999999999,
-  "seconds": 9.35,
+  "cost_usd": 0.0016635,
+  "seconds": 8.744,
   "model_calls": 1,
   "errors": [],
   "day": 36,
@@ -3052,7 +3039,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.001,
+  "seconds": 0,
   "model_calls": 0,
   "errors": [],
   "day": 40,
@@ -3202,12 +3189,11 @@
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer should, for all devices, allocate a UDI to every device.",
-      "why": "Its trace link points to FDO-G-2025-010 2.1, the clause as it was before the change, with the same wording, and its rationale names this guidance on cybersecurity for medical devices (2025)."
+      "why": "Its trace link points at FDO-G-2025-010 clause 2.1, the clause as it was before the change, and its requirement text states the same unrestricted obligation."
      }
     ],
     "gaps": [],
     "flags": [
-     "DRS: REQ-DRS-0369 may implement FDO-G-2025-010 2.1; It has no trace link and its rationale says only \"Federal Device Office expectation\", which could refer to FDO-G-2025-010, FDO-G-2025-009 or FDO-G-2024-004, so an expert needs to decide.",
      "PMP: no requirement found for 2.1; check whether one exists",
      "DRS: no requirement found for 2.1; check whether one exists"
     ]
@@ -3336,8 +3322,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0017343999999999999,
-  "seconds": 9.964,
+  "cost_usd": 0.0016008999999999997,
+  "seconds": 9.468,
   "model_calls": 1,
   "errors": [],
   "day": 42,
@@ -3376,7 +3362,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the importer shall maintain a software bill of materials.",
-      "why": "Its trace link points to UDA-GD-2024-009 clause 1.1, which is the clause as it was before the change, and its text states the same SBOM obligation."
+      "why": "Its trace link points at UDA-GD-2024-009 clause 1.1, and its text (keep current the SBOM) states the same obligation as that clause before the change."
      }
     ],
     "gaps": [],
@@ -3414,21 +3400,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "Derived from the Union Device Authority position paper on cybersecurity for medical devices (2024).",
-      "why": "It has no trace link, but its rationale names this document and no other source, and its text requires updating the CER every two years."
+      "why": "It has no trace link, its rationale points only at this UDA-GD-2024-009 position paper, and its text (update the CER at least every two years) matches clause 2.1 before the change."
      },
      {
       "requirement": "REQ-DRS-0121",
       "device": "DRS",
       "via": "model",
       "quote": "The manufacturer should, for all devices, revise the CER every two years.",
-      "why": "Its trace link is UDA-GD-2024-009 clause 2.1 as it was before the change, and its text states the same two-year CER revision obligation."
+      "why": "Its trace link points at UDA-GD-2024-009 clause 2.1, and its text (update the CER at least every two years) states the same obligation as that clause before the change."
      },
      {
       "requirement": "REQ-IMG-0122",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer should, for all devices, revise the CER every two years.",
-      "why": "Its trace link is UDA-GD-2024-009 clause 2.1 as it was before the change, and its text states the same two-year CER revision obligation."
+      "why": "Its trace link points at UDA-GD-2024-009 clause 2.1, and its text (update the CER at least every two years) states the same obligation as that clause before the change."
      }
     ],
     "gaps": [],
@@ -3447,8 +3433,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0020115999999999997,
-  "seconds": 11.381,
+  "cost_usd": 0.0021011,
+  "seconds": 21.976,
   "model_calls": 1,
   "errors": [],
   "day": 42,
@@ -3608,8 +3594,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0017041,
-  "seconds": 8.834,
+  "cost_usd": 0.0016761,
+  "seconds": 8.475,
   "model_calls": 1,
   "errors": [],
   "day": 46,
@@ -3737,14 +3723,14 @@
       "device": "DRS",
       "via": "model",
       "quote": "The manufacturer shall, for all devices, keep an SBOM for the device.",
-      "why": "Its trace link points to FDO-G-2025-010 clause 1.1, and that clause's wording matches the pre-change obligation for all devices."
+      "why": "Its trace link points at clause 1.1 of this document, which states the same all-devices SBOM obligation, and its text matches."
      },
      {
       "requirement": "REQ-IMG-0362",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer shall, for all devices, keep an SBOM for the device.",
-      "why": "Its trace link points to FDO-G-2025-010 clause 1.1, and the imaging software is in scope under the pre-change all-devices wording."
+      "why": "Its trace link points at clause 1.1 of this document, which states the same all-devices SBOM obligation, and its rationale names the Federal Device Office."
      }
     ],
     "gaps": [],
@@ -3755,8 +3741,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0022806,
-  "seconds": 14.227,
+  "cost_usd": 0.0027621,
+  "seconds": 16.082,
   "model_calls": 1,
   "errors": [],
   "day": 48,
@@ -3797,14 +3783,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, send the field safety notice prior to any field safety corrective action within 5 days.",
-      "why": "Its trace link points at FDO-G-2024-004 1.2, the clause as it was before the change, and its 5-day deadline matches that clause for class IIb."
+      "why": "Its trace link points at this document's clause 1.2 in the before-text wording, and it requires the notice no later than 5 calendar days."
      },
      {
       "requirement": "REQ-IMG-0267",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, send the field safety notice prior to any field safety corrective action within 5 days.",
-      "why": "Its trace link points at FDO-G-2024-004 1.2, the clause as it was before the change, and its 5-day deadline matches that clause for class IIa."
+      "why": "Its trace link points at this document's clause 1.2 in the before-text wording, and it requires the notice no later than 5 calendar days."
      }
     ],
     "gaps": [],
@@ -3834,12 +3820,24 @@
      "PMP",
      "IMG"
     ],
-    "affected": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0268",
+      "device": "PMP",
+      "via": "model",
+      "quote": "The manufacturer shall, for class IIa, IIb and III devices, examine why each serious incident occurred within 12 days.",
+      "why": "Its trace link points at this document's clause 1.3 in the before-text wording, and it requires the cause determination no later than 12 calendar days."
+     },
+     {
+      "requirement": "REQ-IMG-0269",
+      "device": "IMG",
+      "via": "model",
+      "quote": "The manufacturer shall, for class IIa, IIb and III devices, examine why each serious incident occurred within 12 days.",
+      "why": "Its trace link points at this document's clause 1.3 in the before-text wording, and it requires the cause determination no later than 12 calendar days."
+     }
+    ],
     "gaps": [],
-    "flags": [
-     "PMP: no requirement found for 1.3; check whether one exists",
-     "IMG: no requirement found for 1.3; check whether one exists"
-    ]
+    "flags": []
    },
    {
     "id": "c3",
@@ -3874,8 +3872,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0017400000000000002,
-  "seconds": 8.957,
+  "cost_usd": 0.0023465,
+  "seconds": 12.59,
   "model_calls": 1,
   "errors": [],
   "day": 51,
@@ -4050,8 +4048,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.001808,
-  "seconds": 10.275,
+  "cost_usd": 0.001732,
+  "seconds": 9.092,
   "model_calls": 1,
   "errors": [],
   "day": 56,
@@ -4144,7 +4142,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "The authorised representative shall, for class IIb and III devices, notify the authority of a statistically significant rise in incidents within 23 days.",
-      "why": "Its trace link points to TGA-DG-2025-010 clause 2.2, and its text states the 23-day rise notification for class IIb devices that the clause imposed before the change."
+      "why": "Its trace link points to TGA-DG-2025-010 clause 2.2, and the linked text matches the clause as it was before the change (shall, IIb and III, 23 days)."
      }
     ],
     "gaps": [],
@@ -4190,8 +4188,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0009214,
-  "seconds": 6.545,
+  "cost_usd": 0.0007904,
+  "seconds": 4.829,
   "model_calls": 1,
   "errors": [],
   "day": 58,
@@ -4342,8 +4340,8 @@
       "requirement": "REQ-PMP-0071",
       "device": "PMP",
       "via": "model",
-      "quote": "Union Device Authority expectation.",
-      "why": "It is the only class IIb candidate without a trace link to another document, its rationale names the Union Device Authority that issued this document, and its text (\"carry out the clinical evaluation\") matches the clause, though it omits the \"plan\" element."
+      "quote": "Union Device Authority expectation",
+      "why": "The requirement uses 'must' (the obligation as it was before the change), has no trace link, and its rationale names this document's authority, while every other PMP candidate links to a different document."
      }
     ],
     "gaps": [],
@@ -4362,8 +4360,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.002188,
-  "seconds": 15.925,
+  "cost_usd": 0.002138,
+  "seconds": 13.62,
   "model_calls": 1,
   "errors": [],
   "day": 61,
@@ -4402,7 +4400,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 8 days.",
-      "why": "Its trace link points to NMPA-RG-2025-007 1.2, the clause as it was before the change, and the 8-day deadline matches."
+      "why": "Its trace link points to NMPA-RG-2025-007 clause 1.2, which states the same 8-day field safety notice obligation as the clause before the change."
      }
     ],
     "gaps": [],
@@ -4436,7 +4434,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIb and III devices, notify each serious incident to the competent authority within 10 days.",
-      "why": "Its trace link points to NMPA-RG-2025-007 1.1, the clause as it was before the change, and the 10-day deadline matches."
+      "why": "Its trace link points to NMPA-RG-2025-007 clause 1.1, which states the same 10-day serious incident notification obligation as the clause before the change."
      }
     ],
     "gaps": [],
@@ -4469,8 +4467,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0014108,
-  "seconds": 8.145,
+  "cost_usd": 0.0012993,
+  "seconds": 6.514,
   "model_calls": 1,
   "errors": [],
   "day": 64,
@@ -4584,12 +4582,25 @@
      "PMP",
      "IMG"
     ],
-    "affected": [],
+    "affected": [
+     {
+      "requirement": "REQ-DRS-0582",
+      "device": "DRS",
+      "via": "model",
+      "quote": "The manufacturer shall, for all devices, run the summative evaluation of usability.",
+      "why": "Its trace link points to TGA-DG-2023-002 2.2, the clause as it was before the change, and the wording matches."
+     },
+     {
+      "requirement": "REQ-IMG-0583",
+      "device": "IMG",
+      "via": "model",
+      "quote": "The manufacturer shall, for all devices, run the summative evaluation of usability.",
+      "why": "Its trace link points to TGA-DG-2023-002 2.2, the clause as it was before the change, and the wording matches."
+     }
+    ],
     "gaps": [],
     "flags": [
-     "PMP: no requirement found for 2.2; check whether one exists",
-     "DRS: no requirement found for 2.2; check whether one exists",
-     "IMG: no requirement found for 2.2; check whether one exists"
+     "PMP: no requirement found for 2.2; check whether one exists"
     ]
    }
   ],
@@ -4679,32 +4690,9 @@
     "why": "clause 2.2 is now 3.1"
    }
   ],
-  "rejected": [
-   {
-    "change": "c4",
-    "pick": {
-     "change": "c4",
-     "device": "DRS",
-     "requirement": "REQ-DRS-0582",
-     "quote": "trace link: TGA-DG-2023-002 2.2 \"The manufacturer shall, for all devices, run the summative evaluation of usability.\"",
-     "why": "Its trace link points at this document's clause 2.2, the clause as it was before the change, and its text states the same obligation."
-    },
-    "reason": "the quote is not in the requirement, its rationale or its trace link"
-   },
-   {
-    "change": "c4",
-    "pick": {
-     "change": "c4",
-     "device": "IMG",
-     "requirement": "REQ-IMG-0583",
-     "quote": "trace link: TGA-DG-2023-002 2.2 \"The manufacturer shall, for all devices, run the summative evaluation of usability.\"",
-     "why": "Its trace link points at this document's clause 2.2, the clause as it was before the change, and its text states the same obligation."
-    },
-    "reason": "the quote is not in the requirement, its rationale or its trace link"
-   }
-  ],
-  "cost_usd": 0.0012682000000000001,
-  "seconds": 8.983,
+  "rejected": [],
+  "cost_usd": 0.0013162,
+  "seconds": 7.394,
   "model_calls": 1,
   "errors": [],
   "day": 66,
@@ -4806,8 +4794,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.000769,
-  "seconds": 9.887,
+  "cost_usd": 0.0007665,
+  "seconds": 5.782,
   "model_calls": 1,
   "errors": [],
   "day": 66,
@@ -4921,13 +4909,19 @@
       "device": "PMP",
       "via": "model",
       "quote": "Derived from the Tasman Goods Administration guidance on usability engineering (2025).",
-      "why": "It has no trace link, its rationale names this document (TGA-DG-2025-009), and its 6-day deadline matches clause 1.4 as it was before the change, with no other candidate pointing elsewhere."
+      "why": "Its 6-day deadline matches clause 1.4 as it was before the change, and its rationale names this document while no trace link points elsewhere."
+     },
+     {
+      "requirement": "REQ-IMG-0678",
+      "device": "IMG",
+      "via": "model",
+      "quote": "Derived from the Tasman Goods Administration guidance on usability engineering (2025).",
+      "why": "Its 6-day deadline matches clause 1.4 and its rationale names this document; its trace link states a different obligation (software unit testing), so the link is treated as wrong and not as pointing elsewhere."
      }
     ],
     "gaps": [],
     "flags": [
-     "DRS: no requirement found for 1.4; check whether one exists",
-     "IMG: no requirement found for 1.4; check whether one exists"
+     "DRS: no requirement found for 1.4; check whether one exists"
     ]
    },
    {
@@ -4969,11 +4963,23 @@
      "clause": "1.4"
     },
     "why": "no link recorded; the requirement implements TGA-DG-2025-009 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0678",
+    "from": {
+     "ref": "UDA-GD-2024-011",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-009 1.4"
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0017249,
-  "seconds": 10.666,
+  "cost_usd": 0.0020454,
+  "seconds": 12.842,
   "model_calls": 1,
   "errors": [],
   "day": 69,
@@ -5094,14 +5100,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The authorised representative shall, for all devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points at UDA-GD-2024-007 clause 1.1, and that quoted clause matches the pre-change obligation."
+      "why": "Its trace link points at UDA-GD-2024-007 clause 1.1 as it read before the change, and its text states the same plan obligation."
      },
      {
       "requirement": "REQ-DRS-0087",
       "device": "DRS",
       "via": "model",
       "quote": "The authorised representative shall, for all devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points at UDA-GD-2024-007 clause 1.1, and that quoted clause matches the pre-change obligation."
+      "why": "Its trace link points at UDA-GD-2024-007 clause 1.1 as it read before the change, and its text states the same plan obligation."
      }
     ],
     "gaps": [],
@@ -5137,7 +5143,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the importer shall perform penetration testing before release.",
-      "why": "Its trace link points at UDA-GD-2024-007 clause 2.4, which states the pre-change penetration-testing obligation for class IIb devices."
+      "why": "Its trace link points at UDA-GD-2024-007 clause 2.4 as it read before the change, and its text states the same penetration-testing obligation."
      }
     ],
     "gaps": [],
@@ -5207,8 +5213,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0023485999999999997,
-  "seconds": 14.006,
+  "cost_usd": 0.0022841,
+  "seconds": 13.818,
   "model_calls": 1,
   "errors": [],
   "day": 69,
@@ -5274,24 +5280,12 @@
      "PMP",
      "IMG"
     ],
-    "affected": [
-     {
-      "requirement": "REQ-PMP-0770",
-      "device": "PMP",
-      "via": "model",
-      "quote": "SMC-W-2024-006 1.3 \"For class IIa, IIb and III devices, the manufacturer shall analyse trend data on non-serious incidents every two years.\"",
-      "why": "Its trace link points at clause 1.3 of this document, which is the pre-change every-two-years obligation for class IIb devices."
-     },
-     {
-      "requirement": "REQ-IMG-0771",
-      "device": "IMG",
-      "via": "model",
-      "quote": "SMC-W-2024-006 1.3 \"For class IIa, IIb and III devices, the manufacturer shall analyse trend data on non-serious incidents every two years.\"",
-      "why": "Its trace link points at clause 1.3 of this document, which is the pre-change every-two-years obligation for class IIa devices."
-     }
-    ],
+    "affected": [],
     "gaps": [],
-    "flags": []
+    "flags": [
+     "PMP: no requirement found for 1.3; check whether one exists",
+     "IMG: no requirement found for 1.3; check whether one exists"
+    ]
    },
    {
     "id": "c3",
@@ -5350,8 +5344,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0022597,
-  "seconds": 12.745,
+  "cost_usd": 0.0015252,
+  "seconds": 7.677,
   "model_calls": 1,
   "errors": [],
   "day": 72,
@@ -5391,15 +5385,15 @@
       "requirement": "REQ-PMP-0055",
       "device": "PMP",
       "via": "model",
-      "quote": "the manufacturer shall justify any claim of equivalence to another device",
-      "why": "Its trace link points to this document's clause 2.2, which carries the same 'shall justify' obligation that existed before the change."
+      "quote": "For class IIa, IIb and III devices, the manufacturer shall justify any claim of equivalence to another device.",
+      "why": "Its trace link points at UDA-GD-2024-004 clause 2.2, the clause as it read before the change, and the rationale names this position paper."
      },
      {
       "requirement": "REQ-IMG-0056",
       "device": "IMG",
       "via": "model",
-      "quote": "the manufacturer shall justify any claim of equivalence to another device",
-      "why": "Its trace link points to this document's clause 2.2, which carries the same 'shall justify' obligation that existed before the change."
+      "quote": "For class IIa, IIb and III devices, the manufacturer shall justify any claim of equivalence to another device.",
+      "why": "Its trace link points at UDA-GD-2024-004 clause 2.2, the clause as it read before the change, and the rationale names this position paper."
      }
     ],
     "gaps": [],
@@ -5408,8 +5402,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0012956999999999999,
-  "seconds": 9.202,
+  "cost_usd": 0.0011532,
+  "seconds": 13.353,
   "model_calls": 1,
   "errors": [],
   "day": 76,
@@ -5448,7 +5442,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIb and III devices, the manufacturer shall identify the user interface characteristics related to safety.",
-      "why": "Its trace link points at SMC-W-2024-004 clause 1.1, which carries the same obligation as the clause before the change, and its rationale names the Swiss Medical Council."
+      "why": "Its trace link points to SMC-W-2024-004 clause 1.1, and its requirement text (list safety-related user interface characteristics) states the same obligation as the pre-change clause."
      }
     ],
     "gaps": [],
@@ -5457,8 +5451,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0007883,
-  "seconds": 8.438,
+  "cost_usd": 0.0009638000000000001,
+  "seconds": 6.1,
   "model_calls": 1,
   "errors": [],
   "day": 79,
@@ -5499,14 +5493,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points at SMC-W-2024-002 clause 1.1, the clause as it was before the change."
+      "why": "Its trace link points at SMC-W-2024-002 clause 1.1, which states the same obligation as the clause before the change."
      },
      {
       "requirement": "REQ-IMG-0712",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points at SMC-W-2024-002 clause 1.1, and its rationale names the Swiss Medical Council post-market surveillance document (2024)."
+      "why": "Its trace link points at SMC-W-2024-002 clause 1.1, which states the same obligation as the clause before the change."
      }
     ],
     "gaps": [],
@@ -5534,33 +5528,18 @@
     "scopeAfter": [
      "PMP"
     ],
-    "affected": [
-     {
-      "requirement": "REQ-PMP-0743",
-      "device": "PMP",
-      "via": "model",
-      "quote": "Swiss Medical Council expectation.",
-      "why": "It has no trace link, and its rationale is the only one that names this document's authority, while every other candidate points to another authority's document."
-     }
-    ],
+    "affected": [],
     "gaps": [],
-    "flags": []
+    "flags": [
+     "PMP: REQ-PMP-0743 may implement SMC-W-2024-002 1.2; Its only support is the rationale \"Swiss Medical Council expectation\" with no trace link, and its \"must\" wording is stronger than the \"should\" of clause 1.2 before the change, so an expert should decide.",
+     "PMP: no requirement found for 1.2; check whether one exists"
+    ]
    }
   ],
-  "relinks": [
-   {
-    "requirement": "REQ-PMP-0743",
-    "from": null,
-    "to": {
-     "ref": "SMC-W-2024-002",
-     "clause": "1.2"
-    },
-    "why": "no link recorded; the requirement implements SMC-W-2024-002 1.2"
-   }
-  ],
+  "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0022584999999999997,
-  "seconds": 13.205,
+  "cost_usd": 0.003375,
+  "seconds": 23.181,
   "model_calls": 1,
   "errors": [],
   "day": 81,
@@ -5596,8 +5575,8 @@
       "requirement": "REQ-PMP-0450",
       "device": "PMP",
       "via": "model",
-      "quote": "NMPA-RG-2024-003 2.3 \"For class IIb and III devices, the manufacturer shall establish a risk management process.\"",
-      "why": "Its trace link points to clause 2.3 of this document, which is the clause as it was before the change, and its rationale names the Northern Medical Products Agency, so it implements the IIb-inclusive obligation."
+      "quote": "For class IIb and III devices, the manufacturer shall establish a risk management process.",
+      "why": "Its trace link points at NMPA-RG-2024-003 clause 2.3, the clause as it read before the change, and its text states the same obligation."
      }
     ],
     "gaps": [],
@@ -5606,8 +5585,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0007941000000000001,
-  "seconds": 6.473,
+  "cost_usd": 0.0007506000000000001,
+  "seconds": 5.538,
   "model_calls": 1,
   "errors": [],
   "day": 82,
@@ -5648,14 +5627,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points to SMC-W-2024-002 clause 1.1 with the pre-change wording, and its rationale names the Swiss Medical Council."
+      "why": "Its trace link points at SMC-W-2024-002 clause 1.1 and quotes the clause as it was before the change."
      },
      {
       "requirement": "REQ-IMG-0712",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link points to SMC-W-2024-002 clause 1.1 with the pre-change wording, and its rationale cites the Swiss Medical Council document."
+      "why": "Its trace link points at SMC-W-2024-002 clause 1.1 and quotes the clause as it was before the change, and the device is class IIa, which the clause covers."
      }
     ],
     "gaps": [],
@@ -5685,18 +5664,11 @@
      "PMP",
      "IMG"
     ],
-    "affected": [
-     {
-      "requirement": "REQ-IMG-0720",
-      "device": "IMG",
-      "via": "model",
-      "quote": "For class IIa, IIb and III devices, the manufacturer shall establish a risk management process.",
-      "why": "Its trace link points to SMC-W-2024-002 clause 2.2 with the pre-change wording, and its rationale names the Swiss Medical Council."
-     }
-    ],
+    "affected": [],
     "gaps": [],
     "flags": [
-     "PMP: no requirement found for 2.2; check whether one exists"
+     "PMP: no requirement found for 2.2; check whether one exists",
+     "IMG: no requirement found for 2.2; check whether one exists"
     ]
    },
    {
@@ -5721,23 +5693,17 @@
     "scopeAfter": [
      "PMP"
     ],
-    "affected": [
-     {
-      "requirement": "REQ-PMP-0743",
-      "device": "PMP",
-      "via": "model",
-      "quote": "The manufacturer shall, for class IIb and III devices, revise the PSUR annually.",
-      "why": "Its trace link points to SMC-W-2024-002 clause 1.2 with the pre-change wording, and its rationale names the Swiss Medical Council."
-     }
-    ],
+    "affected": [],
     "gaps": [],
-    "flags": []
+    "flags": [
+     "PMP: no requirement found for 1.2; check whether one exists"
+    ]
    }
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0028132,
-  "seconds": 15.851,
+  "cost_usd": 0.0018419,
+  "seconds": 8.576,
   "model_calls": 1,
   "errors": [],
   "day": 90,
@@ -5780,21 +5746,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer should, for all devices, test each software unit against its acceptance criteria.",
-      "why": "Its trace link points to FDO-G-2024-005 clause 1.3 with the same \"should\" wording as the pre-change clause, and its text (\"is expected to\") matches that softer obligation."
+      "why": "Its trace link points at FDO-G-2024-005 1.3, and its text (\"is expected to check\") matches the pre-change \"should\" obligation."
      },
      {
       "requirement": "REQ-DRS-0289",
       "device": "DRS",
       "via": "model",
       "quote": "The manufacturer should, for all devices, test each software unit against its acceptance criteria.",
-      "why": "Its trace link points to FDO-G-2024-005 clause 1.3 with the pre-change \"should\" wording, and its text (\"is expected to\") matches that obligation, even though its rationale is empty."
+      "why": "Its trace link points at FDO-G-2024-005 1.3, and its text (\"is expected to check\") matches the pre-change \"should\" obligation, despite its empty rationale."
      },
      {
       "requirement": "REQ-IMG-0290",
       "device": "IMG",
       "via": "model",
-      "quote": "The manufacturer should, for all devices, test each software unit against its acceptance criteria.",
-      "why": "Its trace link points to FDO-G-2024-005 clause 1.3 with the pre-change \"should\" wording, and its rationale names the same Federal Device Office lifecycle paper (2024)."
+      "quote": "Derived from the Federal Device Office position paper on medical device software lifecycle (2024).",
+      "why": "Its trace link points at FDO-G-2024-005 1.3, and its rationale names this same Federal Device Office software lifecycle paper, so it implements the pre-change clause."
      }
     ],
     "gaps": [],
@@ -5859,8 +5825,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0013248000000000001,
-  "seconds": 7.934,
+  "cost_usd": 0.0016817999999999998,
+  "seconds": 9.495,
   "model_calls": 1,
   "errors": [],
   "day": 92,
@@ -6288,7 +6254,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.007,
+  "seconds": 0.001,
   "model_calls": 0,
   "errors": [],
   "day": 95,
@@ -6412,7 +6378,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.001,
+  "seconds": 0,
   "model_calls": 0,
   "errors": [],
   "day": 96,
@@ -6720,7 +6686,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.001,
+  "seconds": 0,
   "model_calls": 0,
   "errors": [],
   "day": 98,
@@ -6987,8 +6953,8 @@
       "requirement": "REQ-IMG-0449",
       "device": "IMG",
       "via": "model",
-      "quote": "NMPA-RG-2024-003 1.3 \"For class IIa, IIb and III devices, the manufacturer shall justify any claim of equivalence to another device.\"",
-      "why": "Its trace link points at clause 1.3 of this document, and that clause's text matches the before-change clause for class IIa devices."
+      "quote": "For class IIa, IIb and III devices, the manufacturer shall justify any claim of equivalence to another device.",
+      "why": "Its trace link points at NMPA-RG-2024-003 1.3, the clause as it was before the change, and the rationale names the same NMPA position paper, so it implements that clause."
      }
     ],
     "gaps": [
@@ -7053,8 +7019,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0010913,
-  "seconds": 6.659,
+  "cost_usd": 0.0012148,
+  "seconds": 7.166,
   "model_calls": 1,
   "errors": [],
   "day": 100,
@@ -7123,14 +7089,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The importer shall, for class IIa, IIb and III devices, remediate vulnerabilities rated critical within 45 days.",
-      "why": "Its trace link is the clause 2.2 text verbatim, and it states the same 45-day deadline for critical vulnerabilities on a class IIb device."
+      "why": "Its trace link points at SMC-W-2024-005 2.2, the clause as it was before the change, and its 45-day obligation matches."
      },
      {
       "requirement": "REQ-IMG-0766",
       "device": "IMG",
       "via": "model",
       "quote": "The importer shall, for class IIa, IIb and III devices, remediate vulnerabilities rated critical within 45 days.",
-      "why": "Its trace link is the clause 2.2 text verbatim, and it states the same 45-day deadline for critical vulnerabilities on a class IIa device."
+      "why": "Its trace link points at SMC-W-2024-005 2.2, the clause as it was before the change, and its 45-day obligation matches."
      }
     ],
     "gaps": [],
@@ -7167,14 +7133,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link is clause 1.3 verbatim, and its text (operate and keep current the PMS plan) states the same obligation for a class IIb device."
+      "why": "Its trace link points at SMC-W-2024-005 1.3, the clause as it was before the change, and its plan-for-post-market-surveillance obligation matches."
      },
      {
       "requirement": "REQ-IMG-0760",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer should, for class IIa, IIb and III devices, set up and keep up to date a plan for post-market surveillance.",
-      "why": "Its trace link is clause 1.3 of this document, its text states the same PMS-plan obligation for a class IIa device, and its rationale names this document's title."
+      "why": "Its trace link points at SMC-W-2024-005 1.3, the clause as it was before the change, its rationale names the Swiss Medical Council, and its plan obligation matches."
      }
     ],
     "gaps": [
@@ -7216,14 +7182,14 @@
       "device": "PMP",
       "via": "model",
       "quote": "For class IIa, IIb and III devices, the manufacturer shall perform penetration testing before release.",
-      "why": "Its trace link is clause 2.1 verbatim, and its text requires a penetration test prior to release for a class IIb device."
+      "why": "Its trace link points at SMC-W-2024-005 2.1, the clause as it was before the change, and its pre-release penetration-test obligation matches."
      },
      {
       "requirement": "REQ-IMG-0763",
       "device": "IMG",
       "via": "model",
       "quote": "For class IIa, IIb and III devices, the manufacturer shall perform penetration testing before release.",
-      "why": "Its trace link is clause 2.1 verbatim, and its text requires a penetration test prior to release for a class IIa device."
+      "why": "Its trace link points at SMC-W-2024-005 2.1, the clause as it was before the change, and its pre-release penetration-test obligation matches."
      }
     ],
     "gaps": [
@@ -7310,8 +7276,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0035745000000000004,
-  "seconds": 20.001,
+  "cost_usd": 0.003372,
+  "seconds": 17.602,
   "model_calls": 1,
   "errors": [],
   "day": 102,
@@ -7491,8 +7457,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0008346,
-  "seconds": 5.73,
+  "cost_usd": 0.0009431,
+  "seconds": 7.001,
   "model_calls": 1,
   "errors": [],
   "day": 103,
@@ -7848,7 +7814,7 @@
   ],
   "rejected": [],
   "cost_usd": 0,
-  "seconds": 0.001,
+  "seconds": 0,
   "model_calls": 0,
   "errors": [],
   "day": 105,
@@ -7936,21 +7902,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "For all devices, the authorised representative shall justify any claim of equivalence to another device.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.3 with the same 'shall' obligation for all devices."
+      "why": "Its trace link points at TGA-DG-2023-001 1.3, the clause as it stood before the change, and its text states the same obligation."
      },
      {
       "requirement": "REQ-DRS-0557",
       "device": "DRS",
       "via": "model",
       "quote": "For all devices, the authorised representative shall justify any claim of equivalence to another device.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.3 with the same 'shall' obligation for all devices."
+      "why": "Its trace link points at TGA-DG-2023-001 1.3, the clause as it stood before the change, and its text states the same obligation."
      },
      {
       "requirement": "REQ-IMG-0558",
       "device": "IMG",
       "via": "model",
       "quote": "For all devices, the authorised representative shall justify any claim of equivalence to another device.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.3 with the same 'shall' obligation for all devices."
+      "why": "Its trace link points at TGA-DG-2023-001 1.3, the clause as it stood before the change, and its text states the same obligation."
      }
     ],
     "gaps": [],
@@ -7988,25 +7954,20 @@
       "device": "PMP",
       "via": "model",
       "quote": "For all devices, the manufacturer shall assess vulnerabilities in third-party components annually.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.4 with the same annual 'shall' obligation for all devices."
+      "why": "Its trace link points at TGA-DG-2023-001 1.4, the clause as it stood before the change, and its text states the same annual obligation."
      },
      {
       "requirement": "REQ-DRS-0560",
       "device": "DRS",
       "via": "model",
       "quote": "For all devices, the manufacturer shall assess vulnerabilities in third-party components annually.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.4 with the same annual 'shall' obligation for all devices."
-     },
-     {
-      "requirement": "REQ-IMG-0561",
-      "device": "IMG",
-      "via": "model",
-      "quote": "Tasman Goods Administration expectation.",
-      "why": "It has no trace link, its rationale points only to this document's authority with nothing pointing elsewhere, and its annual review matches the clause before the change."
+      "why": "Its trace link points at TGA-DG-2023-001 1.4, the clause as it stood before the change, and its text states the same annual obligation."
      }
     ],
     "gaps": [],
-    "flags": []
+    "flags": [
+     "IMG: no requirement found for 1.4; check whether one exists"
+    ]
    },
    {
     "id": "c3",
@@ -8037,50 +7998,24 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, revise the CER every six months.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.2 with the same six-monthly CER revision obligation for class IIb."
-     },
-     {
-      "requirement": "REQ-PMP-0622",
-      "device": "PMP",
-      "via": "model",
-      "quote": "Tasman Goods Administration expectation.",
-      "why": "It has no trace link, its rationale points only to this document's authority with nothing pointing elsewhere, and its six-monthly CER update matches the clause before the change."
+      "why": "Its trace link points at TGA-DG-2023-001 1.2, the clause as it stood before the change, and its text states the same six-monthly obligation."
      },
      {
       "requirement": "REQ-IMG-0555",
       "device": "IMG",
       "via": "model",
       "quote": "The manufacturer shall, for class IIa, IIb and III devices, revise the CER every six months.",
-      "why": "Its trace link cites TGA-DG-2023-001 clause 1.2 with the same six-monthly CER revision obligation for class IIa."
+      "why": "Its trace link points at TGA-DG-2023-001 1.2, the clause as it stood before the change, and its text states the same six-monthly obligation."
      }
     ],
     "gaps": [],
     "flags": []
    }
   ],
-  "relinks": [
-   {
-    "requirement": "REQ-IMG-0561",
-    "from": null,
-    "to": {
-     "ref": "TGA-DG-2023-001",
-     "clause": "1.4"
-    },
-    "why": "no link recorded; the requirement implements TGA-DG-2023-001 1.4"
-   },
-   {
-    "requirement": "REQ-PMP-0622",
-    "from": null,
-    "to": {
-     "ref": "TGA-DG-2023-001",
-     "clause": "1.2"
-    },
-    "why": "no link recorded; the requirement implements TGA-DG-2023-001 1.2"
-   }
-  ],
+  "relinks": [],
   "rejected": [],
-  "cost_usd": 0.005002400000000001,
-  "seconds": 30.015,
+  "cost_usd": 0.0039589,
+  "seconds": 20.748,
   "model_calls": 1,
   "errors": [],
   "day": 109,
@@ -8187,8 +8122,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0017981,
-  "seconds": 10.806,
+  "cost_usd": 0.0018055999999999999,
+  "seconds": 9.6,
   "model_calls": 1,
   "errors": [],
   "day": 110,
@@ -8259,8 +8194,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0010937,
-  "seconds": 5.377,
+  "cost_usd": 0.0025762,
+  "seconds": 18.036,
   "model_calls": 1,
   "errors": [],
   "day": 111,
@@ -8400,7 +8335,7 @@
      }
     ],
     "flags": [
-     "IMG: REQ-IMG-0773 may implement SMC-W-2024-006 1.4; Its rationale names the Swiss Medical Council guidance and its trace link cites clause 1.4, but its text sets 23 days where the clause sets 17, so the requirement and link disagree and an expert should decide.",
+     "IMG: REQ-IMG-0773 may implement SMC-W-2024-006 1.4; Its rationale cites the Swiss Medical Council guidance and its trace link points to SMC-W-2024-006 1.4, but its text sets 23 days where the clause before the change says 17, so the link may be wrong and an expert should decide.",
      "PMP: no requirement found for 1.4; check whether one exists",
      "IMG: no requirement found for 1.4; check whether one exists"
     ]
@@ -8457,8 +8392,8 @@
    }
   ],
   "rejected": [],
-  "cost_usd": 0.0034849000000000004,
-  "seconds": 25.796,
+  "cost_usd": 0.0028044000000000003,
+  "seconds": 19.671,
   "model_calls": 1,
   "errors": [],
   "day": 114,
@@ -8555,7 +8490,7 @@
       "device": "PMP",
       "via": "model",
       "quote": "The manufacturer shall, for all devices, determine safety-related characteristics of the user interface.",
-      "why": "Its trace link points at TGA-DG-2024-005 2.3, whose text is the clause as it was before the change, and its rationale names the Tasman Goods Administration."
+      "why": "Its trace link points at TGA-DG-2024-005 clause 2.3 with the same wording as the clause before the change, and its rationale names the Tasman Goods Administration."
      }
     ],
     "gaps": [],
@@ -8567,8 +8502,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0012602,
-  "seconds": 7.52,
+  "cost_usd": 0.0013122,
+  "seconds": 6.725,
   "model_calls": 1,
   "errors": [],
   "day": 115,
@@ -8739,21 +8674,21 @@
       "device": "PMP",
       "via": "model",
       "quote": "For all devices, the manufacturer should document a software development plan.",
-      "why": "Its trace link points at UDA-GD-2024-010 1.1, the clause as it stood before the change, and its text states no different obligation."
+      "why": "Its trace link points to UDA-GD-2024-010 clause 1.1, which is the pre-change clause, and its text states the same 'should' obligation."
      },
      {
       "requirement": "REQ-DRS-0129",
       "device": "DRS",
       "via": "model",
       "quote": "For all devices, the manufacturer should document a software development plan.",
-      "why": "Its trace link points at UDA-GD-2024-010 1.1, the clause as it stood before the change, and its text states no different obligation."
+      "why": "Its trace link points to UDA-GD-2024-010 clause 1.1, which is the pre-change clause, and its text says 'is expected to' write down the plan, matching 'should'."
      },
      {
       "requirement": "REQ-IMG-0130",
       "device": "IMG",
       "via": "model",
       "quote": "For all devices, the manufacturer should document a software development plan.",
-      "why": "Its trace link points at UDA-GD-2024-010 1.1, the clause as it stood before the change, and its text states no different obligation."
+      "why": "Its trace link points to UDA-GD-2024-010 clause 1.1, the pre-change clause that covers all devices including class IIa, and its text says 'is expected to' write down the plan."
      }
     ],
     "gaps": [],
@@ -8762,8 +8697,8 @@
   ],
   "relinks": [],
   "rejected": [],
-  "cost_usd": 0.0017827999999999997,
-  "seconds": 10.026,
+  "cost_usd": 0.0015703000000000002,
+  "seconds": 8.196,
   "model_calls": 1,
   "errors": [],
   "day": 119,
