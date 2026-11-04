@@ -1,4 +1,4 @@
-// deployed day 46 by person for people-only:fdo:44
+// deployed day 47 by person for people-only:fdo:44
 /** fdo: written by a person for the layout in force (reference). */
 import { MONTHS, checkDate, isoDate, load, text } from "../parse.js";
 import type { Fetch, ListingItem, ScrapedDoc, Scraper } from "../types.js";

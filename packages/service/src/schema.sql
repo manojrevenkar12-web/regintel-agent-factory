@@ -65,15 +65,32 @@ create table if not exists deployments (
   primary key (setup, source, version)
 );
 
--- Change impact: assessments proposed by the platform, signed off (or not) by an expert.
+-- Change impact: assessments proposed by the platform (one per document version and matcher), and
+-- the expert sign-offs on them. A sign-off is bound to the hash of the body it signed.
 create table if not exists assessments (
-  id        text primary key,               -- setup:ref:vN
+  id        text primary key,               -- setup:method:ref:vN
   setup     text not null,
+  method    text not null,
   ref       text not null,
   version   int not null,
-  body      jsonb not null,                 -- changes, affected items with citations, gaps
+  day       int not null,                   -- day the platform first saw the version
+  body      jsonb not null,                 -- changes, affected items with citations, gaps, relinks
+  body_hash text not null,
   created   timestamptz not null default now()
 );
+
+create table if not exists signoffs (
+  seq        bigserial primary key,
+  assessment text not null references assessments(id),
+  body_hash  text not null,                 -- what was signed; must equal the assessment's hash
+  signer     text not null,                 -- a person's id
+  name       text not null,                 -- printed name
+  role       text not null,
+  meaning    text not null check (meaning in ('reviewed', 'approved', 'rejected')),
+  decisions  jsonb not null,                -- per item: accepted or rejected, with a comment
+  at         timestamptz not null default now()
+);
+drop trigger if exists signoffs_no_change on signoffs;
 
 create table if not exists audit_log (
   seq       bigserial primary key,
@@ -99,3 +116,9 @@ create table if not exists requirement_vectors (
   text      text not null,
   embedding vector(256) not null
 );
+
+create or replace function signoffs_append_only() returns trigger language plpgsql as $$
+begin
+  raise exception 'signoffs are append-only';
+end $$;
+create trigger signoffs_no_change before update or delete on signoffs for each row execute function signoffs_append_only();

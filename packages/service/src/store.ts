@@ -30,7 +30,7 @@ export class Store {
   }
 
   async reset(setup: string) {
-    for (const t of ["crawls", "last_good", "doc_versions", "incidents", "deployments", "assessments"])
+    for (const t of ["crawls", "last_good", "doc_versions", "incidents", "deployments"])
       await this.pool.query(`delete from ${t} where setup = $1`, [setup]);
   }
 
@@ -205,6 +205,105 @@ export class Store {
         fields.resolved_day ?? null,
       ],
     );
+  }
+
+  /** Every document version the platform recorded for a setup, in the order it saw them. */
+  async versions(setup: string): Promise<(ScrapedDoc & { source: string; first_seen: number })[]> {
+    const r = await this.pool.query(
+      "select * from doc_versions where setup = $1 order by first_seen, ref, version",
+      [setup],
+    );
+    return r.rows.map((x) => ({
+      ref: x.ref,
+      source: x.source,
+      title: x.title,
+      version: x.version,
+      published: x.published,
+      effective: x.effective,
+      clauses: x.clauses,
+      first_seen: x.first_seen,
+    }));
+  }
+
+  /** Remove a setup's assessments that nobody has signed (signed ones are part of the record). */
+  async clearUnsignedAssessments(setup: string) {
+    await this.pool.query(
+      "delete from assessments a where setup = $1 and not exists (select 1 from signoffs s where s.assessment = a.id)",
+      [setup],
+    );
+  }
+
+  /** Record a proposed assessment; its hash is what a sign-off binds to. Signed ones never change. */
+  async saveAssessment(
+    setup: string,
+    method: string,
+    day: number,
+    body: { ref: string; version: number } & Record<string, unknown>,
+  ): Promise<{ id: string; hash: string; saved: boolean }> {
+    const id = `${setup}:${method}:${body.ref}:v${body.version}`;
+    const hash = createHash("sha256").update(canonical(body)).digest("hex");
+    const r = await this.pool.query(
+      `insert into assessments(id, setup, method, ref, version, day, body, body_hash) values ($1,$2,$3,$4,$5,$6,$7,$8)
+       on conflict (id) do update set body = excluded.body, body_hash = excluded.body_hash, day = excluded.day
+       where not exists (select 1 from signoffs s where s.assessment = assessments.id)`,
+      [id, setup, method, body.ref, body.version, day, JSON.stringify(body), hash],
+    );
+    if (r.rowCount) await this.audit(`agent:${method}`, "assessment.proposed", id, { hash });
+    return { id, hash, saved: Boolean(r.rowCount) };
+  }
+
+  async assessments(setup: string, method?: string) {
+    const r = await this.pool.query(
+      `select a.id, a.setup, a.method, a.ref, a.version, a.day, a.body, a.body_hash,
+              coalesce((select json_agg(s order by s.seq) from signoffs s where s.assessment = a.id), '[]') as signoffs
+         from assessments a where a.setup = $1 and ($2::text is null or a.method = $2) order by a.day, a.ref, a.version`,
+      [setup, method ?? null],
+    );
+    return r.rows;
+  }
+
+  async assessment(id: string) {
+    const r = await this.pool.query(
+      `select a.*, coalesce((select json_agg(s order by s.seq) from signoffs s where s.assessment = a.id), '[]') as signoffs
+         from assessments a where a.id = $1`,
+      [id],
+    );
+    return r.rows[0] ?? null;
+  }
+
+  /** An expert's electronic signature: who (id and printed name), in which role, what it means,
+   * when, and over exactly which body (its hash). A stale hash is refused, so nobody signs a version
+   * of the assessment they did not see. Recorded in the hash-chained audit log as well. */
+  async signoff(
+    id: string,
+    s: {
+      bodyHash: string;
+      signer: string;
+      name: string;
+      role: string;
+      meaning: "reviewed" | "approved" | "rejected";
+      decisions: unknown;
+    },
+    roles: string[],
+  ): Promise<{ ok: true; seq: number } | { ok: false; error: string }> {
+    if (!roles.includes(s.role)) return { ok: false, error: `role ${s.role} may not sign assessments` };
+    if (!s.name.trim() || !s.signer.trim())
+      return { ok: false, error: "a signature needs the signer's id and printed name" };
+    const a = await this.pool.query("select body_hash from assessments where id = $1", [id]);
+    if (!a.rows[0]) return { ok: false, error: `no assessment ${id}` };
+    if (a.rows[0].body_hash !== s.bodyHash)
+      return { ok: false, error: "the assessment changed since you opened it; reload and review again" };
+    const r = await this.pool.query(
+      "insert into signoffs(assessment, body_hash, signer, name, role, meaning, decisions) values ($1,$2,$3,$4,$5,$6,$7) returning seq",
+      [id, s.bodyHash, s.signer, s.name, s.role, s.meaning, JSON.stringify(s.decisions ?? {})],
+    );
+    await this.audit(s.signer, `assessment.${s.meaning}`, id, {
+      hash: s.bodyHash,
+      name: s.name,
+      role: s.role,
+      decisions: s.decisions ?? {},
+    });
+    return { ok: true, seq: Number(r.rows[0].seq) };
   }
 
   /** Append to the hash-chained audit log. */

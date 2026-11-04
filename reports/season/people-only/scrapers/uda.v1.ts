@@ -1,4 +1,4 @@
-// deployed day 35 by person for people-only:uda:33
+// deployed day 36 by person for people-only:uda:33
 /** uda: written by a person for the layout in force (reference). */
 import { MONTHS, checkDate, isoDate, load, text } from "../parse.js";
 import type { Fetch, ListingItem, ScrapedDoc, Scraper } from "../types.js";

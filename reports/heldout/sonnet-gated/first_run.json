@@ -1,0 +1,259 @@
+{
+ "setup": "sonnet-gated",
+ "at": "2026-11-04T12:39:05.020Z",
+ "results": [
+  {
+   "id": "split-uda-clauses",
+   "kind": "template_split",
+   "source": "uda",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 9 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 8 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 9 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 7 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 8 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 6 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 10 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 7 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 6 clauses became 0"
+   ],
+   "decision": "escalated",
+   "reason": "attempt 2 rejected: gate \"contract on every page\": 14 listed, 14 read; 10 error(s): doc.clauses no clauses extracted; doc.clauses_lost same version, 7 clauses became 0",
+   "right": false,
+   "attempts": 2,
+   "cost_usd": 0.1768444,
+   "seconds": 125,
+   "first_attempt": {
+    "exact_days": 0,
+    "days": 10,
+    "wrong": 50,
+    "missing": 0
+   },
+   "deployed": null,
+   "claims": [
+    "The site moved clauses from `ol.doc-clauses li` with `span.num` to a `dl.doc-clauses` list of `dt` (clause id) and `dd` (clause text) pairs; the scraper now reads that structure and errors if the pairs don't line up.",
+    "The site appears to have split clauses across multiple definition lists, so I changed `scrapers/uda.ts` to read clauses from all of them, but I couldn't confirm this on the failing pages because they aren't in the snapshots."
+   ],
+   "reviews": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "split-fdo-meta",
+   "kind": "template_split",
+   "source": "fdo",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: no version in \"\""
+   ],
+   "decision": "escalated",
+   "reason": "attempt 2 rejected: gate \"contract on every page\": exception: no version in \"\"",
+   "right": false,
+   "attempts": 2,
+   "cost_usd": 0.20361629999999997,
+   "seconds": 120,
+   "first_attempt": {
+    "exact_days": 0,
+    "days": 10,
+    "wrong": 0,
+    "missing": 110
+   },
+   "deployed": null,
+   "claims": [
+    "The site moved the document metadata from the `table.doc-meta` table into a JSON-LD block, with the revision also shown in `p.doc-status`. I changed `scrapers/fdo.ts` to read reference, version, published date and effective date (`legislationDateVersion`) from that block, parse the ISO dates strictly, and fail loudly if a field is missing or the visible revision disagrees with the JSON-LD. `rif-check` passes, and the three documents I could check match `last-good.json`. The snapshots hold only those three of the 12 listed documents, so the other nine are unchecked.",
+    "The site now serves some document pages with split, partial or absent `ld+json` metadata, and I changed `fdo.ts` to merge `ld+json` with fallbacks (page markup and the `p.doc-status` text) and to fail loudly on anything still missing."
+   ],
+   "reviews": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "split-nmpa-dates",
+   "kind": "template_split",
+   "source": "nmpa",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: not an ISO date: \"1 November 2025\""
+   ],
+   "decision": "deployed",
+   "reason": "every gate passed and the reviewer approved",
+   "right": true,
+   "attempts": 1,
+   "cost_usd": 0.1146925,
+   "seconds": 41,
+   "first_attempt": {
+    "exact_days": 10,
+    "days": 10,
+    "wrong": 0,
+    "missing": 0
+   },
+   "deployed": {
+    "exact_days": 10,
+    "days": 10,
+    "wrong": 0,
+    "missing": 0
+   },
+   "claims": [
+    "The site now writes dates on document pages as day-first text like \"6 December 2023\" instead of ISO. I changed `scrapers/nmpa.ts` to parse \"D Month YYYY\" strictly, using the month-name list and `checkDate`, and to fall back to strict ISO for the listing dates. `rif-check` passes, and the three documents it could read match `last-good.json`. The other 7 listed documents aren't in the snapshots, so I couldn't check them."
+   ],
+   "reviews": [
+    "approve"
+   ]
+  },
+  {
+   "id": "split-smc-version",
+   "kind": "template_split",
+   "source": "smc",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: no version in \"Version 2.0\""
+   ],
+   "decision": "deployed",
+   "reason": "every gate passed and the reviewer approved",
+   "right": true,
+   "attempts": 2,
+   "cost_usd": 0.1960941,
+   "seconds": 94,
+   "first_attempt": {
+    "exact_days": 0,
+    "days": 10,
+    "wrong": 0,
+    "missing": 82
+   },
+   "deployed": {
+    "exact_days": 10,
+    "days": 10,
+    "wrong": 0,
+    "missing": 0
+   },
+   "claims": [
+    "The site changed the status field from \"Rev. N\" to \"Version N.0\", and the scraper now parses that format as version N, failing loudly on any non-zero minor number.",
+    "The site now writes some versions as \"Rev. N\" (and \"Version N.0\"), so I made the status parser in `scrapers/smc.ts` accept those forms while still throwing on anything else."
+   ],
+   "reviews": [
+    null,
+    "approve"
+   ]
+  },
+  {
+   "id": "withdraw-tga",
+   "kind": "withdraw",
+   "source": "tga",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "listing.shrank: 7 documents listed, 10 on the last good crawl"
+   ],
+   "decision": "escalated",
+   "reason": "the agent found no scraper fault: The site withdrew TGA-DG-2023-001, TGA-DG-2023-002 and TGA-DG-2023-003 from its listing, so the scraper correctly sees 7 documents instead of 10, and a person must confirm the withdrawals.",
+   "right": true,
+   "attempts": 1,
+   "cost_usd": 0.047341499999999995,
+   "seconds": 28,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [
+    "The site withdrew TGA-DG-2023-001, TGA-DG-2023-002 and TGA-DG-2023-003 from its listing, so the scraper correctly sees 7 documents instead of 10, and a person must confirm the withdrawals."
+   ],
+   "reviews": [
+    null
+   ]
+  },
+  {
+   "id": "withdraw-fdo",
+   "kind": "withdraw",
+   "source": "fdo",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "listing.shrank: 8 documents listed, 12 on the last good crawl"
+   ],
+   "decision": "escalated",
+   "reason": "the agent found no scraper fault: The site withdrew FDO-G-2024-001 to 2024-004 (the listing and sitemap now carry only 8 of the 12 documents), and the scraper reads the remaining ones correctly, so a person must confirm the withdrawals.",
+   "right": true,
+   "attempts": 1,
+   "cost_usd": 0.0633524,
+   "seconds": 34,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [
+    "The site withdrew FDO-G-2024-001 to 2024-004 (the listing and sitemap now carry only 8 of the 12 documents), and the scraper reads the remaining ones correctly, so a person must confirm the withdrawals."
+   ],
+   "reviews": [
+    null
+   ]
+  },
+  {
+   "id": "edit-uda",
+   "kind": "silent_edit",
+   "source": "uda",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "doc.content_changed: same version, different clauses"
+   ],
+   "decision": "escalated",
+   "reason": "the agent found no scraper fault: UDA-GD-2023-001 (still Rev. 1) had clause 1.1 edited in place, from \"the manufacturer shall establish…\" to \"the legal manufacturer shall establish…\". The layout is unchanged and the scraper reads it correctly, so a person must confirm the edit.",
+   "right": true,
+   "attempts": 1,
+   "cost_usd": 0.06297670000000001,
+   "seconds": 24,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [
+    "UDA-GD-2023-001 (still Rev. 1) had clause 1.1 edited in place, from \"the manufacturer shall establish…\" to \"the legal manufacturer shall establish…\". The layout is unchanged and the scraper reads it correctly, so a person must confirm the edit."
+   ],
+   "reviews": [
+    null
+   ]
+  },
+  {
+   "id": "edit-nmpa",
+   "kind": "silent_edit",
+   "source": "nmpa",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "doc.content_changed: same version, different clauses"
+   ],
+   "decision": "escalated",
+   "reason": "the agent found no scraper fault: Clause 1.1 of NMPA-RG-2023-001 (still Rev. 1) was edited in place, from \"The manufacturer shall…\" to \"the legal manufacturer shall…\". The scraper reads it correctly, so a person must confirm the change.",
+   "right": true,
+   "attempts": 1,
+   "cost_usd": 0.053487299999999995,
+   "seconds": 21,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [
+    "Clause 1.1 of NMPA-RG-2023-001 (still Rev. 1) was edited in place, from \"The manufacturer shall…\" to \"the legal manufacturer shall…\". The scraper reads it correctly, so a person must confirm the change."
+   ],
+   "reviews": [
+    null
+   ]
+  }
+ ]
+}

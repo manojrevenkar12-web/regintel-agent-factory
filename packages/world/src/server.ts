@@ -3,7 +3,7 @@
  * maintenance pages on maintenance days and 429s when they ask too fast on a busy day. */
 import { type IncomingMessage, type Server, type ServerResponse, createServer } from "node:http";
 import { MAINTENANCE, renderApiList, renderDoc, renderListing, renderSitemap } from "./sites.js";
-import { type World, layoutOf, shownAt } from "./world.js";
+import { type World, docLayout, layoutOf, shownAt } from "./world.js";
 
 export type WorldServer = {
   url: string;
@@ -60,7 +60,9 @@ export async function serveWorld(w: World, port = 0): Promise<WorldServer> {
     if (path.startsWith("doc/")) {
       const ref = decodeURIComponent(path.slice(4));
       const d = docs.find((x) => x.ref === ref);
-      return d ? html(renderDoc(src.name, d, l)) : html("<h1>Not found</h1>", 404);
+      return d
+        ? html(renderDoc(src.name, d, docLayout(w, src, day, d.ref)))
+        : html("<h1>Not found</h1>", 404);
     }
     let pageNo = 1;
     if (path.startsWith("page/") && l.pagination === "path") pageNo = Number(path.slice(5));

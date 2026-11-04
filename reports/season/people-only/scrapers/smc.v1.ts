@@ -1,4 +1,4 @@
-// deployed day 28 by person for people-only:smc:26
+// deployed day 29 by person for people-only:smc:26
 /** smc: written by a person for the layout in force (reference). */
 import { MONTHS, checkDate, isoDate, load, text } from "../parse.js";
 import type { Fetch, ListingItem, ScrapedDoc, Scraper } from "../types.js";

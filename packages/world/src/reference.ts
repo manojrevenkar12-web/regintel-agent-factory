@@ -8,7 +8,7 @@ export function referenceScraper(source: string, refPrefix: string, l: Layout): 
   const refRe = `/^${refPrefix.replace(/-/g, "\\-")}-\\d{4}-\\d{3}$/`;
   const date =
     l.dateFormat === "iso"
-      ? `(s: string) => isoDate(s)`
+      ? "(s: string) => isoDate(s)"
       : l.dateFormat === "dmy"
         ? `(s: string) => { const m = text(s).match(/^(\\d{2})\\.(\\d{2})\\.(\\d{4})$/); if (!m) throw new Error(\`bad date "\${s}"\`); return checkDate(+m[3], +m[2], +m[1]); }`
         : l.dateFormat === "mdy"
@@ -30,7 +30,7 @@ export function referenceScraper(source: string, refPrefix: string, l: Layout): 
       : l.meta === "dl"
         ? `const get = (k: string) => text($("dl.${c}-meta dt").filter((_, dt) => text($(dt).text()) === k).first().next("dd").text());`
         : `const get = (k: string) => text($("table.${c}-meta tr").filter((_, tr) => text($(tr).find("th").text()) === k).find("td").text());`;
-  const version = l.versionLabel === "rev" ? `/^Rev\\. (\\d+)$/` : `/^Version (\\d+)\\.0$/`;
+  const version = l.versionLabel === "rev" ? "/^Rev\\. (\\d+)$/" : "/^Version (\\d+)\\.0$/";
   const clauses =
     l.clauses === "ol"
       ? `$("ol.${c}-clauses li").map((_, li) => ({ id: text($(li).find("span.num").text()), text: text($(li).clone().children("span.num").remove().end().text()) })).get()`

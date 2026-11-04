@@ -1,0 +1,190 @@
+[
+ {
+  "incident": "haiku-gated:tga:25",
+  "source": "tga",
+  "days": 29,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 307,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:smc:26",
+  "source": "smc",
+  "days": 39,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 412,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:uda:33",
+  "source": "uda",
+  "days": 24,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 356,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:nmpa:38",
+  "source": "nmpa",
+  "days": 41,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 419,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:fdo:44",
+  "source": "fdo",
+  "days": 41,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 525,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:tga:54",
+  "source": "tga",
+  "days": 32,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 372,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:uda:57",
+  "source": "uda",
+  "days": 36,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 526,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:smc:65",
+  "source": "smc",
+  "days": 22,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 264,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:nmpa:79",
+  "source": "nmpa",
+  "days": 41,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 462,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": {
+   "correct": 462,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  }
+ },
+ {
+  "incident": "haiku-gated:fdo:85",
+  "source": "fdo",
+  "days": 35,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 510,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:tga:86",
+  "source": "tga",
+  "days": 34,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 408,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:smc:87",
+  "source": "smc",
+  "days": 33,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 459,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ },
+ {
+  "incident": "haiku-gated:uda:93",
+  "source": "uda",
+  "days": 27,
+  "self_check": true,
+  "first_attempt": {
+   "correct": 432,
+   "wrong": 0,
+   "missing": 0,
+   "stale": 0,
+   "failed_days": 0
+  },
+  "deployed": null
+ }
+]

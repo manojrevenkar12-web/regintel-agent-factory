@@ -12,6 +12,7 @@ export type Requirement = {
   text: string;
   topic: string;
   trace: { ref: string; clause: string } | null; // what the company recorded (may be missing or wrong)
+  rationale: string; // free text the author wrote about where it came from: informal, sometimes vague or empty
   truth: { ref: string; uid: string }; // where it really comes from
 };
 export type SopSection = { id: string; title: string; topic: string; device: string; requirements: string[] };
@@ -62,6 +63,28 @@ export function requirementText(ob: Obligation, device: Device, object: string, 
   return `Halden Medical ${strength} ${v} ${object.replace(/^the |^a |^an /, "the ")} for the ${device.name.toLowerCase()}${when}${freq}.`;
 }
 
+/** What an engineer typically writes in a requirement's rationale field: the document in their own
+ * words (the kind and subject paraphrased, the year), only the authority, or nothing. */
+function rationale(rng: Rng, d: Doc, authority: string, year: string): string {
+  const subject = d.title.replace(
+    /^(Guidance on|Requirements for|Questions and answers on|Position paper on) /,
+    "",
+  );
+  const kind =
+    d.title.match(/^(Guidance|Requirements|Questions and answers|Position paper)/)?.[1] ?? "Guidance";
+  const kindWord: Record<string, string> = {
+    Guidance: "guidance",
+    Requirements: "requirements document",
+    "Questions and answers": "Q&A",
+    "Position paper": "position paper",
+  };
+  const roll = rng.next();
+  if (roll < 0.45) return `Derived from the ${authority} ${kindWord[kind]} on ${subject} (${year}).`;
+  if (roll < 0.65) return `${authority} ${year} publication about ${subject}.`;
+  if (roll < 0.85) return `${authority} expectation.`;
+  return "";
+}
+
 /** Requirements for every clause that applies to a device, for the documents in force at day 0. */
 export function buildCompany(
   rng: Rng,
@@ -71,8 +94,11 @@ export function buildCompany(
   words: (ob: Obligation) => { verb: string; object: string },
   coverage: number,
   wrongRate: number,
+  authority: (source: string) => string,
+  year: (day: number) => string,
 ): Company {
   const requirements: Requirement[] = [];
+  const why = rng.fork("rationale");
   const allClauses = docs.flatMap((d) => (d.versions[0]?.clauses ?? []).map((c) => ({ ref: d.ref, c })));
   let n = 0;
   for (const d of docs) {
@@ -95,6 +121,7 @@ export function buildCompany(
           text: requirementText(c.ob, dev, w.object, w.verb),
           topic: c.ob.topic,
           trace,
+          rationale: rationale(why, d, authority(d.source), year(d.published)),
           truth: { ref: d.ref, uid: c.uid },
         });
       }

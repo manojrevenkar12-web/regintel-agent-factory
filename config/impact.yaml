@@ -1,0 +1,33 @@
+# Change impact: from a new version of a regulatory document to the requirements it affects and the
+# gaps it opens. The rules read the clause diff; retrieval finds candidate requirements; a model reads
+# the candidates; a verifier checks every citation; an expert signs. Thresholds live here, not in code.
+authorities:                    # the platform's own registry of what each watched source is
+  uda: "Union Device Authority"
+  fdo: "Federal Device Office"
+  nmpa: "Northern Medical Products Agency"
+  tga: "Tasman Goods Administration"
+  smc: "Swiss Medical Council"
+
+diff:
+  min_similarity: 0.6           # token overlap for two clause texts to be one clause edited
+
+retrieval:
+  dims: 256                     # hashed embedding size (pgvector column)
+  bm25: { k1: 1.2, b: 0.75 }
+  weight_dense: 0.4             # hybrid score = (1 - w) * bm25 (normalised) + w * cosine
+  per_device: 6                 # candidates per device in scope, besides linked ones
+
+rules:                          # the deterministic matcher (a baseline, and the fallback)
+  link_agreement: 0.145         # a recorded link counts when requirement and clause share this much (token overlap)
+  min_score: 0.35               # retrieval score for a candidate to be considered at all
+  rationale_weight: 0.5         # weight of the rationale field matching the document
+  margin: 0.08                  # the best candidate must beat the next by this much
+
+model:
+  setups:
+    - { name: sonnet, model: sonnet, budget_usd: 0.30, timeout_s: 240 }
+    - { name: haiku,  model: haiku,  budget_usd: 0.10, timeout_s: 180 }
+  max_candidates: 30            # per call
+
+signoff:
+  roles: [regulatory_affairs, quality_assurance]   # who may sign an assessment

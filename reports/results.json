@@ -1,0 +1,673 @@
+{
+ "generated_at": "2026-11-04T12:44:43.100Z",
+ "world": {
+  "documents": 70,
+  "requirements": 819,
+  "revisions": 57,
+  "changes": 198,
+  "substantive": 71,
+  "affected": 109,
+  "gaps": 17,
+  "drifts": 13,
+  "unlinked_requirements": 171
+ },
+ "heldout_world": {
+  "documents": 78,
+  "requirements": 851,
+  "revisions": 52,
+  "changes": 161,
+  "substantive": 74,
+  "affected": 110,
+  "gaps": 35,
+  "drifts": 14,
+  "unlinked_requirements": 188
+ },
+ "season": [
+  {
+   "setup": "sonnet-gated",
+   "model": "sonnet",
+   "incidents": 13,
+   "deployed_by_agent": 12,
+   "fixed_by_person": 1,
+   "still_open": 0,
+   "agent_cost_usd": 1.9954999999999998,
+   "agent_minutes_mean": 1.082051282051282,
+   "days_to_restore_mean": 0.23076923076923078,
+   "days_to_restore_max": 3,
+   "person_hours": 2,
+   "doc_days": {
+    "correct": 7409,
+    "stale": 0,
+    "wrong": 0,
+    "missing": 0,
+    "phantom": 0
+   },
+   "ungated_first_attempts": {
+    "replayed": 13,
+    "exact": 13,
+    "wrong_doc_days": 0
+   }
+  },
+  {
+   "setup": "haiku-gated",
+   "model": "haiku",
+   "incidents": 13,
+   "deployed_by_agent": 13,
+   "fixed_by_person": 0,
+   "still_open": 0,
+   "agent_cost_usd": 0.8480000000000001,
+   "agent_minutes_mean": 1.0692307692307694,
+   "days_to_restore_mean": 0,
+   "days_to_restore_max": 0,
+   "person_hours": 0,
+   "doc_days": {
+    "correct": 7409,
+    "stale": 0,
+    "wrong": 0,
+    "missing": 0,
+    "phantom": 0
+   },
+   "ungated_first_attempts": {
+    "replayed": 13,
+    "exact": 13,
+    "wrong_doc_days": 0
+   }
+  },
+  {
+   "setup": "people-only",
+   "model": "none",
+   "incidents": 13,
+   "deployed_by_agent": 0,
+   "fixed_by_person": 13,
+   "still_open": 0,
+   "agent_cost_usd": 0,
+   "agent_minutes_mean": 0,
+   "days_to_restore_mean": 3,
+   "days_to_restore_max": 3,
+   "person_hours": 26,
+   "doc_days": {
+    "correct": 7403,
+    "stale": 5,
+    "wrong": 0,
+    "missing": 1,
+    "phantom": 0
+   },
+   "ungated_first_attempts": null
+  }
+ ],
+ "heldout_incidents": [
+  {
+   "setup": "sonnet-gated",
+   "at": "2026-11-04T12:39:05.020Z",
+   "right": 6,
+   "total": 8,
+   "by_kind": {
+    "template_split": {
+     "right": 2,
+     "total": 4
+    },
+    "withdraw": {
+     "right": 2,
+     "total": 2
+    },
+    "silent_edit": {
+     "right": 2,
+     "total": 2
+    }
+   },
+   "wrongly_deployed": 0,
+   "cost_usd": 0.9184051999999999,
+   "ungated_first_attempts_exact": 1,
+   "ungated_first_attempts_changed": 4,
+   "results": [
+    {
+     "id": "split-uda-clauses",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.1768444,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 50,
+      "missing": 0
+     },
+     "reason": "attempt 2 rejected: gate \"contract on every page\": 14 listed, 14 read; 10 error(s): doc.clauses no clauses extracted; doc.clauses_lost same version, 7 clauses became 0"
+    },
+    {
+     "id": "split-fdo-meta",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.20361629999999997,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 110
+     },
+     "reason": "attempt 2 rejected: gate \"contract on every page\": exception: no version in \"\""
+    },
+    {
+     "id": "split-nmpa-dates",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "deployed",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.1146925,
+     "first_attempt": {
+      "exact_days": 10,
+      "days": 10,
+      "wrong": 0,
+      "missing": 0
+     },
+     "reason": "every gate passed and the reviewer approved"
+    },
+    {
+     "id": "split-smc-version",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "deployed",
+     "right": true,
+     "attempts": 2,
+     "cost_usd": 0.1960941,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 82
+     },
+     "reason": "every gate passed and the reviewer approved"
+    },
+    {
+     "id": "withdraw-tga",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.047341499999999995,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: The site withdrew TGA-DG-2023-001, TGA-DG-2023-002 and TGA-DG-2023-003 from its listing, so the scraper correctly sees 7 documents instead of 10, and a person must confirm the withdrawals."
+    },
+    {
+     "id": "withdraw-fdo",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.0633524,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: The site withdrew FDO-G-2024-001 to 2024-004 (the listing and sitemap now carry only 8 of the 12 documents), and the scraper reads the remaining ones correctly, so a person must confirm the withdrawals."
+    },
+    {
+     "id": "edit-uda",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.06297670000000001,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: UDA-GD-2023-001 (still Rev. 1) had clause 1.1 edited in place, from \"the manufacturer shall establish…\" to \"the legal manufacturer shall establish…\". The layout is unchanged and the scraper reads it correctly, so a person must confirm the edit."
+    },
+    {
+     "id": "edit-nmpa",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.053487299999999995,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: Clause 1.1 of NMPA-RG-2023-001 (still Rev. 1) was edited in place, from \"The manufacturer shall…\" to \"the legal manufacturer shall…\". The scraper reads it correctly, so a person must confirm the change."
+    }
+   ]
+  },
+  {
+   "setup": "haiku-gated",
+   "at": "2026-11-04T12:39:07.993Z",
+   "right": 4,
+   "total": 8,
+   "by_kind": {
+    "template_split": {
+     "right": 0,
+     "total": 4
+    },
+    "withdraw": {
+     "right": 2,
+     "total": 2
+    },
+    "silent_edit": {
+     "right": 2,
+     "total": 2
+    }
+   },
+   "wrongly_deployed": 0,
+   "cost_usd": 0.17349745,
+   "ungated_first_attempts_exact": 0,
+   "ungated_first_attempts_changed": 4,
+   "results": [
+    {
+     "id": "split-uda-clauses",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.020610970000000003,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 140
+     },
+     "reason": "attempt 2 rejected: gate \"contract on every page\": exception: expected one clause list, found 0"
+    },
+    {
+     "id": "split-fdo-meta",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.0182992,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 110
+     },
+     "reason": "attempt 2 rejected: gate \"contract on every page\": exception: no JSON-LD metadata at /fdo/doc/FDO-G-2025-011"
+    },
+    {
+     "id": "split-nmpa-dates",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.01899164,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 89
+     },
+     "reason": "attempt 2 rejected: gate \"no gaming\": hard-codes a date"
+    },
+    {
+     "id": "split-smc-version",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 2,
+     "cost_usd": 0.08282737,
+     "first_attempt": {
+      "exact_days": 0,
+      "days": 10,
+      "wrong": 0,
+      "missing": 82
+     },
+     "reason": "attempt 2 rejected: reviewer: Unrelated behaviour change: clause text now joins multiple <p> elements with a space, where before it concatenated them with no separator. This alters stored clause text for any multi-paragraph clause and could cause spurious clause diffs or amendments. The incident was only about the version format. No sampled page has a multi-paragraph clause, so the gates never test this change. Revert it or submit it separately with a check against existing stored data."
+    },
+    {
+     "id": "withdraw-tga",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.0066754,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: The TGA listing and sitemap now show 7 documents, with TGA-DG-2023-001 to -003 withdrawn from the site, and the scraper reads the current pages correctly, so the listing drop needs a person to confirm the withdrawal."
+    },
+    {
+     "id": "withdraw-fdo",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.00927617,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: the site's listing and sitemap now show only 8 FDO documents, with no pagination and FDO-G-2024-001 to -004 absent from both, so the scraper is reading the listing correctly and the drop looks like withdrawn documents that a person must confirm."
+    },
+    {
+     "id": "edit-uda",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.007116810000000001,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: The UDA site changed clause 1.1 of UDA-GD-2023-001 in place (Rev. 1 is unchanged) from \"the manufacturer shall\" to \"the legal manufacturer shall\", and the scraper reads this correctly, so a person needs to confirm the correction."
+    },
+    {
+     "id": "edit-nmpa",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 1,
+     "cost_usd": 0.009699890000000001,
+     "first_attempt": null,
+     "reason": "the agent found no scraper fault: NMPA-RG-2023-001 clause 1.1 was reworded in place without a new revision (now \"the legal manufacturer shall…\" instead of \"The manufacturer shall…\"), and the scraper reads that wording correctly."
+    }
+   ]
+  },
+  {
+   "setup": "people-only",
+   "at": "2026-11-04T12:30:43.761Z",
+   "right": 4,
+   "total": 8,
+   "by_kind": {
+    "template_split": {
+     "right": 0,
+     "total": 4
+    },
+    "withdraw": {
+     "right": 2,
+     "total": 2
+    },
+    "silent_edit": {
+     "right": 2,
+     "total": 2
+    }
+   },
+   "wrongly_deployed": 0,
+   "cost_usd": 0,
+   "ungated_first_attempts_exact": 0,
+   "ungated_first_attempts_changed": 0,
+   "results": [
+    {
+     "id": "split-uda-clauses",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "split-fdo-meta",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "split-nmpa-dates",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "split-smc-version",
+     "kind": "template_split",
+     "expect": "deploy",
+     "decision": "escalated",
+     "right": false,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "withdraw-tga",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "withdraw-fdo",
+     "kind": "withdraw",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "edit-uda",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    },
+    {
+     "id": "edit-nmpa",
+     "kind": "silent_edit",
+     "expect": "escalate",
+     "decision": "escalated",
+     "right": true,
+     "attempts": 0,
+     "cost_usd": 0,
+     "first_attempt": null,
+     "reason": "no agent in this setup: a person handles every incident"
+    }
+   ]
+  }
+ ],
+ "impact": {
+  "season_world": {
+   "links": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 80,
+     "fp": 3,
+     "fn": 29
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 144,
+     "right": 138
+    },
+    "flags": 83,
+    "rejected": 0,
+    "cost_usd": 0,
+    "model_calls": 0,
+    "errors": 0,
+    "precision": 0.963855421686747,
+    "recall": 0.7339449541284404,
+    "gap_recall": 1
+   },
+   "retrieval": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 22,
+     "fp": 104,
+     "fn": 87
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 257,
+     "right": 147
+    },
+    "flags": 37,
+    "rejected": 0,
+    "cost_usd": 0,
+    "model_calls": 0,
+    "errors": 0,
+    "precision": 0.1746031746031746,
+    "recall": 0.2018348623853211,
+    "gap_recall": 1
+   },
+   "rules": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 97,
+     "fp": 12,
+     "fn": 12
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 176,
+     "right": 157
+    },
+    "flags": 69,
+    "rejected": 0,
+    "cost_usd": 0,
+    "model_calls": 0,
+    "errors": 0,
+    "precision": 0.8899082568807339,
+    "recall": 0.8899082568807339,
+    "gap_recall": 1
+   },
+   "model-sonnet": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 83,
+     "fp": 3,
+     "fn": 26
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 155,
+     "right": 146
+    },
+    "flags": 83,
+    "rejected": 2,
+    "cost_usd": 0.7609051000000001,
+    "model_calls": 40,
+    "errors": 0,
+    "precision": 0.9651162790697675,
+    "recall": 0.7614678899082569,
+    "gap_recall": 1
+   },
+   "raw-sonnet": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 85,
+     "fp": 3,
+     "fn": 24
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 155,
+     "right": 146
+    },
+    "flags": 81,
+    "rejected": 0,
+    "cost_usd": 0,
+    "model_calls": 40,
+    "errors": 0,
+    "precision": 0.9659090909090909,
+    "recall": 0.7798165137614679,
+    "gap_recall": 1
+   },
+   "model-haiku": {
+    "versions": 57,
+    "changes": {
+     "truth": 198,
+     "classified_right": 198,
+     "substantive_truth": 71,
+     "substantive_found": 71
+    },
+    "affected": {
+     "tp": 79,
+     "fp": 4,
+     "fn": 30
+    },
+    "gaps": {
+     "tp": 17,
+     "fp": 0,
+     "fn": 0
+    },
+    "relinks": {
+     "proposed": 156,
+     "right": 146
+    },
+    "flags": 83,
+    "rejected": 2,
+    "cost_usd": 0.07359168,
+    "model_calls": 40,
+    "errors": 0,
+    "precision": 0.9518072289156626,
+    "recall": 0.7247706422018348,
+    "gap_recall": 1
+   }
+  },
+  "heldout_world_first_run": {}
+ }
+}

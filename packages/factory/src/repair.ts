@@ -62,8 +62,12 @@ Rules:
 - Parse dates exactly in the format the site now uses; do not guess between day-first and month-first.
 - Documents whose version did not change must come out exactly as in \`last-good.json\`.
 - The pages you see are a sample: your scraper will be checked on every page the site serves today.
+- Not every failed contract is a scraper fault. If the pages show that the site's content really
+  changed (documents withdrawn, a published clause corrected in place) and the scraper reads it
+  correctly, do not change the scraper: a person must confirm such changes.
 ${feedback ? `\nYour previous fix was rejected. What the checks found:\n${feedback}\n` : ""}
-When you are done, end with one line: DONE: <one sentence on what changed on the site and what you changed>.`;
+When you are done, end with one line: DONE: <one sentence on what changed on the site and what you changed>.
+If the scraper is not at fault, end instead with: ESCALATE: <one sentence on what really changed>.`;
 }
 
 export function reviewPrompt(inc: Incident): string {
@@ -118,7 +122,7 @@ export async function repair(
     );
     const diff = unifiedDiff(currentCode, code);
     let review: Review | null = null;
-    if (setup.review && gates.ok)
+    if (setup.review && gates.ok && code !== currentCode)
       review = await reviewFix(
         inc,
         currentCode,
@@ -128,8 +132,13 @@ export async function repair(
         join(runDir, "reviews", `${inc.id}-${a}`),
         cfg,
       );
-    const claim = (session.result.match(/DONE:\s*(.+)/)?.[1] ?? "").trim();
+    const claim = (session.result.match(/(?:DONE|ESCALATE):\s*(.+)/)?.[1] ?? "").trim();
+    const handBack = /ESCALATE:/.test(session.result);
     attempts.push({ session, code, diff, gates, review, claim });
+    if (handBack && code === currentCode) {
+      reason = `the agent found no scraper fault: ${claim}`;
+      break;
+    }
     if (!setup.gates) {
       decision = "deployed";
       reason = "deployed without gates (baseline)";

@@ -1,0 +1,191 @@
+{
+ "setup": "people-only",
+ "at": "2026-11-04T12:30:43.761Z",
+ "results": [
+  {
+   "id": "split-uda-clauses",
+   "kind": "template_split",
+   "source": "uda",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 9 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 8 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 9 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 7 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 8 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 6 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 10 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 7 clauses became 0",
+    "doc.clauses: no clauses extracted",
+    "doc.clauses_lost: same version, 6 clauses became 0"
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": false,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "split-fdo-meta",
+   "kind": "template_split",
+   "source": "fdo",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: no version in \"\""
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": false,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "split-nmpa-dates",
+   "kind": "template_split",
+   "source": "nmpa",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: not an ISO date: \"1 November 2025\""
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": false,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "split-smc-version",
+   "kind": "template_split",
+   "source": "smc",
+   "day": 12,
+   "expect": "deploy",
+   "reproduced": true,
+   "findings": [
+    "scraper.exception: no version in \"Version 2.0\""
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": false,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "withdraw-tga",
+   "kind": "withdraw",
+   "source": "tga",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "listing.shrank: 7 documents listed, 10 on the last good crawl"
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": true,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "withdraw-fdo",
+   "kind": "withdraw",
+   "source": "fdo",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "listing.shrank: 8 documents listed, 12 on the last good crawl"
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": true,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "edit-uda",
+   "kind": "silent_edit",
+   "source": "uda",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "doc.content_changed: same version, different clauses"
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": true,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  },
+  {
+   "id": "edit-nmpa",
+   "kind": "silent_edit",
+   "source": "nmpa",
+   "day": 12,
+   "expect": "escalate",
+   "reproduced": true,
+   "findings": [
+    "doc.content_changed: same version, different clauses"
+   ],
+   "decision": "escalated",
+   "reason": "no agent in this setup: a person handles every incident",
+   "right": true,
+   "attempts": 0,
+   "cost_usd": 0,
+   "seconds": 0,
+   "first_attempt": null,
+   "deployed": null,
+   "claims": [],
+   "reviews": []
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour roles. Contrast checked for text on --paper and --sheet: ink 14:1, muted 5.9:1,
+   verified 6.1:1, attention 5.2:1, fault 6.0:1, link 7.3:1 (light); similar margins in dark. */
+:root {
+  --paper: #f3f5f6;
+  --sheet: #ffffff;
+  --ink: #14212b;
+  --muted: #4d5d68;
+  --line: #c9d2d8;
+  --verified: #1d6b58;
+  --verified-wash: #e3f1ec;
+  --attention: #8f5206;
+  --attention-wash: #fbf0dc;
+  --fault: #b0251b;
+  --fault-wash: #fbe6e3;
+  --link: #2a4a9b;
+  --focus: #2a4a9b;
+  --idle: #dfe5e9;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #101920;
+    --sheet: #16222b;
+    --ink: #e6edf1;
+    --muted: #a3b2bc;
+    --line: #2f3f4a;
+    --verified: #6cc7ab;
+    --verified-wash: #173029;
+    --attention: #f0b860;
+    --attention-wash: #33270f;
+    --fault: #f4877c;
+    --fault-wash: #3a1b18;
+    --link: #9db6f5;
+    --focus: #9db6f5;
+    --idle: #24333d;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #101920;
+  --sheet: #16222b;
+  --ink: #e6edf1;
+  --muted: #a3b2bc;
+  --line: #2f3f4a;
+  --verified: #6cc7ab;
+  --verified-wash: #173029;
+  --attention: #f0b860;
+  --attention-wash: #33270f;
+  --fault: #f4877c;
+  --fault-wash: #3a1b18;
+  --link: #9db6f5;
+  --focus: #9db6f5;
+  --idle: #24333d;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -99,7 +99,9 @@ export function scheduleDrifts(rng: Rng, days: number, picks: number[], initial:
 }
 
 export function layoutAt(initial: Layout, drifts: Drift[], day: number): Layout {
-  return drifts.filter((d) => d.day <= day).reduce<Layout>((l, d) => ({ ...l, ...d.change }), initial);
+  const l: Layout = { ...initial };
+  for (const d of drifts) if (d.day <= day) Object.assign(l, d.change);
+  return l;
 }
 
 const MONTHS = [

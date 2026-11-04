@@ -1,4 +1,4 @@
-// deployed day 40 by person for people-only:nmpa:38
+// deployed day 41 by person for people-only:nmpa:38
 /** nmpa: written by a person for the layout in force (reference). */
 import { MONTHS, checkDate, isoDate, load, text } from "../parse.js";
 import type { Fetch, ListingItem, ScrapedDoc, Scraper } from "../types.js";

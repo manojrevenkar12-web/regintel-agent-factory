@@ -1,4 +1,4 @@
-// deployed day 88 by person for people-only:tga:86
+// deployed day 89 by person for people-only:tga:86
 /** tga: written by a person for the layout in force (reference). */
 import { MONTHS, checkDate, isoDate, load, text } from "../parse.js";
 import type { Fetch, ListingItem, ScrapedDoc, Scraper } from "../types.js";

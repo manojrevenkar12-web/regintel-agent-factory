@@ -1,0 +1,18 @@
+# Held-out incidents: harder than the season's drifts, and two kinds that are not scraper faults at
+# all. Written before the factory was run on any of them; the first run is recorded in
+# reports/heldout/FIRST_RUN.md and never rewritten. Do not change the factory to pass these: if you
+# study their failures, move them to config/dev-incidents.yaml and write a new held-out set.
+#
+# Each incident is one event in its own copy of the world, on the first quiet day (no drift,
+# maintenance or rate limit at that source) on or after `day`.
+#   expect: deploy     the scraper is at fault; a correct fix exists
+#           escalate   the site's content really changed; nothing should be deployed
+incidents:
+  - { id: split-uda-clauses, kind: template_split, source: uda,  day: 12, change: { clauses: dl },        expect: deploy }
+  - { id: split-fdo-meta,    kind: template_split, source: fdo,  day: 12, change: { meta: jsonld },       expect: deploy }
+  - { id: split-nmpa-dates,  kind: template_split, source: nmpa, day: 12, change: { dateFormat: long },   expect: deploy }
+  - { id: split-smc-version, kind: template_split, source: smc,  day: 12, change: { versionLabel: version }, expect: deploy }
+  - { id: withdraw-tga,      kind: withdraw,       source: tga,  day: 12, count: 3,                       expect: escalate }
+  - { id: withdraw-fdo,      kind: withdraw,       source: fdo,  day: 12, count: 4,                       expect: escalate }
+  - { id: edit-uda,          kind: silent_edit,    source: uda,  day: 12,                                 expect: escalate }
+  - { id: edit-nmpa,         kind: silent_edit,    source: nmpa, day: 12,                                 expect: escalate }

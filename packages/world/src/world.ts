@@ -6,16 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
 import { type Company, type Device, applies, buildCompany } from "./company.js";
-import {
-  type ClauseChange,
-  type Doc,
-  type DocVersion,
-  TOPICS,
-  newDoc,
-  render,
-  revise,
-  sameObligation,
-} from "./corpus.js";
+import { type Doc, type DocVersion, TOPICS, newDoc, render, revise, sameObligation } from "./corpus.js";
 import { Rng } from "./rng.js";
 import {
   DRIFT_KINDS,
@@ -58,12 +49,26 @@ export type Source = SourceCfg & {
   rateLimited: number[];
 };
 
+/** Things that happen to a site that are not ordinary drift, used by the held-out incidents:
+ *   withdraw         the regulator takes its oldest documents down (the listing really shrinks)
+ *   silent_edit      a published clause is corrected without a new version (the content really changed)
+ *   template_split   the site moves some document pages to a new template and leaves the rest on the
+ *                    old one (the first pages in reference order move, then every other one) */
+export type WorldEvent = {
+  kind: "withdraw" | "silent_edit" | "template_split";
+  source: string;
+  day: number;
+  count?: number;
+  change?: Partial<Layout>;
+};
+
 export type World = {
   cfg: WorldCfg;
   sources: Source[];
   docs: Doc[];
   company: Company;
   date: (day: number) => string;
+  events: WorldEvent[];
 };
 
 export const loadWorldCfg = (path = join(ROOT, "config/world.yaml")): WorldCfg =>
@@ -142,8 +147,10 @@ export function buildWorld(cfg: WorldCfg = loadWorldCfg()): World {
     words,
     cfg.company.trace_link_coverage,
     cfg.company.wrong_link_rate,
+    (id) => (cfg.sources.find((s) => s.id === id) as SourceCfg).name,
+    (day) => date(day).slice(0, 4),
   );
-  return { cfg, sources, docs, company, date };
+  return { cfg, sources, docs, company, date, events: [] };
 }
 
 export function versionAt(doc: Doc, day: number): DocVersion | undefined {
@@ -152,8 +159,23 @@ export function versionAt(doc: Doc, day: number): DocVersion | undefined {
 
 /** What a site shows on a day: its documents, newest first, each at its latest version. */
 export function shownAt(w: World, source: string, day: number): ShownDoc[] {
-  return w.docs
-    .filter((d) => d.source === source && d.published <= day)
+  const active = w.events.filter((e) => e.source === source && e.day <= day);
+  const mine = w.docs.filter((d) => d.source === source && d.published <= day);
+  const withdrawn = new Set(
+    active
+      .filter((e) => e.kind === "withdraw")
+      .flatMap((e) =>
+        [...mine]
+          .sort((a, b) => a.published - b.published)
+          .slice(0, e.count ?? 3)
+          .map((d) => d.ref),
+      ),
+  );
+  const edited = active.some((e) => e.kind === "silent_edit")
+    ? [...mine].map((d) => d.ref).sort()[0]
+    : undefined;
+  return mine
+    .filter((d) => !withdrawn.has(d.ref))
     .map((d) => {
       const v = versionAt(d, day) as DocVersion;
       return {
@@ -162,7 +184,17 @@ export function shownAt(w: World, source: string, day: number): ShownDoc[] {
         version: v.version,
         published: w.date(v.day),
         effective: w.date(v.day + 30),
-        clauses: v.clauses.map((c) => ({ id: c.id, text: render(c.ob, c.wording) })),
+        clauses: v.clauses.map((c, i) => {
+          const text = render(c.ob, c.wording);
+          // a correction published in place: same version, one clause reworded
+          return {
+            id: c.id,
+            text:
+              d.ref === edited && i === 0
+                ? text.replace(/the manufacturer/i, "the legal manufacturer")
+                : text,
+          };
+        }),
       };
     })
     .sort((a, b) =>
@@ -172,39 +204,93 @@ export function shownAt(w: World, source: string, day: number): ShownDoc[] {
 
 export const layoutOf = (s: Source, day: number) => layoutAt(s.initial, s.drifts, day);
 
-/** For one new version: per change, which existing requirements it affects and which devices it
- * newly brings into scope without a requirement (gaps). Editorial changes affect nothing. */
-export type ImpactTruth = {
-  ref: string;
-  version: number;
-  changes: (ClauseChange & { affected: string[]; gaps: string[] })[];
-};
+/** The layout one document page is rendered with: the site's, unless a template split left it on
+ * the old template. */
+export function docLayout(w: World, s: Source, day: number, ref: string): Layout {
+  const l = layoutOf(s, day);
+  const split = w.events.find((e) => e.kind === "template_split" && e.source === s.id && e.day <= day);
+  if (!split) return l;
+  const refs = shownAt(w, s.id, day)
+    .map((d) => d.ref)
+    .sort();
+  const i = refs.indexOf(ref);
+  const migrated = i < 3 || i % 2 === 1;
+  return migrated ? { ...l, ...split.change } : l;
+}
 
-export function impactTruth(w: World, ref: string, version: number): ImpactTruth {
+/** For one new version, what really changed, by clause identity (not by number, which the document
+ * may have shifted): per changed clause, the kinds of change, whether an obligation changed, which
+ * existing requirements it affects and which devices it newly brings into scope without one (gaps).
+ * Editorial changes (rewording, renumbering) affect nothing. */
+export type TruthChange = {
+  uid: string;
+  before: string | null; // clause number in the previous version
+  after: string | null; // clause number in this version
+  kinds: string[];
+  substantive: boolean;
+  affected: string[];
+  gaps: string[];
+};
+export type ImpactTruth = { ref: string; version: number; changes: TruthChange[] };
+
+export function impactTruth(w: World, ref: string, version: number, from = version - 1): ImpactTruth {
   const doc = w.docs.find((d) => d.ref === ref) as Doc;
   const v = doc.versions.find((x) => x.version === version) as DocVersion;
-  const prev = doc.versions.find((x) => x.version === version - 1) as DocVersion;
-  const byId = (vv: DocVersion, id: string | null) => vv.clauses.find((c) => c.id === id);
-  const changes = v.changes.map((ch) => {
-    if (!ch.substantive) return { ...ch, affected: [], gaps: [] };
-    const before = byId(prev, ch.before);
-    const after = byId(v, ch.after);
-    const uid = (before ?? after)?.uid;
-    const reqs = w.company.requirements.filter((r) => r.truth.uid === uid);
+  const prev = doc.versions.find((x) => x.version === from) as DocVersion;
+  const uids = [...new Set([...prev.clauses, ...v.clauses].map((c) => c.uid))];
+  const changes: TruthChange[] = [];
+  for (const uid of uids) {
+    const before = prev.clauses.find((c) => c.uid === uid);
+    const after = v.clauses.find((c) => c.uid === uid);
+    const kinds: string[] = [];
+    if (!before) kinds.push("added");
+    else if (!after) kinds.push("removed");
+    else {
+      const a = before.ob;
+      const b = after.ob;
+      if (a.modal !== b.modal) kinds.push("modal");
+      if (a.days !== b.days) kinds.push("deadline");
+      if (a.frequency !== b.frequency) kinds.push("frequency");
+      if (a.classes.join() !== b.classes.join()) kinds.push("scope");
+      if (a.actor !== b.actor) kinds.push("actor");
+      if (before.wording !== after.wording) kinds.push("reworded");
+      if (before.id !== after.id) kinds.push("renumbered");
+    }
+    if (!kinds.length) continue;
+    const substantive = !before || !after || !sameObligation(before.ob, after.ob);
     const affected = new Set<string>();
     const gaps = new Set<string>();
-    for (const dev of w.company.devices) {
-      const had = before ? applies(before.ob, dev) : false;
-      const has = after ? applies(after.ob, dev) : false;
-      const mine = reqs.filter((r) => r.device === dev.id).map((r) => r.id);
-      if (had && has && before && after && !sameObligation(before.ob, after.ob))
-        for (const r of mine) affected.add(r);
-      if (had && !has) for (const r of mine) affected.add(r); // out of scope or removed: retire it
-      if (!had && has) mine.length ? mine.forEach((r) => affected.add(r)) : gaps.add(dev.id);
+    if (substantive) {
+      const reqs = w.company.requirements.filter((r) => r.truth.uid === uid);
+      for (const dev of w.company.devices) {
+        const had = before ? applies(before.ob, dev) : false;
+        const has = after ? applies(after.ob, dev) : false;
+        const mine = reqs.filter((r) => r.device === dev.id).map((r) => r.id);
+        if (had && has) for (const r of mine) affected.add(r); // the obligation changed: review it
+        if (had && !has) for (const r of mine) affected.add(r); // out of scope or removed: retire it
+        if (!had && has) {
+          if (mine.length) for (const r of mine) affected.add(r);
+          else gaps.add(dev.id);
+        }
+      }
     }
-    return { ...ch, affected: [...affected].sort(), gaps: [...gaps].sort() };
-  });
+    changes.push({
+      uid,
+      before: before?.id ?? null,
+      after: after?.id ?? null,
+      kinds,
+      substantive,
+      affected: [...affected].sort(),
+      gaps: [...gaps].sort(),
+    });
+  }
   return { ref, version, changes };
+}
+
+/** Which clause (by identity) a clause number in a version holds; for scoring relinks. */
+export function clauseUid(w: World, ref: string, version: number, id: string): string | null {
+  const doc = w.docs.find((d) => d.ref === ref);
+  return doc?.versions.find((x) => x.version === version)?.clauses.find((c) => c.id === id)?.uid ?? null;
 }
 
 /** Every revision published during the season, in order. */

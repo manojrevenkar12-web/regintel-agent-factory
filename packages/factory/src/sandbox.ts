@@ -112,6 +112,8 @@ export function makeSandbox(
     JSON.stringify(inc.lastGood ?? { items: [], docs: [] }, null, 1),
   );
   writeFileSync(join(dir, "INCIDENT.md"), incidentText(inc, visible));
+  // ES modules wherever the sandbox lives (outside the repo there is no package.json to say so)
+  writeFileSync(join(dir, "package.json"), `${JSON.stringify({ private: true, type: "module" })}\n`);
   writeFileSync(
     join(dir, "tsconfig.json"),
     JSON.stringify(
@@ -150,6 +152,8 @@ export function makeSandbox(
     "config/contracts.yaml",
     "snapshots.json",
     "last-good.json",
+    "package.json",
+    "tsconfig.json",
   ])
     locked[f] = hash(readFileSync(join(dir, f), "utf8"));
   return { dir, bin, scraper: join(dir, "scrapers", `${inc.source}.ts`), locked };

@@ -62,7 +62,7 @@ export function checkCrawl(
     if (!dateOk(i.published, today))
       err("listing.date", `published "${i.published}" is not a valid past date`, i.ref);
   }
-  if (prev && prev.items.length && now.items.length < prev.items.length * (1 - d.listing_drop))
+  if (prev?.items.length && now.items.length < prev.items.length * (1 - d.listing_drop))
     err(
       "listing.shrank",
       `${now.items.length} documents listed, ${prev.items.length} on the last good crawl`,

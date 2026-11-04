@@ -1,7 +1,9 @@
 /** rif: run the season, the change-impact assessments and the reports.
  *
  *   rif season --setup <name> [--days N] [--fresh]   crawl and repair for a season (needs RIF_DATABASE_URL)
- *   rif impact --setup <name> [--limit N]            assess every new document version the season saw
+ *   rif impact --setup <name> [--limit N] [--only a,b] assess every new document version the season saw
+ *   rif heldout --setup <name> [--check]              the held-out incidents (first run recorded once)
+ *   rif counterfactual --setup <name>                 replay first attempts ungated, scored against the truth
  *   rif report                                       write reports/RESULTS.md and reports/results.json
  *   rif serve                                        the API for the console
  */
@@ -86,7 +88,16 @@ async function main() {
       db(),
       opt("setup", "sonnet-gated") as string,
       Number(opt("limit", "1000")),
+      opt("only")?.split(","),
+      args.includes("--heldout"),
     );
+  if (cmd === "heldout")
+    return (await import("./heldout.js")).runHeldout(
+      opt("setup", "sonnet-gated") as string,
+      args.includes("--check"),
+    );
+  if (cmd === "counterfactual")
+    return (await import("./counterfactual.js")).counterfactual(opt("setup", "sonnet-gated") as string);
   if (cmd === "report") return (await import("./report.js")).writeReport();
   if (cmd === "serve") return (await import("./main.js")).serve();
   console.log("usage: rif season|impact|report|serve");

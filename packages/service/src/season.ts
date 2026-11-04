@@ -92,9 +92,13 @@ async function personStep(source: string, day: number, incident: string): Promis
 const repairWorkflow = DBOS.registerWorkflow(
   async (source: string, day: number, incident: string) => {
     const c = C();
-    const pages = await DBOS.runStep(() => (c.server.setDay(day), evidenceCrawl(c.server.url, source)), {
-      name: "evidence",
-    });
+    const pages = await DBOS.runStep(
+      () => {
+        c.server.setDay(day);
+        return evidenceCrawl(c.server.url, source);
+      },
+      { name: "evidence" },
+    );
     const findings = await DBOS.runStep(
       async () => {
         const r = await c.store.pool.query("select findings from incidents where id = $1", [incident]);
