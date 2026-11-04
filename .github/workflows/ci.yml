@@ -1,0 +1,43 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: rif
+          POSTGRES_PASSWORD: rif
+          POSTGRES_DB: rif
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U rif" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      RIF_DATABASE_URL: postgres://rif:rif@localhost:5432/rif
+      RIF_TEST_DATABASE_URL: postgres://rif:rif@localhost:5432/rif_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10.28.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Create the test database
+        run: PGPASSWORD=rif psql -h localhost -U rif -d rif -c "create database rif_test"
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - run: cd apps/console && pnpm exec playwright install --with-deps chromium
+      - name: Console end to end, against a short people-only season
+        run: |
+          (cd apps/console && pnpm build)
+          pnpm rif season --setup people-only --days 30 --fresh
+          pnpm rif impact --setup people-only --only links,rules
+          pnpm rif report
+          pnpm rif serve &
+          for _ in $(seq 1 30); do curl -sf http://localhost:8787/api/health >/dev/null && break; sleep 1; done
+          cd apps/console && RIF_CONSOLE_URL=http://localhost:8787 E2E_SIGN=1 pnpm e2e

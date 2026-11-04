@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ImpactScreen } from "./features/impact/ImpactScreen";
 import { IncidentsScreen } from "./features/incidents/IncidentsScreen";
 import { ResultsScreen } from "./features/results/ResultsScreen";
@@ -17,6 +18,11 @@ export function App() {
   const route = useRoute();
   const { setup, setSetup, who, setWho } = useSession();
   const setups = useResource<{ setup: string }[]>("/api/setups");
+  // start on a season that exists: the one asked for if it ran, else the first that did
+  useEffect(() => {
+    const names = (setups.data ?? []).map((s) => s.setup);
+    if (names.length && !names.includes(setup)) setSetup(names[0] as string);
+  }, [setups.data, setup, setSetup]);
   return (
     <div className="min-h-screen">
       <a href="#main" className="sr-only focus:not-sr-only">
