@@ -1,0 +1,8445 @@
+[
+ {
+  "ref": "TGA-DG-2025-009",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer should establish a risk management process."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer shall establish a risk management process."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0022",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-DRS-0023",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-IMG-0024",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0022",
+    "from": null,
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "2.4"
+    },
+    "why": "no link recorded; the requirement implements TGA-DG-2025-009 2.4"
+   },
+   {
+    "requirement": "REQ-DRS-0023",
+    "from": {
+     "ref": "UDA-GD-2023-002",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-009 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0024",
+    "from": {
+     "ref": "UDA-GD-2023-002",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-009 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.012,
+  "model_calls": 0,
+  "errors": [],
+  "day": 2,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2025-008",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall report serious incidents to the competent authority within 8 days."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall report serious incidents to the competent authority within 8 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0834",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "IMG",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for all devices, test each software unit against its acceptance criteria."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall verify software units against their acceptance criteria."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c3",
+    "kind": "removed",
+    "before": {
+     "id": "2.4",
+     "text": "For class IIb and III devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 10 days."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0631",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0631",
+    "from": {
+     "ref": "SMC-W-2023-001",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements SMC-W-2025-008 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.008,
+  "model_calls": 0,
+  "errors": [],
+  "day": 4,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2023-004",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for all devices, examine why each serious incident occurred within 50 days."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for all devices, examine why each serious incident occurred within 50 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIb and III devices, give reasons for each claim of equivalence with another device."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIb and III devices, give reasons for each claim of equivalence with another device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "For all devices, the manufacturer shall update the clinical evaluation report every two years."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall update the clinical evaluation report annually."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "frequency"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     },
+     {
+      "requirement": "REQ-DRS-0028",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     },
+     {
+      "requirement": "REQ-IMG-0029",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c7",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for all devices, determine safety-related characteristics of the user interface."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, determine safety-related characteristics of the user interface."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0064",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.81)"
+     },
+     {
+      "requirement": "REQ-DRS-0191",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.83)"
+     },
+     {
+      "requirement": "REQ-IMG-0082",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0249",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "why": "clause 1.3 is now 3.1"
+   },
+   {
+    "requirement": "REQ-DRS-0250",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "why": "clause 1.3 is now 3.1"
+   },
+   {
+    "requirement": "REQ-IMG-0251",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "why": "clause 1.3 is now 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0252",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0253",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0254",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0261",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.3"
+    },
+    "why": "clause 2.4 is now 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0258",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-DRS-0259",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.3"
+   },
+   {
+    "requirement": "REQ-DRS-0028",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-004 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0029",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0255",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-DRS-0256",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0257",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0064",
+    "from": {
+     "ref": "UDA-GD-2024-005",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   },
+   {
+    "requirement": "REQ-DRS-0191",
+    "from": {
+     "ref": "UDA-GD-2025-014",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0082",
+    "from": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 5,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2025-009",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0025",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "IMG",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "For all devices, the manufacturer shall perform penetration testing before release."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "For all devices, the manufacturer should perform penetration testing before release."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0010",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-DRS-0130",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-IMG-0131",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0025",
+    "from": null,
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "3.1"
+    },
+    "why": "no link recorded; the requirement implements TGA-DG-2025-009 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0010",
+    "from": {
+     "ref": "UDA-GD-2023-001",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-009 1.4"
+   },
+   {
+    "requirement": "REQ-DRS-0130",
+    "from": null,
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "1.4"
+    },
+    "why": "no link recorded; the requirement implements TGA-DG-2025-009 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0131",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-009 1.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 6,
+  "from": 2
+ },
+ {
+  "ref": "FDO-G-2025-010",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "The authorised representative shall, for class IIb and III devices, give reasons for each claim of equivalence with another device."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the authorised representative shall justify any claim of equivalence to another device."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, enter UDI data into the device database within 18 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, enter UDI data into the device database within 18 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal",
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0343",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     },
+     {
+      "requirement": "REQ-DRS-0344",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     },
+     {
+      "requirement": "REQ-IMG-0345",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 9,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2024-002",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer should, for class IIb and III devices, assess residual risk as a whole."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, assess residual risk as a whole."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0025",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "IMG",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0132",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.74)"
+     },
+     {
+      "requirement": "REQ-IMG-0134",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0025",
+    "from": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-002 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0132",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-002 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0134",
+    "from": null,
+    "to": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "2.2"
+    },
+    "why": "no link recorded; the requirement implements NMPA-RG-2024-002 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 10,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2025-010",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "removed",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer should, for all devices, give reasons for each claim of equivalence with another device."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0150",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     },
+     {
+      "requirement": "REQ-DRS-0151",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     },
+     {
+      "requirement": "REQ-IMG-0152",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-DRS-0710",
+    "from": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "1.3"
+    },
+    "to": null,
+    "why": "clause 1.3 was removed"
+   },
+   {
+    "requirement": "REQ-IMG-0711",
+    "from": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "1.3"
+    },
+    "to": null,
+    "why": "clause 1.3 was removed"
+   },
+   {
+    "requirement": "REQ-PMP-0150",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "2.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 1.3"
+   },
+   {
+    "requirement": "REQ-DRS-0151",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "2.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 1.3"
+   },
+   {
+    "requirement": "REQ-IMG-0152",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "2.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 1.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 10,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2024-007",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, keep an SBOM for the device."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, keep an SBOM for the device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIb and III devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for all devices, remediate vulnerabilities rated critical within 27 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, remediate vulnerabilities rated critical within 27 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, carry out a penetration test prior to release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer shall report any statistically significant increase in incidents within 24 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall report any statistically significant increase in incidents within 24 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for class IIb and III devices, assess residual anomalies prior to release."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIb and III devices, assess residual anomalies prior to release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c7",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate trends in incidents that are not serious every two years."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate trends in incidents that are not serious every two years."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c8",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall document a software development plan."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for all devices, record the plan for software development."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0288",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.4"
+    },
+    "why": "clause 1.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0289",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.4"
+    },
+    "why": "clause 1.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-PMP-0290",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.1"
+    },
+    "why": "clause 1.2 is now 1.1"
+   },
+   {
+    "requirement": "REQ-PMP-0291",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0293",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-PMP-0294",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-IMG-0295",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0299",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0300",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0301",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.3"
+    },
+    "why": "clause 2.4 is now 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0302",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.3"
+    },
+    "why": "clause 2.4 is now 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0296",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0298",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0662",
+    "from": {
+     "ref": "FDO-G-2024-007",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2024-007",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 12,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2024-005",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIb and III devices, run the summative evaluation of usability."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 16,
+  "from": 1
+ },
+ {
+  "ref": "UDA-GD-2023-001",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIb and III devices, carry out a penetration test prior to release."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0010",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for all devices, keep an SBOM for the device."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, keep an SBOM for the device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0001",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-DRS-0002",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     },
+     {
+      "requirement": "REQ-IMG-0003",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0010",
+    "from": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "UDA-GD-2023-001",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2023-001 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0003",
+    "from": null,
+    "to": {
+     "ref": "UDA-GD-2023-001",
+     "clause": "1.1"
+    },
+    "why": "no link recorded; the requirement implements UDA-GD-2023-001 1.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 17,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2023-004",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0038",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "IMG",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.2",
+     "text": "For all devices, the manufacturer shall classify each software item by its safety class."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "DRS",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0038",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 1.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 19,
+  "from": 2
+ },
+ {
+  "ref": "TGA-DG-2025-008",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 39 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 60 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "days"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0674",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer should assign a unique device identifier to each device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0051",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.62)"
+     },
+     {
+      "requirement": "REQ-IMG-0053",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.64)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0051",
+    "from": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-008",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-008 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0053",
+    "from": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-008",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-008 1.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 22,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2024-004",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIb and III devices, keep an SBOM for the device."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall maintain a software bill of materials."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 26,
+  "from": 1
+ },
+ {
+  "ref": "UDA-GD-2024-004",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 51 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 51 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0046",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     },
+     {
+      "requirement": "REQ-IMG-0047",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, assign a safety class to each software item."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer should, for all devices, assign a safety class to each software item."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0051",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     },
+     {
+      "requirement": "REQ-DRS-0052",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-IMG-0053",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0051",
+    "from": {
+     "ref": "TGA-DG-2025-008",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0053",
+    "from": {
+     "ref": "TGA-DG-2025-008",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 26,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2024-005",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIb and III devices, examine why each serious incident occurred within 15 days."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 15 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 29,
+  "from": 1
+ },
+ {
+  "ref": "UDA-GD-2025-011",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for all devices, assess residual risk as a whole."
+    },
+    "after": {
+     "id": "3.2",
+     "text": "The manufacturer shall, for all devices, assess residual risk as a whole."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "3.2",
+     "text": "For class IIb and III devices, the manufacturer shall review the risk management file every six months."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall review the risk management file every six months."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, remediate vulnerabilities rated critical within 19 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall patch critical vulnerabilities within 19 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-DRS-0157",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "3.2"
+    },
+    "why": "clause 2.4 is now 3.2"
+   },
+   {
+    "requirement": "REQ-IMG-0158",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "3.2"
+    },
+    "why": "clause 2.4 is now 3.2"
+   },
+   {
+    "requirement": "REQ-PMP-0160",
+    "from": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "3.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-011",
+     "clause": "3.1"
+    },
+    "why": "clause 3.2 is now 3.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 34,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2026-014",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer shall register the UDI in the device database within 18 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer should register the UDI in the device database within 18 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0343",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIb and III devices, the manufacturer shall update the database entry after a change to the device within 17 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, amend database records after a device change within 17 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0343",
+    "from": {
+     "ref": "FDO-G-2025-010",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 1.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 36,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2023-002",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall justify any claim of equivalence to another device."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer shall justify any claim of equivalence to another device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0150",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     },
+     {
+      "requirement": "REQ-IMG-0152",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for all devices, revise the CER annually."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, revise the CER annually."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0030",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.66)"
+     },
+     {
+      "requirement": "REQ-DRS-0176",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.66)"
+     },
+     {
+      "requirement": "REQ-IMG-0177",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.66)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "removed",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, send the field safety notice prior to any field safety corrective action within 5 days."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0217",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.84)"
+     },
+     {
+      "requirement": "REQ-DRS-0218",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.83)"
+     },
+     {
+      "requirement": "REQ-IMG-0219",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.84)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0150",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-002",
+     "clause": "2.4"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-002 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0152",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-002",
+     "clause": "2.4"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-002 2.4"
+   },
+   {
+    "requirement": "REQ-PMP-0030",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-002",
+     "clause": "3.1"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-002 3.1"
+   },
+   {
+    "requirement": "REQ-DRS-0176",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-002",
+     "clause": "3.1"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-002 3.1"
+   },
+   {
+    "requirement": "REQ-IMG-0177",
+    "from": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-002",
+     "clause": "3.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-002 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0217",
+    "from": {
+     "ref": "FDO-G-2023-002",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "clause 1.2 was removed"
+   },
+   {
+    "requirement": "REQ-DRS-0218",
+    "from": {
+     "ref": "FDO-G-2023-002",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "clause 1.2 was removed"
+   },
+   {
+    "requirement": "REQ-IMG-0219",
+    "from": {
+     "ref": "FDO-G-2023-002",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "clause 1.2 was removed"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.005,
+  "model_calls": 0,
+  "errors": [],
+  "day": 38,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2024-004",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "after": {
+     "id": "3.2",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.2",
+     "text": "The importer should, for class IIa, IIb and III devices, enter UDI data into the device database within 16 days."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "The importer should, for class IIa, IIb and III devices, enter UDI data into the device database within 16 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, amend database records after a device change within 30 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, amend database records after a device change within 30 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for all devices, carry out a penetration test prior to release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer should, for all devices, revise the PSUR every two years."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer should, for all devices, revise the PSUR every two years."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for all devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for all devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c7",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components every six months."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components every six months."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c8",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall maintain a software bill of materials."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For class IIb and III devices, the manufacturer shall maintain a software bill of materials."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c9",
+    "kind": "moved",
+    "before": {
+     "id": "3.2",
+     "text": "For all devices, the manufacturer shall report any statistically significant increase in incidents within 19 days."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For all devices, the manufacturer shall report any statistically significant increase in incidents within 19 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c10",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, affix the UDI carrier on the device label."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0594",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.2"
+    },
+    "why": "clause 1.1 is now 3.2"
+   },
+   {
+    "requirement": "REQ-PMP-0595",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.1"
+    },
+    "why": "clause 1.2 is now 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0596",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.1"
+    },
+    "why": "clause 1.2 is now 1.1"
+   },
+   {
+    "requirement": "REQ-DRS-0601",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0602",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0603",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-DRS-0604",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0606",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-DRS-0607",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0608",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0609",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.3"
+    },
+    "why": "clause 2.4 is now 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0610",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "2.3"
+    },
+    "why": "clause 2.4 is now 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0612",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.1"
+    },
+    "why": "clause 3.2 is now 3.1"
+   },
+   {
+    "requirement": "REQ-DRS-0613",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.1"
+    },
+    "why": "clause 3.2 is now 3.1"
+   },
+   {
+    "requirement": "REQ-IMG-0614",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "3.1"
+    },
+    "why": "clause 3.2 is now 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0597",
+    "from": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-004",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 39,
+  "from": 2
+ },
+ {
+  "ref": "UDA-GD-2025-013",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "For all devices, the importer shall update the clinical evaluation report annually."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For all devices, the importer should update the clinical evaluation report annually."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     },
+     {
+      "requirement": "REQ-DRS-0028",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     },
+     {
+      "requirement": "REQ-IMG-0029",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer should document a software development plan."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "For all devices, the manufacturer should document a software development plan."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0015",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     },
+     {
+      "requirement": "REQ-IMG-0063",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-013 1.2"
+   },
+   {
+    "requirement": "REQ-DRS-0028",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-013 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0029",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-013 1.2"
+   },
+   {
+    "requirement": "REQ-PMP-0015",
+    "from": {
+     "ref": "UDA-GD-2023-002",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-013 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0063",
+    "from": null,
+    "to": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.4"
+    },
+    "why": "no link recorded; the requirement implements UDA-GD-2025-013 1.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 41,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2024-005",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIb and III devices, revise the PSUR annually."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer should, for class IIb and III devices, revise the PSUR annually."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0118",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0118",
+    "from": null,
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "why": "no link recorded; the requirement implements SMC-W-2024-005 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 42,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2024-005",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for class IIb and III devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for class IIb and III devices, notify the authority of a statistically significant rise in incidents within 14 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, notify the authority of a statistically significant rise in incidents within 14 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer should, for class IIb and III devices, revise the PSUR annually."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer should, for class IIb and III devices, revise the PSUR annually."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate trends in incidents that are not serious every six months."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, evaluate trends in incidents that are not serious every six months."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0274",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-IMG-0794",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for all devices, determine safety-related characteristics of the user interface."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For all devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0790",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "why": "clause 1.2 is now 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0791",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "why": "clause 1.2 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0792",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-PMP-0795",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0796",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0118",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0793",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-IMG-0794",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0274",
+    "from": null,
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "why": "no link recorded; the requirement implements SMC-W-2024-005 1.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 50,
+  "from": 2
+ },
+ {
+  "ref": "UDA-GD-2024-005",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer should evaluate the overall residual risk."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0025",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, run the summative evaluation of usability."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer should, for all devices, run the summative evaluation of usability."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0065",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     },
+     {
+      "requirement": "REQ-DRS-0066",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     },
+     {
+      "requirement": "REQ-IMG-0067",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0025",
+    "from": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-005",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-005 1.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 52,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2025-007",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for all devices, notify each serious incident to the competent authority within 6 days."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for all devices, notify each serious incident to the competent authority within 6 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 2 days."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 2 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 58 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 58 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall evaluate known anomalies before release."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall evaluate known anomalies before release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c7",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for class IIb and III devices, enter UDI data into the device database within 13 days."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIb and III devices, enter UDI data into the device database within 13 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c8",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIb and III devices, test each software unit against its acceptance criteria."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for class IIb and III devices, test each software unit against its acceptance criteria."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c9",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "For all devices, the manufacturer should update the database entry after a change to the device within 24 days."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer should update the database entry after a change to the device within 24 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0804",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "3.1"
+    },
+    "why": "clause 1.1 is now 3.1"
+   },
+   {
+    "requirement": "REQ-IMG-0806",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "3.1"
+    },
+    "why": "clause 1.1 is now 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0807",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.1"
+    },
+    "why": "clause 1.2 is now 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0808",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.1"
+    },
+    "why": "clause 1.2 is now 1.1"
+   },
+   {
+    "requirement": "REQ-PMP-0809",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0811",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0812",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0813",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0815",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0817",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-DRS-0818",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0819",
+    "from": {
+     "ref": "SMC-W-2025-007",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "SMC-W-2025-007",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 60,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2025-008",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.2",
+     "text": "For all devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, re-examine the file for risk management every six months."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, re-examine the file for risk management every six months."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, notify each serious incident to the competent authority within 5 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, notify each serious incident to the competent authority within 5 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 12 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 12 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0512",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.2"
+    },
+    "why": "clause 1.2 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0515",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0516",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.2"
+    },
+    "why": "clause 1.3 is now 1.2"
+   },
+   {
+    "requirement": "REQ-DRS-0350",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0517",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-IMG-0518",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0519",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0520",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0521",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0522",
+    "from": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "NMPA-RG-2025-008",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 62,
+  "from": 1
+ },
+ {
+  "ref": "UDA-GD-2026-015",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components quarterly."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, evaluate known vulnerabilities in third-party components quarterly."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0198",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     },
+     {
+      "requirement": "REQ-IMG-0200",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall investigate the root cause of each serious incident within 32 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, examine why each serious incident occurred within 32 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, send the field safety notice prior to any field safety corrective action within 5 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For all devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 5 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0198",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "UDA-GD-2026-015",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2026-015 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0200",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2026-015",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2026-015 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 62,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2026-013",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIb and III devices, the manufacturer shall plan and conduct a clinical evaluation."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for class IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 63,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2025-010",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer should identify the user interface characteristics related to safety."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0064",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.70)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer should evaluate the overall residual risk."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal",
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0025",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "IMG",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The importer shall, for all devices, test each software unit against its acceptance criteria."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The importer shall, for class IIa, IIb and III devices, test each software unit against its acceptance criteria."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0019",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     },
+     {
+      "requirement": "REQ-DRS-0713",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     },
+     {
+      "requirement": "REQ-IMG-0184",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.83)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0064",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0025",
+    "from": {
+     "ref": "UDA-GD-2024-005",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "2.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0019",
+    "from": null,
+    "to": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "1.4"
+    },
+    "why": "no link recorded; the requirement implements TGA-DG-2025-010 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0184",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2025-010 1.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 65,
+  "from": 2
+ },
+ {
+  "ref": "TGA-DG-2026-011",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall patch critical vulnerabilities within 38 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall patch critical vulnerabilities within 38 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0079",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.63)"
+     },
+     {
+      "requirement": "REQ-IMG-0128",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.63)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for all devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For all devices, the manufacturer shall establish and maintain a post-market surveillance plan."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c3",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall maintain a software bill of materials."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0079",
+    "from": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2026-011",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2026-011 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0128",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "TGA-DG-2026-011",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2026-011 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 66,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2023-001",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, plan and carry out the clinical evaluation of the device."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for all devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for all devices, revise the CER quarterly."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, revise the CER quarterly."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for all devices, give reasons for each claim of equivalence with another device."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer should, for all devices, give reasons for each claim of equivalence with another device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0150",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     },
+     {
+      "requirement": "REQ-DRS-0151",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.76)"
+     },
+     {
+      "requirement": "REQ-IMG-0152",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For class IIb and III devices, the manufacturer shall perform penetration testing before release."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c5",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall conduct a summative usability evaluation."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0205",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-DRS-0206",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0207",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0210",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0211",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-DRS-0212",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0213",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0150",
+    "from": {
+     "ref": "FDO-G-2023-002",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-001 2.3"
+   },
+   {
+    "requirement": "REQ-DRS-0151",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2023-001 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0152",
+    "from": {
+     "ref": "FDO-G-2023-002",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-001 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0204",
+    "from": {
+     "ref": "FDO-G-2023-001",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "FDO-G-2023-001",
+     "clause": "2.4"
+    },
+    "why": "clause 1.4 is now 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 67,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2024-006",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall update the clinical evaluation report every two years."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer should update the clinical evaluation report every two years."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For all devices, the manufacturer should place the UDI carrier on the label."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For all devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0132",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-DRS-0133",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     },
+     {
+      "requirement": "REQ-IMG-0134",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.3",
+     "text": "For all devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "DRS",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2024-006",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2024-006 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0132",
+    "from": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2024-006",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2024-006 1.3"
+   },
+   {
+    "requirement": "REQ-DRS-0133",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2024-006",
+     "clause": "1.3"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2024-006 1.3"
+   },
+   {
+    "requirement": "REQ-IMG-0134",
+    "from": {
+     "ref": "NMPA-RG-2024-002",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2024-006",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2024-006 1.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 69,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2026-014",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For all devices, the authorised representative shall assign a unique device identifier to each device."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the authorised representative shall assign a unique device identifier to each device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0035",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     },
+     {
+      "requirement": "REQ-DRS-0036",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     },
+     {
+      "requirement": "REQ-IMG-0037",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.70)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "The importer shall, for class IIa, IIb and III devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the importer shall perform penetration testing before release."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0035",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 1.1"
+   },
+   {
+    "requirement": "REQ-DRS-0036",
+    "from": null,
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.1"
+    },
+    "why": "no link recorded; the requirement implements FDO-G-2026-014 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0037",
+    "from": {
+     "ref": "UDA-GD-2023-003",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 1.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 70,
+  "from": 2
+ },
+ {
+  "ref": "TGA-DG-2024-005",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, assign a safety class to each software item."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for all devices, assign a safety class to each software item."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0051",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     },
+     {
+      "requirement": "REQ-IMG-0053",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.2",
+     "text": "For class IIb and III devices, the manufacturer shall establish and maintain a post-market surveillance plan."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0051",
+    "from": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-005",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2024-005 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0053",
+    "from": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "TGA-DG-2024-005",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2024-005 1.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 70,
+  "from": 2
+ },
+ {
+  "ref": "NMPA-RG-2024-005",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "removed",
+    "before": {
+     "id": "1.4",
+     "text": "For all devices, the manufacturer should report any statistically significant increase in incidents within 21 days."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0467",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     },
+     {
+      "requirement": "REQ-DRS-0468",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     },
+     {
+      "requirement": "REQ-IMG-0469",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.68)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "removed",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, determine safety-related characteristics of the user interface."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0064",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     },
+     {
+      "requirement": "REQ-IMG-0082",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 21 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "DRS",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0467",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "1.4"
+    },
+    "to": null,
+    "why": "clause 1.4 was removed"
+   },
+   {
+    "requirement": "REQ-DRS-0468",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "1.4"
+    },
+    "to": null,
+    "why": "clause 1.4 was removed"
+   },
+   {
+    "requirement": "REQ-IMG-0469",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "1.4"
+    },
+    "to": null,
+    "why": "clause 1.4 was removed"
+   },
+   {
+    "requirement": "REQ-PMP-0470",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "to": null,
+    "why": "clause 2.1 was removed"
+   },
+   {
+    "requirement": "REQ-IMG-0471",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "to": null,
+    "why": "clause 2.1 was removed"
+   },
+   {
+    "requirement": "REQ-PMP-0064",
+    "from": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "2.1"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-005 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0082",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-005 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 71,
+  "from": 2
+ },
+ {
+  "ref": "UDA-GD-2024-004",
+  "version": 3,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer should evaluate the overall residual risk."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0025",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     },
+     {
+      "requirement": "REQ-IMG-0026",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer should, for all devices, assign a safety class to each software item."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, assign a safety class to each software item."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0051",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.78)"
+     },
+     {
+      "requirement": "REQ-DRS-0052",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-IMG-0053",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.80)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0025",
+    "from": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "3.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 3.1"
+   },
+   {
+    "requirement": "REQ-IMG-0026",
+    "from": {
+     "ref": "UDA-GD-2023-002",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "3.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 3.1"
+   },
+   {
+    "requirement": "REQ-PMP-0051",
+    "from": {
+     "ref": "TGA-DG-2024-005",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0053",
+    "from": {
+     "ref": "TGA-DG-2024-005",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-004",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-004 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 75,
+  "from": 2
+ },
+ {
+  "ref": "FDO-G-2026-014",
+  "version": 4,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer shall report serious incidents to the competent authority within 8 days."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall report serious incidents to the competent authority within 8 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the importer shall perform penetration testing before release."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the importer shall perform penetration testing before release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer should register the UDI in the device database within 18 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer should register the UDI in the device database within 22 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "days"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0343",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall assess vulnerabilities in third-party components every six months."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "frequency"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0078",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     },
+     {
+      "requirement": "REQ-DRS-0125",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.77)"
+     },
+     {
+      "requirement": "REQ-IMG-0243",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0078",
+    "from": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 2.1"
+   },
+   {
+    "requirement": "REQ-DRS-0125",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0243",
+    "from": {
+     "ref": "FDO-G-2023-003",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 76,
+  "from": 3
+ },
+ {
+  "ref": "TGA-DG-2024-005",
+  "version": 4,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.3",
+     "text": "For all devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "DRS",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 77,
+  "from": 3
+ },
+ {
+  "ref": "NMPA-RG-2024-005",
+  "version": 4,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 21 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 14 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "days"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0467",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.74)"
+     },
+     {
+      "requirement": "REQ-IMG-0469",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.74)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0064",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     },
+     {
+      "requirement": "REQ-DRS-0191",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     },
+     {
+      "requirement": "REQ-IMG-0082",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0467",
+    "from": null,
+    "to": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "1.4"
+    },
+    "why": "no link recorded; the requirement implements NMPA-RG-2024-005 1.4"
+   },
+   {
+    "requirement": "REQ-IMG-0469",
+    "from": null,
+    "to": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "1.4"
+    },
+    "why": "no link recorded; the requirement implements NMPA-RG-2024-005 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0064",
+    "from": null,
+    "to": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "why": "no link recorded; the requirement implements NMPA-RG-2024-005 2.1"
+   },
+   {
+    "requirement": "REQ-DRS-0191",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-005 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0082",
+    "from": null,
+    "to": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "why": "no link recorded; the requirement implements NMPA-RG-2024-005 2.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 78,
+  "from": 3
+ },
+ {
+  "ref": "UDA-GD-2024-008",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for class IIb and III devices, re-examine the file for risk management every six months."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer shall review the risk management file every six months."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 79,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2026-011",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For all devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "For all devices, the manufacturer should assess vulnerabilities in third-party components every six months."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For all devices, the manufacturer should assess vulnerabilities in third-party components every six months."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall verify software units against their acceptance criteria."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer should, for class IIb and III devices, test each software unit against its acceptance criteria."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0019",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.79)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0019",
+    "from": {
+     "ref": "TGA-DG-2025-010",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2026-011",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2026-011 1.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 82,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2023-001",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall establish and maintain a post-market surveillance plan."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIb and III devices, the manufacturer shall establish and maintain a post-market surveillance plan."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0011",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-IMG-0013",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 29 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, notify the authority of a statistically significant rise in incidents within 17 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "days"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0402",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-IMG-0403",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "2.1",
+     "text": "For all devices, the manufacturer shall submit a field safety notice before a field safety corrective action within 9 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, send the field safety notice prior to any field safety corrective action within 9 days."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c4",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.3",
+     "text": "For all devices, the manufacturer shall document a software development plan."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "DRS",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0011",
+    "from": {
+     "ref": "UDA-GD-2023-001",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2023-001",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2023-001 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0013",
+    "from": {
+     "ref": "UDA-GD-2023-001",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "NMPA-RG-2023-001",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2023-001 1.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 83,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2026-014",
+  "version": 5,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer should register the UDI in the device database within 22 days."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIb and III devices, the manufacturer shall register the UDI in the device database within 22 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0102",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the importer shall perform penetration testing before release."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The importer shall, for class IIa, IIb and III devices, carry out a penetration test prior to release."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0102",
+    "from": {
+     "ref": "UDA-GD-2024-007",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2026-014 1.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 84,
+  "from": 4
+ },
+ {
+  "ref": "FDO-G-2023-004",
+  "version": 4,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIb and III devices, give reasons for each claim of equivalence with another device."
+    },
+    "after": {
+     "id": "3.2",
+     "text": "The manufacturer shall, for class IIb and III devices, give reasons for each claim of equivalence with another device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for all devices, examine why each serious incident occurred within 50 days."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for all devices, examine why each serious incident occurred within 50 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "3.2",
+     "text": "For all devices, the manufacturer shall classify each software item by its safety class."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For all devices, the manufacturer shall classify each software item by its safety class."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer should report serious incidents to the competent authority within 14 days."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall report serious incidents to the competent authority within 2 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal",
+     "days"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0659",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     },
+     {
+      "requirement": "REQ-IMG-0661",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall update the clinical evaluation report annually."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For all devices, the manufacturer shall update the clinical evaluation report every two years."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "frequency"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     },
+     {
+      "requirement": "REQ-DRS-0028",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     },
+     {
+      "requirement": "REQ-IMG-0029",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.71)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0249",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-DRS-0250",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0251",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.4"
+    },
+    "why": "clause 3.1 is now 2.4"
+   },
+   {
+    "requirement": "REQ-PMP-0659",
+    "from": {
+     "ref": "TGA-DG-2025-007",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0661",
+    "from": {
+     "ref": "TGA-DG-2025-007",
+     "clause": "3.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 1.1"
+   },
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "FDO-G-2024-006",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   },
+   {
+    "requirement": "REQ-DRS-0028",
+    "from": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0029",
+    "from": {
+     "ref": "UDA-GD-2025-013",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements FDO-G-2023-004 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.004,
+  "model_calls": 0,
+  "errors": [],
+  "day": 85,
+  "from": 3
+ },
+ {
+  "ref": "UDA-GD-2024-006",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, remediate vulnerabilities rated critical within 46 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer should, for class IIb and III devices, remediate vulnerabilities rated critical within 46 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0079",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.70)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer shall, for class IIb and III devices, set up the risk management process."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer should, for class IIb and III devices, set up the risk management process."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0022",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "modified",
+    "before": {
+     "id": "3.1",
+     "text": "The manufacturer shall, for class IIb and III devices, assess residual risk as a whole."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate the overall residual risk."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c4",
+    "kind": "removed",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIa, IIb and III devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0065",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     },
+     {
+      "requirement": "REQ-IMG-0067",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0079",
+    "from": {
+     "ref": "TGA-DG-2026-011",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "1.3"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-006 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0022",
+    "from": {
+     "ref": "TGA-DG-2025-009",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-006 2.4"
+   },
+   {
+    "requirement": "REQ-PMP-0085",
+    "from": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "2.3"
+    },
+    "to": null,
+    "why": "clause 2.3 was removed"
+   },
+   {
+    "requirement": "REQ-IMG-0086",
+    "from": {
+     "ref": "UDA-GD-2024-006",
+     "clause": "2.3"
+    },
+    "to": null,
+    "why": "clause 2.3 was removed"
+   },
+   {
+    "requirement": "REQ-PMP-0065",
+    "from": {
+     "ref": "UDA-GD-2024-005",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-006 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0067",
+    "from": {
+     "ref": "UDA-GD-2024-005",
+     "clause": "1.2"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2024-006 2.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.005,
+  "model_calls": 0,
+  "errors": [],
+  "day": 86,
+  "from": 1
+ },
+ {
+  "ref": "UDA-GD-2025-010",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer should, for all devices, plan and carry out the clinical evaluation of the device."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "The manufacturer should, for class IIa, IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.81)"
+     },
+     {
+      "requirement": "REQ-DRS-0028",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.81)"
+     },
+     {
+      "requirement": "REQ-IMG-0029",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.81)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "3.2",
+     "text": "The manufacturer should, for class IIb and III devices, revise the CER every six months."
+    },
+    "after": {
+     "id": "3.2",
+     "text": "For class IIb and III devices, the manufacturer should update the clinical evaluation report every six months."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-010 2.4"
+   },
+   {
+    "requirement": "REQ-DRS-0028",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-010 2.4"
+   },
+   {
+    "requirement": "REQ-IMG-0029",
+    "from": {
+     "ref": "FDO-G-2023-004",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements UDA-GD-2025-010 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 87,
+  "from": 1
+ },
+ {
+  "ref": "FDO-G-2026-014",
+  "version": 6,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The importer shall, for class IIa, IIb and III devices, carry out a penetration test prior to release."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the importer shall perform penetration testing before release."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 96,
+  "from": 5
+ },
+ {
+  "ref": "SMC-W-2026-010",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "3.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall evaluate known anomalies before release."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     },
+     {
+      "device": "IMG",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0,
+  "model_calls": 0,
+  "errors": [],
+  "day": 103,
+  "from": 1
+ },
+ {
+  "ref": "TGA-DG-2026-012",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, assess residual risk as a whole."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, assess residual risk as a whole."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate known anomalies before release."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall evaluate known anomalies before release."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "For class IIb and III devices, the manufacturer shall verify software units against their acceptance criteria."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "For class IIb and III devices, the manufacturer shall verify software units against their acceptance criteria."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "The manufacturer shall, for all devices, amend database records after a device change within 28 days."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "The manufacturer shall, for all devices, amend database records after a device change within 28 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "modified",
+    "before": {
+     "id": "2.2",
+     "text": "The manufacturer shall, for class IIa, IIb and III devices, enter UDI data into the device database within 22 days."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for all devices, enter UDI data into the device database within 22 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0102",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     },
+     {
+      "requirement": "REQ-IMG-0104",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.73)"
+     }
+    ],
+    "gaps": [
+     {
+      "device": "DRS",
+      "why": "newly in scope and no requirement implements the clause"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0102",
+    "from": {
+     "ref": "FDO-G-2026-014",
+     "clause": "1.2"
+    },
+    "to": {
+     "ref": "TGA-DG-2026-012",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2026-012 2.2"
+   },
+   {
+    "requirement": "REQ-IMG-0104",
+    "from": {
+     "ref": "UDA-GD-2024-007",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "TGA-DG-2026-012",
+     "clause": "1.4"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements TGA-DG-2026-012 2.2"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 113,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2025-009",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "For class IIa, IIb and III devices, the importer shall conduct a summative usability evaluation."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "For class IIa, IIb and III devices, the importer should conduct a summative usability evaluation."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0065",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     },
+     {
+      "requirement": "REQ-IMG-0067",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.69)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "2.3",
+     "text": "The authorised representative shall, for class IIb and III devices, re-examine the file for risk management every two years."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "The authorised representative shall, for class IIb and III devices, re-examine the file for risk management quarterly."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "frequency"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0850",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "removed",
+    "before": {
+     "id": "2.4",
+     "text": "The manufacturer should, for class IIb and III devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "after": null,
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0011",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.74)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0065",
+    "from": null,
+    "to": {
+     "ref": "SMC-W-2025-009",
+     "clause": "1.2"
+    },
+    "why": "no link recorded; the requirement implements SMC-W-2025-009 1.2"
+   },
+   {
+    "requirement": "REQ-IMG-0067",
+    "from": null,
+    "to": {
+     "ref": "SMC-W-2025-009",
+     "clause": "1.2"
+    },
+    "why": "no link recorded; the requirement implements SMC-W-2025-009 1.2"
+   },
+   {
+    "requirement": "REQ-PMP-0851",
+    "from": {
+     "ref": "SMC-W-2025-009",
+     "clause": "2.4"
+    },
+    "to": null,
+    "why": "clause 2.4 was removed"
+   },
+   {
+    "requirement": "REQ-PMP-0011",
+    "from": {
+     "ref": "NMPA-RG-2023-001",
+     "clause": "1.1"
+    },
+    "to": null,
+    "why": "the recorded link points elsewhere; the requirement implements SMC-W-2025-009 2.4"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.003,
+  "model_calls": 0,
+  "errors": [],
+  "day": 116,
+  "from": 1
+ },
+ {
+  "ref": "NMPA-RG-2024-006",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer shall plan and conduct a clinical evaluation."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "The manufacturer shall, for class IIb and III devices, plan and carry out the clinical evaluation of the device."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "classes"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0027",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.65)"
+     },
+     {
+      "requirement": "REQ-IMG-0029",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.67)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "For all devices, the manufacturer shall justify any claim of equivalence to another device."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for all devices, give reasons for each claim of equivalence with another device."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   },
+   {
+    "id": "c3",
+    "kind": "added",
+    "before": null,
+    "after": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer should patch critical vulnerabilities within 25 days."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [],
+    "scopeBefore": [],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [
+     {
+      "device": "PMP",
+      "why": "new obligation: no requirement implements it yet"
+     }
+    ],
+    "flags": []
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0027",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2024-006",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-006 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0029",
+    "from": {
+     "ref": "UDA-GD-2025-010",
+     "clause": "2.4"
+    },
+    "to": {
+     "ref": "NMPA-RG-2024-006",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements NMPA-RG-2024-006 1.1"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.002,
+  "model_calls": 0,
+  "errors": [],
+  "day": 117,
+  "from": 1
+ },
+ {
+  "ref": "SMC-W-2024-005",
+  "version": 4,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "1.4",
+     "text": "The manufacturer shall, for class IIb and III devices, notify the authority of a statistically significant rise in incidents within 14 days."
+    },
+    "after": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, notify the authority of a statistically significant rise in incidents within 14 days."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "2.1",
+     "text": "The manufacturer should, for class IIb and III devices, revise the PSUR annually."
+    },
+    "after": {
+     "id": "1.4",
+     "text": "The manufacturer should, for class IIb and III devices, revise the PSUR annually."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "2.2",
+     "text": "For class IIa, IIb and III devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "after": {
+     "id": "2.1",
+     "text": "For class IIa, IIb and III devices, the manufacturer should conduct a summative usability evaluation."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "IMG"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c4",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "after": {
+     "id": "2.2",
+     "text": "For class IIb and III devices, the manufacturer shall assess vulnerabilities in third-party components every two years."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c5",
+    "kind": "modified",
+    "before": {
+     "id": "1.2",
+     "text": "The manufacturer shall, for class IIb and III devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "after": {
+     "id": "1.2",
+     "text": "The manufacturer should, for class IIb and III devices, set up and keep up to date a plan for post-market surveillance."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0011",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.74)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c6",
+    "kind": "modified",
+    "before": {
+     "id": "1.1",
+     "text": "For all devices, the manufacturer shall identify the user interface characteristics related to safety."
+    },
+    "after": {
+     "id": "1.1",
+     "text": "For all devices, the manufacturer should identify the user interface characteristics related to safety."
+    },
+    "verdict": "substantive",
+    "rule": "substantive",
+    "changed": [
+     "modal"
+    ],
+    "scopeBefore": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "scopeAfter": [
+     "PMP",
+     "DRS",
+     "IMG"
+    ],
+    "affected": [
+     {
+      "requirement": "REQ-PMP-0064",
+      "device": "PMP",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     },
+     {
+      "requirement": "REQ-DRS-0191",
+      "device": "DRS",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.75)"
+     },
+     {
+      "requirement": "REQ-IMG-0082",
+      "device": "IMG",
+      "via": "retrieval",
+      "why": "best retrieval hit (0.72)"
+     }
+    ],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c7",
+    "kind": "modified",
+    "before": {
+     "id": "1.3",
+     "text": "The manufacturer shall, for class IIb and III devices, evaluate trends in incidents that are not serious every six months."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall analyse trend data on non-serious incidents every six months."
+    },
+    "verdict": "editorial",
+    "rule": "unclear",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": [
+     "the text changed but every obligation parameter reads the same: treated as editorial"
+    ]
+   }
+  ],
+  "relinks": [
+   {
+    "requirement": "REQ-PMP-0795",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "why": "clause 1.4 is now 1.3"
+   },
+   {
+    "requirement": "REQ-PMP-0796",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0118",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.4"
+    },
+    "why": "clause 2.1 is now 1.4"
+   },
+   {
+    "requirement": "REQ-PMP-0790",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-IMG-0791",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.1"
+    },
+    "why": "clause 2.2 is now 2.1"
+   },
+   {
+    "requirement": "REQ-PMP-0797",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.3"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.2"
+    },
+    "why": "clause 2.3 is now 2.2"
+   },
+   {
+    "requirement": "REQ-PMP-0011",
+    "from": null,
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.2"
+    },
+    "why": "no link recorded; the requirement implements SMC-W-2024-005 1.2"
+   },
+   {
+    "requirement": "REQ-PMP-0064",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements SMC-W-2024-005 1.1"
+   },
+   {
+    "requirement": "REQ-DRS-0191",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements SMC-W-2024-005 1.1"
+   },
+   {
+    "requirement": "REQ-IMG-0082",
+    "from": {
+     "ref": "NMPA-RG-2024-005",
+     "clause": "2.1"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.1"
+    },
+    "why": "the recorded link points elsewhere; the requirement implements SMC-W-2024-005 1.1"
+   },
+   {
+    "requirement": "REQ-PMP-0793",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.3"
+    },
+    "why": "clause 1.3 is now 2.3"
+   },
+   {
+    "requirement": "REQ-IMG-0794",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.3"
+    },
+    "why": "clause 1.3 is now 2.3"
+   },
+   {
+    "requirement": "REQ-PMP-0274",
+    "from": {
+     "ref": "SMC-W-2024-005",
+     "clause": "1.3"
+    },
+    "to": {
+     "ref": "SMC-W-2024-005",
+     "clause": "2.3"
+    },
+    "why": "clause 1.3 is now 2.3"
+   }
+  ],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.005,
+  "model_calls": 0,
+  "errors": [],
+  "day": 117,
+  "from": 3
+ },
+ {
+  "ref": "SMC-W-2026-013",
+  "version": 2,
+  "method": "retrieval",
+  "changes": [
+   {
+    "id": "c1",
+    "kind": "moved",
+    "before": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "after": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall keep a record of all complaints."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c2",
+    "kind": "moved",
+    "before": {
+     "id": "2.4",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "after": {
+     "id": "2.3",
+     "text": "For class IIb and III devices, the manufacturer shall assign a unique device identifier to each device."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   },
+   {
+    "id": "c3",
+    "kind": "moved",
+    "before": {
+     "id": "3.1",
+     "text": "For class IIb and III devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "after": {
+     "id": "2.4",
+     "text": "For class IIb and III devices, the manufacturer shall place the UDI carrier on the label."
+    },
+    "verdict": "editorial",
+    "rule": "editorial",
+    "changed": [],
+    "scopeBefore": [
+     "PMP"
+    ],
+    "scopeAfter": [
+     "PMP"
+    ],
+    "affected": [],
+    "gaps": [],
+    "flags": []
+   }
+  ],
+  "relinks": [],
+  "rejected": [],
+  "cost_usd": 0,
+  "seconds": 0.001,
+  "model_calls": 0,
+  "errors": [],
+  "day": 119,
+  "from": 1
+ }
+]

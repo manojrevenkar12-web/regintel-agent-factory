@@ -35,11 +35,17 @@ Five simulated regulator sites, 70 documents, 57 revisions over a 120-day season
 | links | 100% | 0.96 | 0.73 | 17 / 17 | 138 / 144 | 83 | 0 | $0.00 |
 | retrieval | 100% | 0.17 | 0.20 | 17 / 17 | 147 / 257 | 37 | 0 | $0.00 |
 | rules | 100% | 0.89 | 0.89 | 17 / 17 | 157 / 176 | 69 | 0 | $0.00 |
-| model-sonnet | 100% | 0.97 | 0.76 | 17 / 17 | 146 / 155 | 83 | 2 | $0.76 |
-| raw-sonnet | 100% | 0.97 | 0.78 | 17 / 17 | 146 / 155 | 81 | 0 | $0.00 |
-| model-haiku | 100% | 0.95 | 0.72 | 17 / 17 | 146 / 156 | 83 | 2 | $0.07 |
+| model-sonnet | 100% | 0.98 | 0.80 | 17 / 17 | 148 / 157 | 81 | 0 | $0.78 |
+| raw-sonnet | 100% | 0.98 | 0.80 | 17 / 17 | 148 / 157 | 81 | 0 | $0.00 |
+| model-haiku | 100% | 0.99 | 0.72 | 17 / 17 | 146 / 154 | 86 | 0 | $0.07 |
 
 ## Change impact: the held-out world (first run)
 
 | Matcher | Changes classified right | Affected requirements: precision | recall | Gaps found | Trace-link proposals right | Left for the expert | Picks the verifier dropped | Cost |
 |---|---|---|---|---|---|---|---|---|
+| links | 99% | 0.97 | 0.81 | 35 / 35 | 98 / 105 | 62 | 0 | $0.00 |
+| retrieval | 99% | 0.27 | 0.31 | 35 / 35 | 116 / 210 | 24 | 0 | $0.00 |
+| rules | 99% | 0.84 | 0.86 | 35 / 35 | 107 / 129 | 52 | 0 | $0.00 |
+| model-sonnet | 99% | 0.99 | 0.85 | 35 / 35 | 103 / 111 | 64 | 0 | $0.77 |
+| raw-sonnet | 99% | 0.99 | 0.85 | 35 / 35 | 103 / 111 | 64 | 0 | $0.00 |
+| model-haiku | 99% | 0.99 | 0.71 | 35 / 35 | 102 / 110 | 78 | 0 | $0.07 |
