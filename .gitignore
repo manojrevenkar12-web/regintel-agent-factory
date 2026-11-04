@@ -1,0 +1,8 @@
+node_modules/
+dist/
+/runs/
+/work/
+*.tsbuildinfo
+apps/console/dist/
+apps/console/test-results/
+apps/console/playwright-report/

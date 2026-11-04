@@ -1,0 +1,15 @@
+# Extraction contracts: what a correct crawl of a source must look like, checked without knowing the
+# truth. An error stops the crawl's data from being used and opens an incident; a warning is recorded.
+defaults:
+  min_date: "2015-01-01"
+  max_days_ahead: 45           # effective dates may lie this far after the crawl day
+  listing_drop: 0.2            # a listing that shrinks by more than this share is suspicious
+  clause_drop: 0.3             # a document that loses this share of clauses without a new version is suspicious
+  min_clause_chars: 20
+  clause_id: "^\\d+\\.\\d+$"
+sources:
+  uda:  { ref: "^UDA-GD-\\d{4}-\\d{3}$" }
+  fdo:  { ref: "^FDO-G-\\d{4}-\\d{3}$" }
+  nmpa: { ref: "^NMPA-RG-\\d{4}-\\d{3}$" }
+  tga:  { ref: "^TGA-DG-\\d{4}-\\d{3}$" }
+  smc:  { ref: "^SMC-W-\\d{4}-\\d{3}$" }

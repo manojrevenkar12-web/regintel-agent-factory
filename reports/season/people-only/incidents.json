@@ -1,0 +1,576 @@
+[
+ {
+  "id": "people-only:tga:25",
+  "setup": "people-only",
+  "source": "tga",
+  "day": 25,
+  "findings": [
+   {
+    "check": "listing.empty",
+    "detail": "the listing returned no documents"
+   },
+   {
+    "check": "listing.shrank",
+    "detail": "0 documents listed, 10 on the last good crawl"
+   },
+   {
+    "check": "listing.sitemap",
+    "detail": "10 document(s) in the sitemap are missing from the listing: TGA-DG-2024-006, TGA-DG-2024-005, TGA-DG-2023-003"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 27
+ },
+ {
+  "id": "people-only:smc:26",
+  "setup": "people-only",
+  "source": "smc",
+  "day": 26,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "not an ISO date: \"26.01.2026\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 28
+ },
+ {
+  "id": "people-only:uda:33",
+  "setup": "people-only",
+  "source": "uda",
+  "day": 33,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "not an ISO date: \"07.02.2026\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 35
+ },
+ {
+  "id": "people-only:nmpa:38",
+  "setup": "people-only",
+  "source": "nmpa",
+  "day": 38,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "no date in \"NMPA-RG-2024-003: Position paper on clinical evaluation (01/26/2026)\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 40
+ },
+ {
+  "id": "people-only:fdo:44",
+  "setup": "people-only",
+  "source": "fdo",
+  "day": 44,
+  "findings": [
+   {
+    "check": "listing.duplicates",
+    "detail": "the same reference appears twice"
+   },
+   {
+    "check": "listing.sitemap",
+    "detail": "4 document(s) in the sitemap are missing from the listing: FDO-G-2024-006, FDO-G-2024-005, FDO-G-2024-003"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 46
+ },
+ {
+  "id": "people-only:tga:54",
+  "setup": "people-only",
+  "source": "tga",
+  "day": 54,
+  "findings": [
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 6 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 10 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 5 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 5 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 6 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 56
+ },
+ {
+  "id": "people-only:uda:57",
+  "setup": "people-only",
+  "source": "uda",
+  "day": 57,
+  "findings": [
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 7 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 7 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 6 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 10 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 7 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 9 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 8 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 6 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 10 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 7 clauses became 0"
+   },
+   {
+    "check": "doc.clauses",
+    "detail": "no clauses extracted"
+   },
+   {
+    "check": "doc.clauses_lost",
+    "detail": "same version, 6 clauses became 0"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 59
+ },
+ {
+  "id": "people-only:smc:65",
+  "setup": "people-only",
+  "source": "smc",
+  "day": 65,
+  "findings": [
+   {
+    "check": "listing.shrank",
+    "detail": "8 documents listed, 12 on the last good crawl"
+   },
+   {
+    "check": "listing.sitemap",
+    "detail": "4 document(s) in the sitemap are missing from the listing: SMC-W-2025-007, SMC-W-2024-003, SMC-W-2024-002"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 67
+ },
+ {
+  "id": "people-only:nmpa:79",
+  "setup": "people-only",
+  "source": "nmpa",
+  "day": 79,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "no version in \"Version 2.0\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 81
+ },
+ {
+  "id": "people-only:fdo:85",
+  "setup": "people-only",
+  "source": "fdo",
+  "day": 85,
+  "findings": [
+   {
+    "check": "listing.shrank",
+    "detail": "8 documents listed, 15 on the last good crawl"
+   },
+   {
+    "check": "listing.sitemap",
+    "detail": "7 document(s) in the sitemap are missing from the listing: FDO-G-2025-011, FDO-G-2025-009, FDO-G-2024-008"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 87
+ },
+ {
+  "id": "people-only:tga:86",
+  "setup": "people-only",
+  "source": "tga",
+  "day": 86,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "no version in \"\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 88
+ },
+ {
+  "id": "people-only:smc:87",
+  "setup": "people-only",
+  "source": "smc",
+  "day": 87,
+  "findings": [
+   {
+    "check": "listing.empty",
+    "detail": "the listing returned no documents"
+   },
+   {
+    "check": "listing.shrank",
+    "detail": "0 documents listed, 12 on the last good crawl"
+   },
+   {
+    "check": "listing.sitemap",
+    "detail": "12 document(s) in the sitemap are missing from the listing: SMC-W-2024-002, SMC-W-2024-004, SMC-W-2024-006"
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 89
+ },
+ {
+  "id": "people-only:uda:93",
+  "setup": "people-only",
+  "source": "uda",
+  "day": 93,
+  "findings": [
+   {
+    "check": "scraper.exception",
+    "detail": "no version in \"\""
+   }
+  ],
+  "status": "fixed_by_person",
+  "decision": "escalated",
+  "reason": "no agent in this setup",
+  "cost_usd": "0.0000",
+  "seconds": 0,
+  "record": {
+   "code": null,
+   "reason": "no agent in this setup",
+   "seconds": 0,
+   "attempts": [],
+   "cost_usd": 0,
+   "decision": "escalated"
+  },
+  "resolved_day": 95
+ }
+]

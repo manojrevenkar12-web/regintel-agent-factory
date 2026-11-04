@@ -1,0 +1,34 @@
+# The simulated world: regulators that publish guidance and change it, websites whose layouts drift,
+# and a device manufacturer whose requirements trace to those clauses. Only packages/world and the
+# evaluation read the truth this produces; the platform sees what a crawler would see.
+seed: 20261104
+days: 120                     # the season: day 0 is 2026-01-05
+start_date: "2026-01-05"
+
+sources:
+  # Fictional authorities modelled on the kinds of sites a regulatory-intelligence platform watches.
+  - { id: uda,  name: "Union Device Authority",          ref_prefix: "UDA-GD",  layout: table,  docs: 14 }
+  - { id: fdo,  name: "Federal Device Office",           ref_prefix: "FDO-G",   layout: cards,  docs: 12 }
+  - { id: nmpa, name: "Northern Medical Products Agency", ref_prefix: "NMPA-RG", layout: list,   docs: 10 }
+  - { id: tga,  name: "Tasman Goods Administration",     ref_prefix: "TGA-DG",  layout: table,  docs: 10 }
+  - { id: smc,  name: "Swiss Medical Council",           ref_prefix: "SMC-W",   layout: cards,  docs: 9 }
+
+publishing:
+  new_doc_per_100_days: 3     # per source
+  revision_per_100_days: 9    # per source: a new version of an existing document
+  changes_per_revision: [1, 4]
+  editorial_share: 0.4        # share of clause changes that do not change the obligation
+
+drift:
+  per_source: [2, 3]          # layout changes over the season, per source
+  maintenance_days: 2         # per source: the site answers 200 with a maintenance page
+  rate_limit_bursts: 3        # per source: days the site answers 429 above a request budget
+
+company:
+  name: "Halden Medical"
+  devices:
+    - { id: PMP, name: "Infusion pump", class: "IIb" }
+    - { id: DRS, name: "Wound dressing", class: "I" }
+    - { id: IMG, name: "Imaging software", class: "IIa" }
+  trace_link_coverage: 0.8    # share of requirement-to-clause links the company has actually recorded
+  wrong_link_rate: 0.03

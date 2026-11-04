@@ -1,0 +1,21 @@
+# The agent factory: who repairs a broken scraper, what it may see and do, and what decides.
+work_dir: work                 # sandboxes and gate files (not committed)
+docs_visible: 3                # document pages the repair agent sees; the rest are for the gates
+max_attempts: 2                # a failed gate goes back to the agent once, with the gate's findings
+repair:
+  budget_usd: 1.50
+  timeout_s: 900
+review:
+  model: sonnet                # the reviewer is a different session with read-only tools
+  budget_usd: 0.40
+  timeout_s: 300
+# Setups compared in the season (packages/service/src/season.ts). Each runs the whole season once.
+setups:
+  - { name: sonnet-gated, model: sonnet, gates: true,  review: true }
+  - { name: haiku-gated,  model: haiku,  gates: true,  review: true }
+  - { name: people-only,  model: none,   gates: true,  review: false }  # every incident goes to a person
+# What deploys a repair without a person:
+#   every gate passes and the reviewer approves. Anything else after the last attempt escalates.
+escalation:
+  human_delay_days: 3          # an escalated source is fixed by a person this many days later (next working days)
+  human_hours_per_incident: 2  # what an escalation costs a regulatory-data engineer (for the report)
