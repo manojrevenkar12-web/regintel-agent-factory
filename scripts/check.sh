@@ -9,6 +9,7 @@ pnpm test
 (cd apps/console && pnpm build)
 pnpm rif season --setup people-only --days 30 --fresh
 pnpm rif impact --setup people-only --only links,rules
+pnpm rif compliance --load
 PORT=${PORT:-8787} pnpm rif serve &
 API=$!
 trap 'kill $API' EXIT

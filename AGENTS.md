@@ -17,8 +17,9 @@
 
 - **The platform never sees the truth.** Only `packages/world` (the simulator) and the service's
   evaluation files (`evaluate.ts`, `report.ts`, `counterfactual.ts`, `heldout.ts`, `season.ts` as the
-  harness, `impact-run.ts` for the requirements export) import `@rif/world`. `ingest`, `factory` and
-  `impact` never do. `packages/service/test/pipeline.test.ts` checks the imports and that the
+  harness, `impact-run.ts` for the requirements export, `compliance-run.ts` and
+  `compliance-workflow.ts` for the procedures) import `@rif/world`. `ingest`, `factory`, `impact` and
+  `compliance` never do, and no stored compliance finding carries the truth. `packages/service/test/pipeline.test.ts` checks the imports and that the
   requirements export carries no truth.
 - **Data from a crawl that fails its contract is never used.** Production keeps the last good crawl
   until a fix passes every gate.
@@ -34,15 +35,20 @@
 - **People sign.** An assessment counts only when signed; a sign-off is bound to the hash of what was
   signed, a stale hash is refused, signed assessments are never overwritten, and sign-offs and the
   audit log are append-only (database triggers) and hash-chained.
+- **Experts decide what the checker cannot.** A compliance finding is accepted unreviewed only above
+  the thresholds in `config/compliance.yaml`. Reviews are append-only and bound to the finding's hash;
+  a ruling is reused only on the exact step text, and a gap ruling only on an unchanged procedure.
+  A compliance run is written once and never overwritten.
 - **Settings live in `config/`**, not in code: `world.yaml`, `contracts.yaml`, `factory.yaml`,
-  `impact.yaml`, `heldout/`.
+  `impact.yaml`, `compliance.yaml`, `heldout/`.
 
 ## Held-out sets
 
-`config/heldout/incidents.yaml` and `config/heldout/world.yaml` were written before the factory and
-the matchers were run on them. Their first runs (`reports/heldout/<setup>/first_run.json`,
-`reports/heldout/FIRST_RUN.md`, `reports/heldout/impact/*.json`) are never rewritten; later runs go
-to `latest.json`. Never change the factory, the gates or the matchers to pass them. If you study
+`config/heldout/incidents.yaml` and `config/heldout/world.yaml` were written before the factory,
+the matchers and the compliance checker were run on them. Their first runs
+(`reports/heldout/<setup>/first_run.json`, `reports/heldout/FIRST_RUN.md`,
+`reports/heldout/impact/*.json`, `reports/compliance/heldout-first-run.json`) are never rewritten; later runs go
+to `latest.json`. Never change the factory, the gates, the matchers or the compliance glossary to pass them. If you study
 their failures, move them into a dev set and have someone who has not read the code write a new
 held-out set from `docs/WRITING_HELDOUT.md` only.
 
@@ -52,5 +58,6 @@ held-out set from `docs/WRITING_HELDOUT.md` only.
 - `packages/ingest`: scrapers, fetching, the extraction contract
 - `packages/factory`: the repair agent's sandbox, the gates, the reviewer, the decision
 - `packages/impact`: clause diff, retrieval, matchers, the verifier, model readers
+- `packages/compliance`: requirement formulation, the SOP checker, review routing, rulings, the AI SDK reader
 - `packages/service`: PostgreSQL record, DBOS workflows, CLI, API, evaluation
 - `apps/console`: the control surface (React, Vite, Tailwind, Framer Motion)

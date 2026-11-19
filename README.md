@@ -5,12 +5,15 @@ reader that traces every revised clause to the requirements it reaches.** Agents
 when regulator sites change; gates and a reviewer decide what ships; the agent hands back the cases
 that are not scraper bugs. When a guidance document changes, the platform compares it clause by clause
 and proposes the requirements to update and the devices that gain obligations. It quotes its evidence,
-and an expert signs.
+and an expert signs. A third part checks customers' SOPs against the requirements in force, clause by
+clause, and sends what it is unsure of to an expert whose decision is reused on the same words.
 
 Built for Rematiq's Senior AI Engineer (Agentic Systems) role. The role covers an "agent factory"
 (workflows, skills, hooks, guardrails, review loops, escalation paths), agents that write, review and
 debug code and analyse data, brittle external dependencies such as scraping, and the internal tools
-to run it all.
+to run it all. The SOP compliance slice was added for the Senior Product Engineer (TypeScript,
+Full-Stack) role, in that team's stack: React with Vite and Tailwind, Node and Express, DBOS,
+PostgreSQL with pgvector, Azure OpenAI through the Vercel AI SDK.
 
 TypeScript on Node 22, pnpm workspaces, DBOS durable workflows on PostgreSQL with pgvector, Express,
 React with Vite, Tailwind and Framer Motion. Claude Code is the coding agent, run headless. The
@@ -79,6 +82,44 @@ links missing and 3% wrong**
 - Retrieval alone fails because many documents impose the same obligation, so requirements read
   alike. Trace links and rationales are what tell them apart, and that is what the model reads.
 
+**SOP compliance: four customers' procedures for three devices, checked against 94 requirements
+formulated from the clauses in force** ([`reports/RESULTS.md`](reports/RESULTS.md)). The truth is
+written per obligation: met, met in part (deadline or frequency left out, "where practicable"),
+contradicted (a longer deadline, less often), or not in the procedure (sometimes with a look-alike step
+that another party does or that defers the decision). Steps use passive voice, weeks and months
+instead of days, and deadlines in the next step. A simulated expert reviews what is routed to them and
+is always right, so the measure is what reaches the report unreviewed and how many expert minutes it
+takes.
+
+| Design | Right before review | Reviewed | Wrong in the final report | of which wrongly "met" | Expert minutes (manual: 6 per obligation) |
+|---|---|---|---|---|---|
+| Season world, 332 obligations (thresholds tuned here) | | | | | |
+| Manual review of everything | 332 | 332 | 0 | 0 | 1992 |
+| Keyword match, no review | 166 | 0 | 166 | 159 | 0 |
+| Rules checker with review routing | 303 | 224 | 0 | 0 | 409 |
+| Revised procedures, expert rulings reused | 322 | 68 (+146 reused) | 0 | 0 | 127 |
+| **Held-out world, 336 obligations, first run** | | | | | |
+| Manual review of everything | 336 | 336 | 0 | 0 | 2016 |
+| Keyword match, no review | 192 | 0 | 144 | 136 | 0 |
+| **Rules checker with review routing** | **317** | **208** | **3** | **0** | **352** |
+| Revised procedures, expert rulings reused | 321 | 76 (+130 reused) | 4 | 0 | 142 |
+
+- On the held-out world the checker took 17% of the expert time of reviewing everything, sent nothing
+  to the report as "met" that was not met, and missed no contradiction. It did send 3 errors through
+  unreviewed: requirements that were met but read as "not in the procedure", because the step used
+  words the glossary does not know ("keeps current" for maintain, "updated" for a report being
+  prepared). A gap that clear is accepted without review. That is the safe direction, since an expert
+  sees a gap before a customer is told it is fine, but it is wrong, and it is left as recorded.
+- Keyword matching, the usual first try, calls 136 unmet obligations "met" because a step reads like
+  the requirement. The checker reads the numbers, the modal ("where practicable"), the party and the
+  deferral, and routes anything it cannot settle.
+- When a customer revises procedures, the expert's earlier decisions are reused only where the step
+  says exactly what it said when they decided, and a gap ruling only while the whole procedure is
+  unchanged. That cut the reviews from 206 to 76 without a single wrong reuse.
+- Formulation joins clauses from several regulators into one requirement and keeps the strictest
+  deadline and frequency. 10 held-out obligations (11 in the season world) end up as two requirements
+  because the glossary does not join paraphrases such as keep and maintain.
+
 ## How it works
 
 ```
@@ -129,6 +170,16 @@ regulator sites ──crawl──▶ contract ──fail──▶ incident ─�
     verifier, to measure what the verifier is worth.
 
   Relinks for renumbered clauses and missing links are proposed too.
+- **SOP compliance** (`packages/compliance`) turns clauses into requirements: one per obligation and
+  device, with every source clause traced and the strictest deadline and frequency kept. It reads each
+  procedure step for its action, deadline, frequency, weakening words, deferral and the party that acts.
+  It gives each requirement a verdict with the steps it quotes and its reasons, and a route: accepted
+  when the evidence is strong and explicit, otherwise to an expert. An expert's correction becomes a
+  ruling, stored with the exact step text (and, for a gap, the procedure's hash) and reused only on the
+  same words. A model reader (Vercel AI SDK, Azure OpenAI provider) can propose verdicts. Code checks
+  that every quote is in the step it names and recomputes the numbers, and any disagreement goes to
+  review. A check run is a DBOS workflow, so a restart replays and does not write twice. Reviews are
+  append-only and bound to the hash of the finding they decide.
 - **The service** (`packages/service`) runs each day as a DBOS workflow. Each source's crawl, each
   incident and each repair step is a step, under deterministic workflow ids: a restart replays and
   does not pay twice. It keeps the record in PostgreSQL: crawls, deployments, document versions,
@@ -136,13 +187,17 @@ regulator sites ──crawl──▶ contract ──fail──▶ incident ─�
   the API.
 - **The console** (`apps/console`) shows each site's season as a strip of day cells. It shows every
   repair attempt with its gates, the reviewer's verdict and the diff, and each assessment's clause
-  changes with the evidence for every pick. An e-signature records name, role, meaning and the hash of
+  changes with the evidence for every pick. The SOP compliance screen shows a procedure's steps, marks
+the ones a finding quotes, and lets a regulatory-affairs or QA reviewer confirm or correct it (a
+correction needs a reason). An e-signature records name, role, meaning and the hash of
   what was signed. Every screen has loading, error-with-retry and empty states, and is checked with axe
   in light and dark.
 
 ![The season, one strip per site](docs/screenshots/sites.png)
 
 ![A clause change, the requirement it reaches with its evidence, a gap, a question for the expert, and the sign-off](docs/screenshots/impact.png)
+
+![A customer procedure with the step a finding quotes, the requirement it contradicts and the clauses behind it](docs/screenshots/compliance.png)
 
 ## Run it
 
@@ -155,12 +210,14 @@ pnpm rif heldout --setup sonnet-gated              # the held-out incidents, abo
 pnpm rif counterfactual --setup sonnet-gated       # replay first attempts ungated, free
 pnpm rif impact --setup sonnet-gated               # every matcher on the season's versions, about $1
 pnpm rif impact --heldout                          # the same on the held-out world
+pnpm rif compliance                                # SOP compliance, every design, free
+pnpm rif compliance --load                         # one check run into PostgreSQL as a DBOS workflow
 pnpm rif report                                    # reports/RESULTS.md and results.json
 (cd apps/console && pnpm build) && pnpm rif serve  # the console on http://localhost:8787
 ```
 
-Tests: `pnpm test` (63 tests; the PostgreSQL ones need `RIF_TEST_DATABASE_URL`) and the console's
-end-to-end tests (`cd apps/console && pnpm e2e`, 14 tests with axe). `scripts/check.sh` runs what CI
+Tests: `pnpm test` (81 tests; the PostgreSQL ones need `RIF_TEST_DATABASE_URL`) and the console's
+end-to-end tests (`cd apps/console && pnpm e2e`, 18 tests with axe). `scripts/check.sh` runs what CI
 runs. The validation pack is in [`docs/validation`](docs/validation): intended use, risk assessment,
 user requirements, and a traceability matrix that a test keeps in step with the tests.
 
@@ -178,6 +235,12 @@ user requirements, and a traceability matrix that a test keeps in step with the 
   how someone else should write the next one.
 - The rules matcher's thresholds were tuned on the season world. The held-out world is the honest
   number.
+- SOP compliance: the procedures are generated from a vocabulary, and I wrote the glossary knowing
+  that vocabulary. The held-out world varies the wording more, and the 3 misses above are exactly
+  where it got past the glossary. Real SOPs would need the model reader to cover what the glossary
+  does not. This environment had no Azure OpenAI key, so the model reader is tested with a mock model
+  and not measured. The expert is simulated and always right; real reviewers disagree with each other.
+  The database layer uses SQL directly, not Prisma.
 - Sign-in is a proxy's job. The API trusts its identity headers, and re-authentication at signing is
   not implemented.
 
@@ -188,9 +251,10 @@ packages/world      simulated regulators, sites, drift, company, truth (evaluati
 packages/ingest     scrapers, fetch, extraction contract
 packages/factory    sandbox, gates, reviewer, repair loop, Claude Code runner
 packages/impact     clause diff, retrieval, matchers, verifier, model readers
+packages/compliance requirement formulation, SOP checker, review routing, rulings, AI SDK reader
 packages/service    PostgreSQL record, DBOS workflows, CLI, API, evaluation, reports
 apps/console        React control surface
-config/             world, contracts, factory, impact, held-out sets
+config/             world, contracts, factory, impact, compliance, held-out sets
 reports/            generated results, season records, held-out first runs
 docs/               ADRs, validation pack, how to write a held-out set
 ```

@@ -224,12 +224,12 @@ function markdown(r: any): string {
     if (!c) return;
     L.push("", `## SOP compliance: ${title}`, "");
     L.push(
-      "| Design | Right before review | Reviewed by the expert | Reused rulings | Wrong 'met' that reached the report | Contradictions missed | Expert minutes (manual) |",
-      "|---|---|---|---|---|---|---|",
+      "| Design | Right before review | Reviewed by the expert | Reused rulings | Wrong in the final report | of which wrongly 'met' | contradictions missed | met but called a gap | Expert minutes (manual) |",
+      "|---|---|---|---|---|---|---|---|---|",
     );
     for (const x of [...c.version1, ...c.version2])
       L.push(
-        `| ${x.design} | ${x.raw.correct} / ${x.obligations} | ${x.reviewed} | ${x.byRuling} | ${x.final.falseCompliant} | ${x.final.missedConflicts} | ${Math.round(x.minutes.tool)} (${x.minutes.manual}) |`,
+        `| ${x.design} | ${x.raw.correct} / ${x.obligations} | ${x.reviewed} | ${x.byRuling} | ${x.obligations - x.final.correct} | ${x.final.falseCompliant} | ${x.final.missedConflicts} | ${x.final.falseGaps} | ${Math.round(x.minutes.tool)} (${x.minutes.manual}) |`,
       );
     const f = c.version1[2]?.formulation;
     if (f)
