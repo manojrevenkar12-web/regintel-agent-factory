@@ -10,6 +10,7 @@
     "@rif/ingest": "workspace:*",
     "@rif/factory": "workspace:*",
     "@rif/impact": "workspace:*",
+    "@rif/compliance": "workspace:*",
     "@rif/world": "workspace:*",
     "@dbos-inc/dbos-sdk": "5.4.0",
     "pg": "8.16.3",

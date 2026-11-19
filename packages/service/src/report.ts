@@ -147,6 +147,10 @@ export function writeReport() {
       season_world: impactOf(w, "reports/impact/sonnet-gated"),
       heldout_world_first_run: impactOf(heldoutWorld(), "reports/heldout/impact"),
     },
+    compliance: {
+      season_world: read("reports/compliance/season.json"),
+      heldout_world_first_run: read("reports/compliance/heldout-first-run.json"),
+    },
   };
   writeFileSync(join(ROOT, "reports", "results.json"), `${JSON.stringify(results, null, 1)}\n`);
   writeFileSync(join(ROOT, "reports", "RESULTS.md"), markdown(results));
@@ -215,5 +219,26 @@ function markdown(r: any): string {
   };
   imp("the season world (where the rules were tuned)", r.impact.season_world);
   imp("the held-out world (first run)", r.impact.heldout_world_first_run);
+  // biome-ignore lint/suspicious/noExplicitAny: the report reads its own JSON back
+  const comp = (title: string, c: any) => {
+    if (!c) return;
+    L.push("", `## SOP compliance: ${title}`, "");
+    L.push(
+      "| Design | Right before review | Reviewed by the expert | Reused rulings | Wrong 'met' that reached the report | Contradictions missed | Expert minutes (manual) |",
+      "|---|---|---|---|---|---|---|",
+    );
+    for (const x of [...c.version1, ...c.version2])
+      L.push(
+        `| ${x.design} | ${x.raw.correct} / ${x.obligations} | ${x.reviewed} | ${x.byRuling} | ${x.final.falseCompliant} | ${x.final.missedConflicts} | ${Math.round(x.minutes.tool)} (${x.minutes.manual}) |`,
+      );
+    const f = c.version1[2]?.formulation;
+    if (f)
+      L.push(
+        "",
+        `Formulation: ${f.requirements} requirements from the clauses in force; every one drawn from a single obligation; ${f.split} obligations split into two requirements (paraphrases the glossary does not join).`,
+      );
+  };
+  comp("the season world (thresholds tuned here, on version 1)", r.compliance?.season_world);
+  comp("the held-out world (first run)", r.compliance?.heldout_world_first_run);
   return `${L.join("\n")}\n`;
 }

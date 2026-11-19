@@ -1,0 +1,68 @@
+# SOP compliance check: from the regulatory clauses in force to one requirement per obligation, then
+# each customer procedure checked against them, then the expert's review queue. The vocabulary below
+# is the platform's own, written by people the way a regulatory team keeps a glossary. Thresholds were
+# tuned on the season world's version-1 procedures only.
+
+# Phrases with the same meaning, rewritten to one word before anything is compared. Longest first.
+canonical:
+  - [report, ["notify the authority of", "notifies the authority of", "informs the competent authority of", "notifies", "notify", "reports", "report", "informs", "inform"]]
+  - [establish, ["establish and maintain", "set up and keep up to date", "operates and keeps current", "sets up and maintains", "operate and keep current", "establishes", "establish", "sets up", "set up", "runs", "run"]]
+  - [update, ["bring up to date", "brings up to date", "revises", "revise", "amends", "amend", "updates", "update"]]
+  - [review, ["goes over", "go over", "re-examines", "re-examine", "reviews", "review"]]
+  - [evaluate, ["analyses", "analyse", "evaluates", "evaluate", "assesses", "assess", "judges", "judge"]]
+  - [submit, ["issues", "issue", "sends", "send", "submits", "submit"]]
+  - [investigate, ["determines the cause of", "determine the cause of", "investigates", "investigate", "examines", "examine"]]
+  - [keep, ["retains", "retain", "keeps", "keep"]]
+  - [assign, ["allocates", "allocate", "gives", "give", "assigns", "assign"]]
+  - [register, ["records", "enters", "enter", "registers", "register"]]
+  - [affix, ["affixes", "affix", "prints", "print", "places", "place"]]
+  - [document, ["writes down", "write down", "documents", "document"]]
+  - [classify, ["rates", "rate", "classifies", "classify"]]
+  - [verify, ["checks", "check", "tests", "test", "verifies", "verify"]]
+  - [maintain, ["keeps current", "keep current", "maintains", "maintain"]]
+  - [remediate, ["fixes", "fix", "patches", "patch", "remediates", "remediate"]]
+  - [perform, ["carries out", "carry out", "completes", "complete", "performs", "perform", "conducts", "conduct"]]
+  - [justify, ["supports with evidence", "support with evidence", "gives reasons for", "give reasons for", "justifies", "justify"]]
+  - [identify, ["lists", "list", "identifies", "identify"]]
+  - [plan, ["plans and carries out", "plans and performs", "plan and carry out", "plan and conduct"]]
+  - [psur, ["periodic safety update report", "psur"]]
+  - [cer, ["clinical evaluation report", "cer"]]
+  - [sbom, ["software bill of materials", "sbom"]]
+  - [udi, ["unique device identifier", "udi"]]
+  - [prior, ["prior to", "before"]]
+
+# Deadlines, frequencies and weakening, as procedures write them.
+frequency_months:
+  "quarterly": 3
+  "every three months": 3
+  "four times a year": 3
+  "every six months": 6
+  "twice a year": 6
+  "semi-annually": 6
+  "annually": 12
+  "once a year": 12
+  "every 12 months": 12
+  "yearly": 12
+  "every two years": 24
+  "biennially": 24
+  "every 24 months": 24
+weakening: ["where practicable", "where possible", "aims to", "should"]
+deferral: ["is taken under a separate procedure", "records whether"]
+other_parties: ["the importer", "the authorised representative", "the distributor"]
+
+formulate:
+  same_obligation: 0.6        # token overlap (Jaccard) of two clauses' canonical action for one obligation
+
+check:
+  min_coverage: 0.6           # share of the obligation's words a step must carry to be its candidate
+  auto_cover: 0.85            # coverage above which a met obligation with explicit numbers is accepted unreviewed
+  missing_auto: 0.35          # best coverage below which a gap is reported without review
+  keyword_min_score: 0.45     # the keyword baseline: retrieval score that counts as covered
+
+review:                       # what an expert's time costs, in minutes
+  manual_per_obligation: 6    # reading the regulation and the procedure without the tool
+  confirm: 1.5                # opening a finding with its evidence and agreeing
+  correct: 4                  # opening it, disagreeing, writing the correction
+
+model:
+  max_obligations_per_call: 12

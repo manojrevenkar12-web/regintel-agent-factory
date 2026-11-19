@@ -17,6 +17,7 @@ import {
   layoutAt,
   scheduleDrifts,
 } from "./sites.js";
+import { type SopCfg, type SopWorld, buildSops } from "./sops.js";
 
 export const ROOT = process.env.RIF_ROOT ?? join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 
@@ -40,6 +41,7 @@ export type WorldCfg = {
   };
   drift: { per_source: [number, number]; maintenance_days: number; rate_limit_bursts: number };
   company: { name: string; devices: Device[]; trace_link_coverage: number; wrong_link_rate: number };
+  sops: SopCfg;
 };
 
 export type Source = SourceCfg & {
@@ -151,6 +153,11 @@ export function buildWorld(cfg: WorldCfg = loadWorldCfg()): World {
     (day) => date(day).slice(0, 4),
   );
   return { cfg, sources, docs, company, date, events: [] };
+}
+
+/** The company's procedures (version 1 at day 0, version 2 a quarter later) with the truth about them. */
+export function sopWorld(w: World, version = 1): SopWorld {
+  return buildSops(new Rng(w.cfg.seed).fork("sops"), w.docs, w.company.devices, w.cfg.sops, version);
 }
 
 export function versionAt(doc: Doc, day: number): DocVersion | undefined {

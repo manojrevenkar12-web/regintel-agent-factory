@@ -93,7 +93,7 @@ describe("truth isolation", () => {
     );
 
   it("nothing that decides imports the world", () => {
-    for (const pkg of ["ingest", "factory", "impact"])
+    for (const pkg of ["ingest", "factory", "impact", "compliance"])
       for (const f of files(join(ROOT, "packages", pkg, "src")))
         expect(readFileSync(f, "utf8"), f).not.toMatch(/@rif\/world|packages\/world|config\/world/);
     // the service hosts the harness: only these files may touch the world
@@ -105,6 +105,8 @@ describe("truth isolation", () => {
       "heldout.ts",
       "impact-run.ts",
       "report.ts",
+      "compliance-run.ts",
+      "compliance-workflow.ts",
     ];
     for (const f of files(join(ROOT, "packages", "service", "src")))
       if (/@rif\/world/.test(readFileSync(f, "utf8"))) expect(allowed, f).toContain(f.split("/").at(-1));
@@ -118,7 +120,7 @@ describe("truth isolation", () => {
   });
 
   it("the API and the console never import the world", () => {
-    for (const f of ["main.ts", "store.ts"])
+    for (const f of ["main.ts", "store.ts", "compliance-store.ts"])
       expect(readFileSync(join(ROOT, "packages/service/src", f), "utf8")).not.toMatch(/@rif\/world/);
   });
 });

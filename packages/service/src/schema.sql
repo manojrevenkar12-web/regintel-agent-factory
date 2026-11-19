@@ -122,3 +122,70 @@ begin
   raise exception 'signoffs are append-only';
 end $$;
 create trigger signoffs_no_change before update or delete on signoffs for each row execute function signoffs_append_only();
+
+-- SOP compliance check: a run checks every customer procedure against the requirements formulated from
+-- the clauses in force. Each finding is hashed; a review binds to that hash, is append-only, and leaves a
+-- ruling that a later run reuses only on the same requirement and the same words.
+create table if not exists compliance_runs (
+  id       text primary key,
+  world    text not null,
+  version  int not null,
+  design   text not null,
+  summary  jsonb not null,
+  created  timestamptz not null default now()
+);
+
+create table if not exists compliance_procedures (
+  run      text not null references compliance_runs(id),
+  id       text not null,
+  customer text not null,
+  device   text not null,
+  title    text not null,
+  steps    jsonb not null,
+  primary key (run, id)
+);
+
+create table if not exists compliance_findings (
+  run         text not null references compliance_runs(id),
+  id          text not null,                -- requirement id @ procedure id
+  procedure   text not null,
+  requirement jsonb not null,               -- the formulated requirement with its source clauses
+  body        jsonb not null,               -- verdict, steps, quotes, numbers found, reasons, route
+  body_hash   text not null,
+  primary key (run, id)
+);
+
+create table if not exists compliance_reviews (
+  seq       bigserial primary key,
+  run       text not null,
+  finding   text not null,
+  body_hash text not null,                  -- what was reviewed; must equal the finding's hash
+  reviewer  text not null,
+  role      text not null,
+  decision  text not null check (decision in ('confirmed', 'corrected')),
+  verdict   text not null check (verdict in ('covered', 'partial', 'conflict', 'missing')),
+  steps     jsonb not null,                 -- the step ids the reviewer's verdict rests on
+  note      text not null,
+  at        timestamptz not null default now()
+);
+
+create or replace function compliance_reviews_append_only() returns trigger language plpgsql as $$
+begin
+  raise exception 'compliance reviews are append-only';
+end $$;
+drop trigger if exists compliance_reviews_no_change on compliance_reviews;
+create trigger compliance_reviews_no_change before update or delete on compliance_reviews for each row execute function compliance_reviews_append_only();
+
+create table if not exists compliance_rulings (
+  seq            bigserial primary key,
+  customer       text not null,
+  requirement    text not null,             -- requirement key: its action and numbers
+  step_text      text not null,
+  procedure_hash text not null,
+  embedding      vector(256) not null,      -- to show reviewers similar earlier rulings, never to apply them
+  found          jsonb not null,
+  verdict        text not null,
+  by_who         text not null,
+  note           text not null,
+  at             timestamptz not null default now()
+);

@@ -7,6 +7,7 @@ import { join } from "node:path";
 import { embed } from "@rif/impact";
 import { ROOT, SOURCES } from "@rif/ingest";
 import express, { type NextFunction, type Request, type Response } from "express";
+import { procedureDetail, procedures, review, runs } from "./compliance-store.js";
 import { impactCfg } from "./impact-run.js";
 import { Store } from "./store.js";
 
@@ -192,6 +193,77 @@ export function app(store: Store, opts: { defaultSetup?: string } = {}) {
       );
       if (!r.ok)
         return res.status(/changed since/.test(r.error) ? 409 : /role/.test(r.error) ? 403 : 400).json(r);
+      res.status(201).json(r);
+    }),
+  );
+
+  /** SOP compliance: runs, procedures with their open reviews, and one procedure's findings. */
+  a.get(
+    "/api/compliance/runs",
+    wrap(async (_req, res) => {
+      res.json(await runs(store));
+    }),
+  );
+  a.get(
+    "/api/compliance/runs/:run/procedures",
+    wrap(async (req, res) => {
+      res.json(await procedures(store, req.params.run as string));
+    }),
+  );
+  a.get(
+    "/api/compliance/runs/:run/procedures/:id",
+    wrap(async (req, res) => {
+      const d = await procedureDetail(store, req.params.run as string, req.params.id as string);
+      if (!d)
+        return res.status(404).json({ error: `no procedure ${req.params.id} in run ${req.params.run}` });
+      res.json(d);
+    }),
+  );
+  /** An expert confirms or corrects a finding; recorded as the signed-in person, bound to its hash. */
+  a.post(
+    "/api/compliance/runs/:run/findings/:finding/review",
+    wrap(async (req, res) => {
+      const id = req.header("x-user-id");
+      const role = req.header("x-user-role");
+      if (!id || !role) return res.status(401).json({ error: "sign in to review" });
+      const b = req.body as {
+        bodyHash?: string;
+        decision?: string;
+        verdict?: string;
+        steps?: string[];
+        note?: string;
+      };
+      if (!b.bodyHash || !["confirmed", "corrected"].includes(String(b.decision)) || !b.verdict)
+        return res
+          .status(400)
+          .json({ error: "a review needs bodyHash, a decision (confirmed or corrected) and a verdict" });
+      const r = await review(
+        store,
+        {
+          run: req.params.run as string,
+          finding: req.params.finding as string,
+          bodyHash: b.bodyHash,
+          reviewer: id,
+          role,
+          decision: b.decision as "confirmed",
+          verdict: b.verdict as "covered",
+          steps: Array.isArray(b.steps) ? b.steps.map(String) : [],
+          note: String(b.note ?? ""),
+        },
+        impactCfg().signoff.roles,
+      );
+      if (!r.ok)
+        return res
+          .status(
+            /changed since/.test(r.error)
+              ? 409
+              : /role/.test(r.error)
+                ? 403
+                : /^no finding/.test(r.error)
+                  ? 404
+                  : 400,
+          )
+          .json(r);
       res.status(201).json(r);
     }),
   );

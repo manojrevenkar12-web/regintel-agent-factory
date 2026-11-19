@@ -32,3 +32,16 @@ company:
     - { id: IMG, name: "Imaging software", class: "IIa" }
   trace_link_coverage: 0.8    # share of requirement-to-clause links the company has actually recorded
   wrong_link_rate: 0.03
+
+# The company's procedures, as text, for the SOP compliance check. The verdict shares are the truth's
+# mix: met as required, met with a stricter number, met only in part, contradicted, left out.
+sops:
+  verdicts: { covered: 0.45, stricter: 0.1, partial: 0.13, conflict: 0.15, missing: 0.17 }
+  split_step: 0.2             # covered obligations whose deadline sits in the next step, pointing back
+  number_words: 0.3           # numbers written as words with digits in brackets
+  distractor: 0.7             # missing obligations that leave a look-alike step behind
+  revise_share: 0.25          # obligations whose step is rewritten in version 2
+  customers: 4                # device makers whose procedures are checked
+  passive: 0.2                # steps written in the passive voice
+  other_units: 0.15            # deadlines in weeks, a month or hours
+  other_frequency_words: 0.2  # recurrences in words the glossary may not know

@@ -32,3 +32,16 @@ company:
     - { id: IMG, name: "Imaging software", class: "IIa" }
   trace_link_coverage: 0.8    # share of requirement-to-clause links the company has actually recorded
   wrong_link_rate: 0.03
+
+# The held-out procedures: another draw, more deadlines split across steps, more numbers as words,
+# more contradictions. Written before the compliance checker ran on them.
+sops:
+  verdicts: { covered: 0.42, stricter: 0.12, partial: 0.14, conflict: 0.16, missing: 0.16 }
+  split_step: 0.3
+  number_words: 0.45
+  distractor: 0.8
+  revise_share: 0.3
+  customers: 4                # device makers whose procedures are checked
+  passive: 0.3                # steps written in the passive voice
+  other_units: 0.25            # deadlines in weeks, a month or hours
+  other_frequency_words: 0.3  # recurrences in words the glossary may not know

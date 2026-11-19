@@ -8,6 +8,7 @@ const SCREENS = [
   { hash: "#/sources", heading: "Five regulator sites, one season" },
   { hash: "#/incidents", heading: "Incidents" },
   { hash: "#/impact", heading: "Change impact" },
+  { hash: "#/compliance", heading: "SOP compliance" },
   { hash: "#/results", heading: "What was measured" },
 ];
 
@@ -109,6 +110,43 @@ test("empty states say what to do", async ({ page }) => {
   await expect(page.getByText("No incidents in this season.")).toBeVisible();
   await page.goto("/#/impact");
   await expect(page.getByText("No assessments for this matcher yet.")).toBeVisible();
+});
+
+test("a compliance finding marks its steps and takes an expert's correction, which needs a reason", async ({
+  page,
+}) => {
+  await page.goto("/#/compliance");
+  await page.getByRole("checkbox", { name: "Only procedures with open reviews" }).check();
+  await page
+    .getByRole("link", { name: /procedure for the/ })
+    .first()
+    .click();
+  await expect(page.getByRole("heading", { level: 2, name: /procedure for the/ })).toBeVisible();
+  await page
+    .getByRole("button", { name: /waits for an expert/ })
+    .first()
+    .click();
+  await expect(page.getByText("The clauses behind it").first()).toBeVisible();
+  const form = page.getByRole("group", { name: "Review this finding" }).first();
+  const radios = form.getByRole("radio");
+  for (let i = 0; i < (await radios.count()); i++) {
+    if (!(await radios.nth(i).isChecked())) {
+      await radios.nth(i).check();
+      break;
+    }
+  }
+  await expect(form.getByRole("button", { name: "Save correction" })).toBeDisabled();
+  await form.getByRole("textbox").fill("The step carries it in the passive voice.");
+  await form.getByRole("button", { name: "Save correction" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Saved." })).toBeVisible();
+});
+
+test("the compliance screen says what to do when no run exists", async ({ page }) => {
+  await page.route("**/api/compliance/runs", (r) =>
+    r.fulfill({ status: 200, contentType: "application/json", body: "[]" }),
+  );
+  await page.goto("/#/compliance");
+  await expect(page.getByText("No compliance run recorded yet.")).toBeVisible();
 });
 
 test("works at phone width without sideways scrolling", async ({ page }) => {

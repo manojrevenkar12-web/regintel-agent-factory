@@ -4,6 +4,9 @@
  *   rif impact --setup <name> [--limit N] [--only a,b] assess every new document version the season saw
  *   rif heldout --setup <name> [--check]              the held-out incidents (first run recorded once)
  *   rif counterfactual --setup <name>                 replay first attempts ungated, scored against the truth
+ *   rif compliance [--heldout]                       the SOP compliance check, every design, scored (no database)
+ *   rif compliance --load [--version N]              check the season world's procedures as a durable workflow and
+ *                                                    record the run for the console (reuses recorded rulings)
  *   rif report                                       write reports/RESULTS.md and reports/results.json
  *   rif serve                                        the API for the console
  */
@@ -80,6 +83,24 @@ async function season() {
   await store.close();
 }
 
+async function loadCompliance(version: number) {
+  const { complianceWorkflow, setComplianceContext } = await import("./compliance-workflow.js");
+  const store = Store.connect(db());
+  await store.migrate();
+  setComplianceContext({ store, worlds: { season: buildWorld() } });
+  DBOS.setConfig({ name: "rif-compliance", systemDatabaseUrl: `${db()}_dbos` } as never);
+  await DBOS.launch();
+  const run = `season-v${version}`;
+  const h = await DBOS.startWorkflow(complianceWorkflow, { workflowID: `compliance:${run}` })({
+    run,
+    world: "season",
+    version,
+  });
+  console.log(run, JSON.stringify(await h.getResult()));
+  await DBOS.shutdown();
+  await store.close();
+}
+
 async function main() {
   const cmd = args[0];
   if (cmd === "season") return season();
@@ -98,6 +119,11 @@ async function main() {
     );
   if (cmd === "counterfactual")
     return (await import("./counterfactual.js")).counterfactual(opt("setup", "sonnet-gated") as string);
+  if (cmd === "compliance") {
+    if (!args.includes("--load"))
+      return (await import("./compliance-run.js")).runCompliance(args.includes("--heldout"));
+    return loadCompliance(Number(opt("version", "1")));
+  }
   if (cmd === "report") return (await import("./report.js")).writeReport();
   if (cmd === "serve") return (await import("./main.js")).serve();
   console.log("usage: rif season|impact|report|serve");

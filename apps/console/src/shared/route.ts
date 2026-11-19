@@ -1,11 +1,16 @@
-/** Hash routes: #/sources, #/incidents/<id>, #/impact/<id>, #/results. */
+/** Hash routes: #/sources, #/incidents/<id>, #/impact/<id>, #/compliance/<run>~<procedure>, #/results. */
 import { useEffect, useState } from "react";
 
-export type Route = { screen: "sources" | "incidents" | "impact" | "results"; id: string | null };
+export type Route = {
+  screen: "sources" | "incidents" | "impact" | "compliance" | "results";
+  id: string | null;
+};
 
 export function parse(hash: string): Route {
   const [, screen, ...rest] = hash.replace(/^#/, "").split("/");
-  const s = (["sources", "incidents", "impact", "results"] as const).find((x) => x === screen) ?? "sources";
+  const s =
+    (["sources", "incidents", "impact", "compliance", "results"] as const).find((x) => x === screen) ??
+    "sources";
   return { screen: s, id: rest.length ? decodeURIComponent(rest.join("/")) : null };
 }
 

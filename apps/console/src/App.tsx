@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ComplianceScreen } from "./features/compliance/ComplianceScreen";
 import { ImpactScreen } from "./features/impact/ImpactScreen";
 import { IncidentsScreen } from "./features/incidents/IncidentsScreen";
 import { ResultsScreen } from "./features/results/ResultsScreen";
@@ -11,6 +12,7 @@ const NAV: { screen: Route["screen"]; label: string }[] = [
   { screen: "sources", label: "Sites" },
   { screen: "incidents", label: "Incidents" },
   { screen: "impact", label: "Change impact" },
+  { screen: "compliance", label: "SOP compliance" },
   { screen: "results", label: "Results" },
 ];
 
@@ -82,6 +84,7 @@ export function App() {
         {route.screen === "sources" && <SourcesScreen />}
         {route.screen === "incidents" && <IncidentsScreen id={route.id} />}
         {route.screen === "impact" && <ImpactScreen id={route.id} />}
+        {route.screen === "compliance" && <ComplianceScreen id={route.id} />}
         {route.screen === "results" && <ResultsScreen />}
       </main>
     </div>

@@ -32,11 +32,12 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: cd apps/console && pnpm exec playwright install --with-deps chromium
-      - name: Console end to end, against a short people-only season
+      - name: Console end to end, against a short people-only season and one compliance run
         run: |
           (cd apps/console && pnpm build)
           pnpm rif season --setup people-only --days 30 --fresh
           pnpm rif impact --setup people-only --only links,rules
+          pnpm rif compliance --load
           pnpm rif report
           pnpm rif serve &
           for _ in $(seq 1 30); do curl -sf http://localhost:8787/api/health >/dev/null && break; sleep 1; done

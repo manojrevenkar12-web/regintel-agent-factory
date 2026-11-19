@@ -1,0 +1,16 @@
+{
+  "name": "@rif/compliance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/azure": "2.0.151",
+    "@rif/impact": "workspace:*",
+    "@rif/ingest": "workspace:*",
+    "ai": "5.0.291",
+    "yaml": "2.8.0"
+  }
+}
